@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panfleto Tríptico: Operação Casa Segura | SEMUNI</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    @media print {
+      .no-print { display: none !important; }
+      body { background: white !important; color: black !important; }
+      .page-break { page-break-before: always; }
+      .print-panel { border: 1px solid #cbd5e1 !important; color: black !important; background: white !important; }
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen selection:bg-sky-500 selection:text-slate-950">
+
+  <!-- BARRA DE TOPO -->
+  <header class="sticky top-0 z-40 bg-slate-900/90 backdrop-blur border-b border-slate-800 px-6 py-3.5 no-print">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <a href="hub_materiais.html" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-sky-400 text-xs font-mono font-bold flex items-center gap-1.5 transition-all">
+          <span>←</span> Hub Geral
+        </a>
+        <div class="border-l border-slate-800 pl-3">
+          <span class="font-mono text-[11px] text-sky-400 font-bold uppercase tracking-wider block">FOLDER TRÍPTICO A4 // PARA OS PAIS</span>
+          <h1 class="text-sm font-bold text-white leading-none">Panfleto Dobrável em 3 Partes (Frente e Verso)</h1>
+        </div>
+      </div>
+
+      <button onclick="window.print()" class="px-4 py-2 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-xs font-mono rounded-lg transition-all flex items-center gap-2 shadow-lg shadow-sky-500/20 active:scale-95">
+        <span>🖨️</span> IMPRIMIR PANFLETO (A4 HORIZONTAL)
+      </button>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="max-w-7xl mx-auto px-4 py-8 space-y-12">
+
+    <!-- INTRODUÇÃO -->
+    <div class="bg-gradient-to-r from-slate-900 via-slate-900 to-sky-950/40 border border-slate-800 rounded-3xl p-6 sm:p-8 space-y-3 no-print">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-mono font-bold">
+        <span>📰 MATERIAL PARA LEVAR PARA CASA</span>
+      </div>
+      <h1 class="text-3xl font-black font-display text-white">
+        Folder Tríptico: <span class="text-sky-400">Operação Casa Segura</span>
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-300 max-w-3xl leading-relaxed">
+        Formato folha A4 na horizontal (29,7 x 21 cm) com 2 dobras (3 partes). O <b>Lado Externo</b> contém a capa e os contatos de socorro. O <b>Lado Interno</b> contém a tabela de alarme vermelho quando ir à UPA e informações da vacina no SUS.
+      </p>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- LADO 1: FACE EXTERNA DO PANFLETO (3 PAINÉIS)                  -->
+    <!-- ============================================================= -->
+    <section class="space-y-4">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+        <div class="flex items-center gap-2">
+          <span class="text-xl">📄</span>
+          <h2 class="text-lg font-bold text-white font-display uppercase tracking-wide">
+            Face 1: Lado Externo (Dobra Interna, Contracapa e Capa Principal)
+          </h2>
+        </div>
+        <span class="text-xs font-mono text-slate-400">Imprimir na Frente</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 bg-slate-900/60 p-4 rounded-3xl border border-slate-800 shadow-2xl">
+        
+        <!-- PAINEL 1: ABA DA DOBRA INTERNA (ROTINA DOS 10 MINUTOS) -->
+        <div class="bg-slate-950 border border-slate-800 rounded-2xl p-5 flex flex-col justify-between space-y-4 print-panel">
+          <div class="space-y-3">
+            <span class="text-[10px] font-mono text-amber-400 font-bold uppercase tracking-wider block">PAINEL EXTERNO 1 • DOBRA</span>
+            <h3 class="text-base font-black font-display text-white">A MISSÃO DOS 10 MINUTOS POR SEMANA</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              O mosquito leva de <b>7 a 10 dias</b> para virar adulto. Se você e seu filho tirarem 10 minutos todo sábado para varrer o quintal, vocês quebram o ciclo da doença antes dela nascer!
+            </p>
+
+            <div class="space-y-2 pt-2 border-t border-slate-800 text-xs font-mono text-slate-300">
+              <div class="flex items-start gap-2">
+                <span class="text-amber-400 font-bold">□</span>
+                <span>Tampar a caixa d’água e calhas entupidas.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-amber-400 font-bold">□</span>
+                <span>Colocar areia até a borda nos pratinhos de plantas.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-amber-400 font-bold">□</span>
+                <span>Esfregar com esponja o pote do cachorro 1x por semana.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-amber-400 font-bold">□</span>
+                <span>Guardar garrafas sempre de boca para baixo.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-3 border-t border-slate-800/80 text-[10px] font-mono text-slate-400 text-center">
+            Vistoria semanal em família salva vidas!
+          </div>
+        </div>
+
+        <!-- PAINEL 2: CONTRACAPA (TELEFONES ÚTEIS E QR CODE) -->
+        <div class="bg-slate-950 border border-slate-800 rounded-2xl p-5 flex flex-col justify-between space-y-4 print-panel text-center">
+          <div class="space-y-3">
+            <span class="text-[10px] font-mono text-sky-400 font-bold uppercase tracking-wider block">PAINEL EXTERNO 2 • CONTRACAPA</span>
+            <h3 class="text-sm font-black font-display text-white">PRECISOU DE AJUDA? ACIONE A SAÚDE!</h3>
+            
+            <div class="space-y-2 text-left text-xs font-mono text-slate-300">
+              <div class="bg-slate-900 p-2.5 rounded-xl border border-slate-800">
+                <b class="text-sky-400 block">📞 DISQUE SAÚDE: 136</b>
+                <span class="text-[10px] text-slate-400">Informações oficiais gratuitas 24h sobre postos e sintomas.</span>
+              </div>
+              <div class="bg-slate-900 p-2.5 rounded-xl border border-slate-800">
+                <b class="text-amber-400 block">📞 ZOONOSES DF: 160</b>
+                <span class="text-[10px] text-slate-400">Denúncia de terrenos baldios e focos com lixo.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-2 pt-2 border-t border-slate-800">
+            <div class="w-20 h-20 bg-slate-900 border border-slate-700 rounded-xl mx-auto flex items-center justify-center text-xs font-mono text-slate-400">
+              [ QR CODE DO JOGO ]
+            </div>
+            <span class="text-[10px] font-mono text-slate-400 block">
+              Acesse o Quiz Oficial no celular
+            </span>
+          </div>
+
+          <div class="text-[9px] font-mono text-slate-500 border-t border-slate-800/80 pt-2">
+            SEMUNI • Universidade de Brasília • SUS
+          </div>
+        </div>
+
+        <!-- PAINEL 3: CAPA PRINCIPAL -->
+        <div class="bg-gradient-to-b from-slate-950 via-slate-900 to-sky-950/60 border-2 border-sky-500/50 rounded-2xl p-5 flex flex-col justify-between space-y-4 print-panel text-center">
+          <div class="space-y-3">
+            <span class="inline-block text-[9px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-sky-500/20 text-sky-300 border border-sky-500/30 uppercase">
+              GUARDE NA GELADEIRA
+            </span>
+            <div class="text-3xl">🛡️</div>
+            <h3 class="text-lg font-black font-display text-white uppercase leading-tight">
+              SEU FILHO FOI TREINADO COMO UM DETETIVE DA SAÚDE!
+            </h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Hoje ele aprendeu a identificar o <i>Aedes aegypti</i>, desarmar mentiras sobre a vacina e reconhecer os sinais de alarme da Dengue.
+            </p>
+          </div>
+
+          <div class="space-y-2 pt-2 border-t border-slate-800">
+            <span class="text-[11px] font-bold text-amber-300 font-mono block">
+              🏆 AGENTE OFICIAL DA D.I.V.
+            </span>
+            <p class="text-[10px] text-slate-400 italic">
+              "Abra este panfleto e faça a vistoria de 10 minutos com seu pequeno perito!"
+            </p>
+          </div>
+
+          <div class="text-[9px] font-mono text-sky-400 border-t border-slate-800 pt-2">
+            Extensão em Parasitologia • SEMUNI UnB
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- LADO 2: FACE INTERNA DO PANFLETO (SPREAD COMPLETO ABERTO)     -->
+    <!-- ============================================================= -->
+    <section class="space-y-4 page-break">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+        <div class="flex items-center gap-2">
+          <span class="text-xl">📖</span>
+          <h2 class="text-lg font-bold text-white font-display uppercase tracking-wide">
+            Face 2: Lado Interno (O Inimigo, Sinais Vermelhos de Alarme e Vacina no SUS)
+          </h2>
+        </div>
+        <span class="text-xs font-mono text-slate-400">Imprimir no Verso</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 bg-slate-900/60 p-4 rounded-3xl border border-slate-800 shadow-2xl">
+        
+        <!-- PAINEL INTERNO 1: O INIMIGO (DENGUE, ZIKA, CHIKUNGUNYA) -->
+        <div class="bg-slate-950 border border-slate-800 rounded-2xl p-5 flex flex-col justify-between space-y-3 print-panel">
+          <div class="space-y-3">
+            <span class="text-[10px] font-mono text-sky-400 font-bold uppercase tracking-wider block">PAINEL INTERNO 1</span>
+            <h3 class="text-sm font-black font-display text-white uppercase">DENGUE, ZIKA E CHIKUNGUNYA</h3>
+            <p class="text-[11px] text-slate-300 leading-snug">
+              O mosquito <i>Aedes aegypti</i> é o mesmo motorista de fuga, mas pode transportar 3 vírus diferentes:
+            </p>
+
+            <div class="space-y-2 text-xs">
+              <div class="bg-rose-950/30 p-2 rounded-xl border border-rose-500/30">
+                <b class="text-rose-400 block font-mono text-[11px]">🔴 DENGUE</b>
+                <span class="text-[11px] text-slate-300">Febre muito alta e súbita, dor atrás dos olhos e dor no corpo que parece quebrar os ossos.</span>
+              </div>
+              <div class="bg-amber-950/30 p-2 rounded-xl border border-amber-500/30">
+                <b class="text-amber-400 block font-mono text-[11px]">🟡 CHIKUNGUNYA</b>
+                <span class="text-[11px] text-slate-300">Dores intensas e inchaço nas juntas das mãos e pés que podem durar meses.</span>
+              </div>
+              <div class="bg-sky-950/30 p-2 rounded-xl border border-sky-500/30">
+                <b class="text-sky-400 block font-mono text-[11px]">🔵 ZIKA</b>
+                <span class="text-[11px] text-slate-300">Febre baixa, olhos vermelhos e manchas na pele que coçam. Perigo grave para grávidas!</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-[10px] font-mono text-slate-400 border-t border-slate-800 pt-2">
+            Mesmo mosquito, armas de combate iguais: sem água parada!
+          </div>
+        </div>
+
+        <!-- PAINEL INTERNO 2: SINAL VERMELHO (TABELA DE ALARME DA UPA) -->
+        <div class="bg-slate-950 border-2 border-rose-500/60 rounded-2xl p-5 flex flex-col justify-between space-y-3 print-panel">
+          <div class="space-y-3">
+            <span class="inline-block text-[9px] font-mono font-bold px-2 py-0.5 rounded bg-rose-500 text-white uppercase">
+              🚨 EMERGÊNCIA MÉDICA
+            </span>
+            <h3 class="text-sm font-black font-display text-rose-300 uppercase">QUANDO CORRER PARA A UPA?</h3>
+            <p class="text-[11px] text-slate-300 leading-snug">
+              <b>CUIDADO:</b> Quando a febre começa a baixar (3º ao 7º dia), é quando pode surgir a <b>Dengue Grave</b>!
+            </p>
+
+            <div class="bg-rose-950/50 p-2.5 rounded-xl border border-rose-500/40 text-[11px] space-y-1 text-slate-200">
+              <p class="font-bold text-rose-300">SINAIS DE ALARME:</p>
+              <ul class="list-disc list-inside space-y-0.5 text-slate-300">
+                <li>Dor na barriga forte e que não passa</li>
+                <li>Vômitos frequentes (não para água)</li>
+                <li>Tontura ou desmaio ao levantar</li>
+                <li>Sangramento no nariz ou gengiva</li>
+              </ul>
+            </div>
+
+            <div class="bg-amber-500/10 p-2 rounded-xl border border-amber-500/30 text-[10px] text-amber-200">
+              ⛔ <b>NUNCA TOME AAS, ASPIRINA OU IBUPROFENO!</b> Eles afinam o sangue e aumentam muito o risco de hemorragia grave!
+            </div>
+          </div>
+
+          <div class="text-[10px] font-mono text-slate-400 border-t border-slate-800 pt-2 text-center font-bold">
+            Hidratação com soro salva vidas!
+          </div>
+        </div>
+
+        <!-- PAINEL INTERNO 3: A VACINA NO SUS E FAKE NEWS -->
+        <div class="bg-slate-950 border border-slate-800 rounded-2xl p-5 flex flex-col justify-between space-y-3 print-panel">
+          <div class="space-y-3">
+            <span class="text-[10px] font-mono text-emerald-400 font-bold uppercase tracking-wider block">PAINEL INTERNO 3</span>
+            <h3 class="text-sm font-black font-display text-white uppercase">A VACINA NO SUS & FAKE NEWS</h3>
+            <p class="text-[11px] text-slate-300 leading-snug">
+              A vacina contra dengue (Qdenga) é gratuita no SUS para crianças e jovens de <b>10 a 14 anos</b>. São <b>2 doses</b> (intervalo de 3 meses).
+            </p>
+
+            <div class="space-y-1.5 text-[10px] font-mono text-slate-300 pt-1">
+              <div class="bg-slate-900 p-2 rounded-lg border border-slate-800">
+                <b class="text-rose-400">✕ "A vacina dá dengue?"</b><br>
+                <span>NÃO! O vírus é atenuado e serve apenas como boneco de treino.</span>
+              </div>
+              <div class="bg-slate-900 p-2 rounded-lg border border-slate-800">
+                <b class="text-rose-400">✕ "Quem já teve não precisa?"</b><br>
+                <span>NÃO! Existem 4 tipos de vírus; a vacina protege contra todos os 4.</span>
+              </div>
+              <div class="bg-slate-900 p-2 rounded-lg border border-slate-800">
+                <b class="text-rose-400">✕ "Chá de mamão cura?"</b><br>
+                <span>NÃO! Remédios caseiros não matam o vírus. Beba água e tome a vacina!</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-[10px] font-mono text-emerald-400 border-t border-slate-800 pt-2 text-center font-bold">
+            Leve seu filho ao Posto de Saúde com o cartão!
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-6 text-xs text-slate-500 font-mono border-t border-slate-800 mt-12 no-print">
+    Projeto de Extensão em Parasitologia • SEMUNI Universidade de Brasília
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Passaporte do Detetive & Medalhas | SEMUNI</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@600;700&family=Space+Grotesk:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    @media print {
+      .no-print { display: none !important; }
+      body { background: white !important; color: black !important; }
+      .page-break { page-break-after: always; }
+      .print-box { border: 2px solid #0f172a !important; background: white !important; color: black !important; box-shadow: none !important; }
+      .print-badge { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+    .badge-ring {
+      box-shadow: 0 0 25px rgba(251, 191, 36, 0.4);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen selection:bg-amber-500 selection:text-slate-950">
+
+  <!-- BARRA DE TOPO -->
+  <header class="sticky top-0 z-40 bg-slate-900/90 backdrop-blur border-b border-slate-800 px-6 py-3.5 no-print">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <a href="hub_materiais.html" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-sky-400 text-xs font-mono font-bold flex items-center gap-1.5 transition-all">
+          <span>←</span> Hub Geral
+        </a>
+        <div class="border-l border-slate-800 pl-3">
+          <span class="font-mono text-[11px] text-amber-400 font-bold uppercase tracking-wider block">GAMIFICAÇÃO & PREMIAÇÃO</span>
+          <h1 class="text-sm font-bold text-white leading-none">Passaporte A5 e Adesivos de Distintivo</h1>
+        </div>
+      </div>
+
+      <button onclick="window.print()" class="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs font-mono rounded-lg transition-all flex items-center gap-2 shadow-lg shadow-amber-500/20 active:scale-95">
+        <span>🖨️</span> IMPRIMIR PASSAPORTE E DISTINTIVOS
+      </button>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="max-w-6xl mx-auto px-4 py-8 space-y-12">
+
+    <!-- CABEÇALHO -->
+    <div class="bg-gradient-to-r from-slate-900 via-slate-900 to-amber-950/40 border border-slate-800 rounded-3xl p-6 sm:p-8 space-y-3">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-mono font-bold">
+        <span>🎖️ MATERIAL INDIVIDUAL DO ESTUDANTE</span>
+      </div>
+      <h1 class="text-3xl font-black font-display text-white">
+        Passaporte de Investigação & <span class="text-amber-400">Distintivos de Elite</span>
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-300 max-w-3xl leading-relaxed">
+        O <b>Passaporte A5</b> é a folha individual de bordo onde cada estudante acumula os 4 carimbos (+20 pts cada). Os <b>Distintivos Redondos (5 cm)</b> são adesivos que são colados no peito do aluno na consagração final.
+      </p>
+    </div>
+
+    <!-- SEÇÃO 1: O PASSAPORTE (FORMATO A5 - CABEM 2 EM UMA FOLHA A4) -->
+    <section class="space-y-4">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+        <div class="flex items-center gap-2">
+          <span class="text-xl">📄</span>
+          <h2 class="text-xl font-bold text-white font-display uppercase tracking-wide">1. Modelo do Passaporte de Perícia (Formato Meia Folha A5)</h2>
+        </div>
+        <span class="text-xs font-mono text-sky-400 font-bold">Imprime 2 por folha A4</span>
+      </div>
+
+      <!-- PASSAPORTE CONTAINER -->
+      <div class="max-w-2xl mx-auto bg-slate-900 border-2 border-slate-700 rounded-3xl p-6 sm:p-8 shadow-2xl print-box space-y-6">
+        
+        <!-- Cabeçalho do Passaporte -->
+        <div class="border-b-2 border-slate-700 pb-4 flex justify-between items-start">
+          <div>
+            <span class="font-mono text-amber-400 text-xs font-extrabold uppercase tracking-widest block">
+              D.I.V. • DIVISÃO DE INVESTIGAÇÃO DE VÍRUS
+            </span>
+            <h3 class="text-xl font-black font-display text-white uppercase tracking-tight mt-0.5">
+              Passaporte de Perícia Epidemiológica
+            </h3>
+            <span class="text-[10px] font-mono text-slate-400">SEMUNI 2024 • UNIVERSIDADE DE BRASÍLIA</span>
+          </div>
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/40 flex items-center justify-center text-2xl">
+            🕵️‍♂️
+          </div>
+        </div>
+
+        <!-- Campos de Identificação -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono">
+          <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
+            <span class="text-slate-400 block text-[10px] uppercase">Nome do Agente Mirim:</span>
+            <span class="text-white font-bold">________________________________</span>
+          </div>
+          <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
+            <span class="text-slate-400 block text-[10px] uppercase">Escola / Patrulha nº:</span>
+            <span class="text-white font-bold">___________________ [   ]</span>
+          </div>
+        </div>
+
+        <!-- AS 4 CAIXAS DE CARIMBOS DE EVIDÊNCIA -->
+        <div class="space-y-2">
+          <span class="font-mono text-[11px] text-sky-400 font-bold uppercase tracking-wider block">
+            Coleta de Evidências nas Bancadas (20 pts cada):
+          </span>
+          <div class="grid grid-cols-2 gap-3">
+            
+            <!-- Caixa 1 -->
+            <div class="border-2 border-dashed border-slate-700 bg-slate-950/60 p-3.5 rounded-2xl flex flex-col justify-between h-32 text-center">
+              <span class="font-mono text-[10px] text-slate-400 uppercase">ESTAÇÃO 1: SUSPEITO</span>
+              <div class="my-auto text-xs font-mono text-slate-600 font-bold">[ ESPAÇO PARA CARIMBO 1 ]</div>
+              <span class="font-mono text-[10px] text-emerald-400 font-bold">+20 PTS</span>
+            </div>
+
+            <!-- Caixa 2 -->
+            <div class="border-2 border-dashed border-slate-700 bg-slate-950/60 p-3.5 rounded-2xl flex flex-col justify-between h-32 text-center">
+              <span class="font-mono text-[10px] text-slate-400 uppercase">ESTAÇÃO 2: CENA DO CRIME</span>
+              <div class="my-auto text-xs font-mono text-slate-600 font-bold">[ ESPAÇO PARA CARIMBO 2 ]</div>
+              <span class="font-mono text-[10px] text-emerald-400 font-bold">+20 PTS</span>
+            </div>
+
+            <!-- Caixa 3 -->
+            <div class="border-2 border-dashed border-slate-700 bg-slate-950/60 p-3.5 rounded-2xl flex flex-col justify-between h-32 text-center">
+              <span class="font-mono text-[10px] text-slate-400 uppercase">ESTAÇÃO 3: SINTOMAS</span>
+              <div class="my-auto text-xs font-mono text-slate-600 font-bold">[ ESPAÇO PARA CARIMBO 3 ]</div>
+              <span class="font-mono text-[10px] text-emerald-400 font-bold">+20 PTS</span>
+            </div>
+
+            <!-- Caixa 4 -->
+            <div class="border-2 border-dashed border-slate-700 bg-slate-950/60 p-3.5 rounded-2xl flex flex-col justify-between h-32 text-center">
+              <span class="font-mono text-[10px] text-slate-400 uppercase">ESTAÇÃO 4: VACINAS</span>
+              <div class="my-auto text-xs font-mono text-slate-600 font-bold">[ ESPAÇO PARA CARIMBO 4 ]</div>
+              <span class="font-mono text-[10px] text-emerald-400 font-bold">+20 PTS</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Termômetro de Evolução de Patente -->
+        <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2">
+          <div class="flex justify-between text-[10px] font-mono font-bold text-slate-400">
+            <span>20 pts • Recruta</span>
+            <span>40 pts • Inspetor</span>
+            <span>60 pts • Detetive</span>
+            <span class="text-amber-400">100 pts • PERITO DE ELITE 🏆</span>
+          </div>
+          <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden border border-slate-700">
+            <div class="h-full bg-gradient-to-r from-sky-400 via-teal-400 to-amber-400 rounded-full" style="width: 100%"></div>
+          </div>
+          <div class="flex justify-between items-center text-xs font-mono pt-1">
+            <span class="text-slate-300">ESTAÇÃO 5 (RESOLUÇÃO DO CASO):</span>
+            <span class="text-amber-300 font-bold">+20 PTS [ TOTAL: 100 PTS ]</span>
+          </div>
+        </div>
+
+        <!-- Rodapé de Condecoração -->
+        <div class="flex justify-between items-center text-[10px] font-mono text-slate-400 border-t border-slate-800 pt-3">
+          <span>STATUS: ( ✓ ) APROVADO COM HONRAS</span>
+          <span>Visto do Coordenador: _____________________</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEÇÃO 2: OS DISTINTIVOS ADESIVOS (5 CM DE DIÂMETRO) -->
+    <section class="space-y-4">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+        <div class="flex items-center gap-2">
+          <span class="text-xl">🛡️</span>
+          <h2 class="text-xl font-bold text-white font-display uppercase tracking-wide">2. Adesivos Redondos "Distintivo de Peito" (5 cm de Diâmetro)</h2>
+        </div>
+        <span class="text-xs font-mono text-amber-400 font-bold">Imprimir em papel adesivo fotográfico brilhante</span>
+      </div>
+
+      <p class="text-xs sm:text-sm text-slate-300">
+        Cada aluno recebe um adesivo circular de 5 cm colado na camiseta ao resolver o caso clínico. Abaixo estão 4 unidades prontas para recorte ou faca gráfica:
+      </p>
+
+      <!-- GRADE DE DISTINTIVOS CIRCULARES -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 py-4 justify-items-center">
+        
+        <!-- DISTINTIVO 1 -->
+        <div class="w-44 h-44 rounded-full bg-gradient-to-tr from-slate-950 via-slate-900 to-amber-950/80 border-4 border-amber-400 p-3 flex flex-col items-center justify-between text-center relative badge-ring print-badge shadow-2xl">
+          <span class="text-[9px] font-mono font-extrabold text-amber-300 tracking-widest uppercase">
+            DIVISÃO D.I.V. • UNB
+          </span>
+          <div class="my-auto space-y-0.5">
+            <div class="text-3xl">🛡️</div>
+            <div class="text-[11px] font-black font-display text-white uppercase tracking-tight">
+              PERITO DE ELITE
+            </div>
+            <div class="text-[9px] font-mono text-sky-400 font-bold">
+              ★ ★ ★ ★ ★
+            </div>
+          </div>
+          <span class="text-[8px] font-mono text-slate-300 font-bold uppercase tracking-wider border-t border-amber-400/40 pt-0.5 w-full">
+            SEMUNI PARASITOLOGIA
+          </span>
+        </div>
+
+        <!-- DISTINTIVO 2 -->
+        <div class="w-44 h-44 rounded-full bg-gradient-to-tr from-slate-950 via-slate-900 to-amber-950/80 border-4 border-amber-400 p-3 flex flex-col items-center justify-between text-center relative badge-ring print-badge shadow-2xl">
+          <span class="text-[9px] font-mono font-extrabold text-amber-300 tracking-widest uppercase">
+            DIVISÃO D.I.V. • UNB
+          </span>
+          <div class="my-auto space-y-0.5">
+            <div class="text-3xl">🛡️</div>
+            <div class="text-[11px] font-black font-display text-white uppercase tracking-tight">
+              PERITO DE ELITE
+            </div>
+            <div class="text-[9px] font-mono text-sky-400 font-bold">
+              ★ ★ ★ ★ ★
+            </div>
+          </div>
+          <span class="text-[8px] font-mono text-slate-300 font-bold uppercase tracking-wider border-t border-amber-400/40 pt-0.5 w-full">
+            SEMUNI PARASITOLOGIA
+          </span>
+        </div>
+
+        <!-- DISTINTIVO 3 -->
+        <div class="w-44 h-44 rounded-full bg-gradient-to-tr from-slate-950 via-slate-900 to-amber-950/80 border-4 border-amber-400 p-3 flex flex-col items-center justify-between text-center relative badge-ring print-badge shadow-2xl">
+          <span class="text-[9px] font-mono font-extrabold text-amber-300 tracking-widest uppercase">
+            DIVISÃO D.I.V. • UNB
+          </span>
+          <div class="my-auto space-y-0.5">
+            <div class="text-3xl">🛡️</div>
+            <div class="text-[11px] font-black font-display text-white uppercase tracking-tight">
+              PERITO DE ELITE
+            </div>
+            <div class="text-[9px] font-mono text-sky-400 font-bold">
+              ★ ★ ★ ★ ★
+            </div>
+          </div>
+          <span class="text-[8px] font-mono text-slate-300 font-bold uppercase tracking-wider border-t border-amber-400/40 pt-0.5 w-full">
+            SEMUNI PARASITOLOGIA
+          </span>
+        </div>
+
+        <!-- DISTINTIVO 4 -->
+        <div class="w-44 h-44 rounded-full bg-gradient-to-tr from-slate-950 via-slate-900 to-amber-950/80 border-4 border-amber-400 p-3 flex flex-col items-center justify-between text-center relative badge-ring print-badge shadow-2xl">
+          <span class="text-[9px] font-mono font-extrabold text-amber-300 tracking-widest uppercase">
+            DIVISÃO D.I.V. • UNB
+          </span>
+          <div class="my-auto space-y-0.5">
+            <div class="text-3xl">🛡️</div>
+            <div class="text-[11px] font-black font-display text-white uppercase tracking-tight">
+              PERITO DE ELITE
+            </div>
+            <div class="text-[9px] font-mono text-sky-400 font-bold">
+              ★ ★ ★ ★ ★
+            </div>
+          </div>
+          <span class="text-[8px] font-mono text-slate-300 font-bold uppercase tracking-wider border-t border-amber-400/40 pt-0.5 w-full">
+            SEMUNI PARASITOLOGIA
+          </span>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-6 text-xs text-slate-500 font-mono border-t border-slate-800 mt-12 no-print">
+    Projeto de Extensão em Parasitologia • SEMUNI Universidade de Brasília
+  </footer>
+
+</body>
+</html>

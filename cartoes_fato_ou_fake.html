@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cartões de Evidência: Fato ou Fake sobre Vacinas | SEMUNI</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@700;800;900&display=swap" rel="stylesheet">
+  
+  <style>
+    @media print {
+      .no-print { display: none !important; }
+      body { background: white !important; color: black !important; }
+      .page-break { page-break-after: always; }
+      .card-box { border: 2px dashed #94a3b8 !important; box-shadow: none !important; margin-bottom: 20px !important; }
+    }
+    .card-stamp-fake {
+      border: 4px solid #ef4444;
+      color: #ef4444;
+      transform: rotate(-5deg);
+    }
+    .card-stamp-fato {
+      border: 4px solid #10b981;
+      color: #10b981;
+      transform: rotate(-5deg);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen selection:bg-rose-500 selection:text-white">
+
+  <!-- BARRA DE TOPO -->
+  <header class="sticky top-0 z-40 bg-slate-900/90 backdrop-blur border-b border-slate-800 px-6 py-3.5 no-print">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <a href="hub_materiais.html" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-sky-400 text-xs font-mono font-bold flex items-center gap-1.5 transition-all">
+          <span>←</span> Hub Geral
+        </a>
+        <div class="border-l border-slate-800 pl-3">
+          <span class="font-mono text-[11px] text-rose-400 font-bold uppercase tracking-wider block">ESTAÇÃO 4 // ARQUIVO CONFIDENCIAL</span>
+          <h1 class="text-sm font-bold text-white leading-none">Cartões Fato ou Fake (Prontos para Impressão)</h1>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button onclick="window.print()" class="px-4 py-2 bg-rose-500 hover:bg-rose-400 text-white font-bold text-xs font-mono rounded-lg transition-all flex items-center gap-2 shadow-lg shadow-rose-500/20 active:scale-95">
+          <span>🖨️</span> IMPRIMIR CARTÕES
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="max-w-6xl mx-auto px-4 py-8 space-y-8">
+    
+    <!-- BANNER INTRODUTÓRIO -->
+    <div class="bg-gradient-to-r from-slate-900 via-slate-900 to-rose-950/40 border border-slate-800 rounded-3xl p-6 sm:p-8 space-y-3">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs font-mono font-bold">
+        <span>📁 MATERIAL DE BANCADA • ESTAÇÃO 4</span>
+      </div>
+      <h1 class="text-3xl font-black font-display text-white">
+        Dossiês Secretos: <span class="text-rose-400">Fato ou Fake sobre Vacinas</span>
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-300 max-w-2xl leading-relaxed">
+        Cada cartão possui a <b>Frente</b> (Dossiê Confidencial para mostrar aos alunos) e o <b>Verso</b> (Gabarito pericial com explicação científica e pontos). Imprima em papel grosso (240g) e plastifique para reutilizar em todas as sessões.
+      </p>
+    </div>
+
+    <!-- GRID DOS 6 CARTÕES (FRENTE E VERSO LADO A LADO) -->
+    <div class="space-y-8">
+
+      <!-- CARTÃO 1 -->
+      <div class="card-box bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-xl space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+          <span class="font-mono text-xs text-sky-400 font-bold uppercase">DOSSIÊ Nº 01</span>
+          <span class="text-xs font-mono text-slate-400">Tema: Vírus Atenuado vs. Doença</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- FRENTE -->
+          <div class="bg-slate-950 border-2 border-slate-700 rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden">
+            <div class="space-y-3">
+              <div class="flex justify-between items-center">
+                <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">FRENTE DO CARTÃO</span>
+                <span class="text-xs font-mono text-rose-400">🚨 CONFIDENCIAL</span>
+              </div>
+              <h3 class="text-xs font-mono font-bold text-slate-400">CASO #01 — O VÍRUS NA AGULHA</h3>
+              <blockquote class="text-lg font-bold text-white leading-snug">
+                “Tomar a vacina da dengue pode acabar me dando a própria dengue hemorrágica, porque colocam o vírus vivo dentro dela!”
+              </blockquote>
+            </div>
+            <div class="pt-6 flex justify-between items-center text-xs font-mono text-slate-400 border-t border-slate-800">
+              <span>Ilustração: Seringa com vírus sonolento</span>
+              <span class="text-amber-400 font-bold">FATO OU FAKE?</span>
+            </div>
+          </div>
+
+          <!-- VERSO -->
+          <div class="bg-rose-950/20 border-2 border-rose-500/40 rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden">
+            <div class="space-y-3">
+              <div class="flex justify-between items-center">
+                <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded bg-rose-500/20 text-rose-300 border border-rose-500/40">VERSO (RESPOSTA)</span>
+                <span class="text-xs font-mono text-amber-400 font-bold">⭐ +5 PTS</span>
+              </div>
+              
+              <div class="card-stamp-fake inline-block px-4 py-1.5 rounded-xl font-display font-black text-2xl tracking-wider uppercase bg-rose-950/80">
+                🚫 FAKE NEWS!
+              </div>
+
+              <p class="text-sm text-slate-200 leading-relaxed">
+                “O vírus usado na vacina é <b>enfraquecido (atenuado)</b> no laboratório. Ele funciona como um <b>boneco de treino</b>: não tem força para nos deixar doentes, mas serve para o exército do nosso corpo treinar e criar anticorpos invencíveis!”
+              </p>
+            </div>
+            <div class="pt-4 text-[11px] font-mono text-slate-400 border-t border-rose-500/20">
+              <b>Apoio ao Monitor:</b> A vacina Qdenga possui vírus vivo quimérico recombinante; replica discretamente sem induzir quadro de doença clássica.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARTÃO 2 -->
+      <div class="card-box bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-xl space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+          <span class="font-mono text-xs text-sky-400 font-bold uppercase">DOSSIÊ Nº 02</span>
+          <span class="text-xs font-mono text-slate-400">Tema: Proteção Cruzada (Zika e Chikungunya)</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- FRENTE -->
+          <div class="bg-slate-950 border-2 border-slate-700 rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden">
+            <div class="space-y-3">
+              <div class="flex justify-between items-center">
+                <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">FRENTE DO CARTÃO</span>
+                <span class="text-xs font-mono text-rose-400">🚨 CONFIDENCIAL</span>
+              </div>
+              <h3 class="text-xs font-mono font-bold text-slate-400">CASO #02 — O ESCUDO TRÊS EM UM</h3>
+              <blockquote class="text-lg font-bold text-white leading-snug">
+                “Se eu tomar a vacina da dengue, fico 100% protegido também contra a Zika e a febre Chikungunya!”
+              </blockquote>
+            </div>
+            <div class="pt-6 flex justify-between items-center text-xs font-mono text-slate-400 border-t border-slate-800">
+              <span>Ilustração: Escudo bloqueando monstrinhos</span>
+              <span class="text-amber-400 font-bold">FATO OU FAKE?</span>
+            </div>
+          </div>
+
+          <!-- VERSO -->
+          <div class="bg-rose-950/20 border-2 border-rose-500/40 rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden">
+            <div class="space-y-3">
+              <div class="flex justify-between items-center">
+                <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded bg-rose-500/20 text-rose-300 border border-rose-500/40">VERSO (RESPOSTA)</span>
+                <span class="text-xs font-mono text-amber-400 font-bold">⭐ +5 PTS</span>
+              </div>
+              
+              <div class="card-stamp-fake inline-block px-4 py-1.5 rounded-xl font-display font-black text-2xl tracking-wider uppercase bg-rose-950/80">
+                🚫 FAKE NEWS!
+              </div>
+
+              <p class="text-sm text-slate-200 leading-relaxed">
+                “O mosquito é apenas o <b>motorista de fuga</b> que dá carona, mas cada vírus é um inimigo diferente! Na ciência vale a regra da <b>chave e fechadura</b>: a chave da dengue só fecha a porta da dengue. Para Zika e Chikungunya, a melhor arma ainda é eliminar os focos de água!”
+              </p>
+            </div>
+            <div class="pt-4 text-[11px] font-mono text-slate-400 border-t border-rose-500/20">
+              <b>Apoio ao Monitor:</b> Dengue e Zika são flavivírus distintos; Chikungunya é um alfavírus. Não existe proteção imunológica cruzada efetiva.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARTÃO 3 -->
+      <div class="card-box bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-xl space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+          <span class="font-mono text-xs text-sky-400 font-bold uppercase">DOSSIÊ Nº 03</span>
+          <span class="text-xs font-mono text-slate-400">Tema: Os 4 Sorotipos da Dengue</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- FRENTE -->
+          <div class="bg-slate-950 border-2 border-slate-700 rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden">
+            <div class="space-y-3">
+              <div class="flex justify-between items-center">
+                <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">FRENTE DO CARTÃO</span>
+                <span class="text-xs font-mono text-rose-400">🚨 CONFIDENCIAL</span>
+              </div>
+              <h3 class="text-xs font-mono font-bold text-slate-400">CASO #03 — A QUADRILHA DOS 4 IRMÃOS</h3>
+              <blockquote class="text-lg font-bold text-white leading-snug">
+                “Quem já pegou dengue no ano passado já está imune para o resto da vida e não precisa mais tomar a vacina!”
+              </blockquote>
+            </div>
+            <div class="pt-6 flex justify-between items-center text-xs font-mono text-slate-400 border-t border-slate-800">
+              <span>Ilustração: 4 monstrinhos mascarados (1 a 4)</span>
+              <span class="text-amber-400 font-bold">FATO OU FAKE?</span>
+            </div>
+          </div>
+
+          <!-- VERSO -->
+          <div class="bg-rose-950/20 border-2 border-rose-500/40 rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden">
+            <div class="space-y-3">
+              <div class="flex justify-between items-center">
+                <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded bg-rose-500/20 text-rose-300 border border-rose-500/40">VERSO (RESPOSTA)</span>
+                <span class="text-xs font-mono text-amber-400 font-bold">⭐ +5 PTS</span>
+              </div>
+              
+              <div class="card-stamp-fake inline-block px-4 py-1.5 rounded-xl font-display font-black text-2xl tracking-wider uppercase bg-rose-950/80">
+                🚫 FAKE NEWS!
+              </div>
+
+              <p class="text-sm text-slate-200 leading-relaxed">
+                “O vírus da dengue tem <b>4 irmãos diferentes</b> (DENV 1, 2, 3 e 4). Pegar um tipo só protege contra aquele! Ter dengue pela segunda vez pode ser muito mais grave. A vacina é essencial porque ensina seu corpo a combater os <b>4 tipos de uma só vez</b>!”
+              </p>
+            </div>
+            <div class="pt-4 text-[11px] font-mono text-slate-400 border-t border-rose-500/20">
+              <b>Apoio ao Monitor:</b> Reinfecções heterólogas possuem maior risco de evolução grave pelo fenômeno de amplificação dependente de anticorpos (ADE).
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARTÃO 4 -->
+      <div class="card-box bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-xl space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+          <span class="font-mono text-xs text-sky-400 font-bold uppercase">DOSSIÊ Nº 04</span>
+          <span class="text-xs font-mono text-slate-400">Tema: Genética e DNA Humano</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- FRENTE -->
+          <div class="bg-slate-950 border-2 border-slate-700 rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden">
+            <div class="space-y-3">
+              <div class="flex justify-between items-center">
+                <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">FRENTE DO CARTÃO</span>
+                <span class="text-xs font-mono text-rose-400">🚨 CONFIDENCIAL</span>
+              </div>
+              <h3 class="text-xs font-mono font-bold text-slate-400">CASO #04 — A INVASÃO DO CÓDIGO SECRETO</h3>
+              <blockquote class="text-lg font-bold text-white leading-snug">
+                “A vacina contra a dengue pode alterar o nosso DNA e modificar a nossa genética para sempre!”
+              </blockquote>
+            </div>
+            <div class="pt-6 flex justify-between items-center text-xs font-mono text-slate-400 border-t border-slate-800">
+              <span>Ilustração: Fita de DNA dentro de um cofre</span>
+              <span class="text-amber-400 font-bold">FATO OU FAKE?</span>
+            </div>
+          </div>
+
+          <!-- VERSO -->
+          <div class="bg-rose-950/20 border-2 border-rose-500/40 rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden">
+            <div class="space-y-3">
+              <div class="flex justify-between items-center">
+                <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded bg-rose-500/20 text-rose-300 border border-rose-500/40">VERSO (RESPOSTA)</span>
+                <span class="text-xs font-mono text-amber-400 font-bold">⭐ +5 PTS</span>
+              </div>
+              
+              <div class="card-stamp-fake inline-block px-4 py-1.5 rounded-xl font-display font-black text-2xl tracking-wider uppercase bg-rose-950/80">
+                🚫 FAKE NEWS!
+              </div>
+
+              <p class="text-sm text-slate-200 leading-relaxed">
+                “O nosso DNA fica guardado dentro do <b>cofre-forte da célula</b> (o núcleo), e a vacina nem sequer chega perto dele! Ela apenas treina nossos soldados no pátio da célula e logo é eliminada naturalmente pelo corpo.”
+              </p>
+            </div>
+            <div class="pt-4 text-[11px] font-mono text-slate-400 border-t border-rose-500/20">
+              <b>Apoio ao Monitor:</b> O vírus vacinal é de RNA e seu ciclo replicativo ocorre estritamente no citoplasma celular, sem qualquer integração genômica.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARTÃO 5 -->
+      <div class="card-box bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-xl space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+          <span class="font-mono text-xs text-sky-400 font-bold uppercase">DOSSIÊ Nº 05</span>
+          <span class="text-xs font-mono text-slate-400">Tema: Vacinação Gratuita no SUS</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- FRENTE -->
+          <div class="bg-slate-950 border-2 border-slate-700 rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden">
+            <div class="space-y-3">
+              <div class="flex justify-between items-center">
+                <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">FRENTE DO CARTÃO</span>
+                <span class="text-xs font-mono text-emerald-400">✅ FATO HISTÓRICO</span>
+              </div>
+              <h3 class="text-xs font-mono font-bold text-slate-400">CASO #05 — A CONVOCAÇÃO DOS JOVENS</h3>
+              <blockquote class="text-lg font-bold text-white leading-snug">
+                “O Brasil foi um dos primeiros países do mundo a oferecer a vacina da dengue de graça no SUS para a faixa de 10 a 14 anos!”
+              </blockquote>
+            </div>
+            <div class="pt-6 flex justify-between items-center text-xs font-mono text-slate-400 border-t border-slate-800">
+              <span>Ilustração: Brasão do SUS brilhando com medalha</span>
+              <span class="text-amber-400 font-bold">FATO OU FAKE?</span>
+            </div>
+          </div>
+
+          <!-- VERSO -->
+          <div class="bg-emerald-950/20 border-2 border-emerald-500/40 rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden">
+            <div class="space-y-3">
+              <div class="flex justify-between items-center">
+                <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">VERSO (RESPOSTA)</span>
+                <span class="text-xs font-mono text-amber-400 font-bold">⭐ +5 PTS</span>
+              </div>
+              
+              <div class="card-stamp-fato inline-block px-4 py-1.5 rounded-xl font-display font-black text-2xl tracking-wider uppercase bg-emerald-950/80">
+                ✅ FATO COMPROVADO!
+              </div>
+
+              <p class="text-sm text-slate-200 leading-relaxed">
+                “É pura verdade! O Brasil fez história ao colocar a vacina no SUS. A faixa de <b>10 a 14 anos</b> foi escolhida como prioridade porque é uma das idades que mais sofria com internações hospitalares. São <b>duas doses</b> para ficar seguro!”
+              </p>
+            </div>
+            <div class="pt-4 text-[11px] font-mono text-slate-400 border-t border-emerald-500/20">
+              <b>Apoio ao Monitor:</b> O Ministério da Saúde incorporou a Qdenga com esquema de 2 doses (intervalo de 3 meses) priorizando municípios endêmicos.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARTÃO 6 -->
+      <div class="card-box bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-xl space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+          <span class="font-mono text-xs text-sky-400 font-bold uppercase">DOSSIÊ Nº 06</span>
+          <span class="text-xs font-mono text-slate-400">Tema: Remédios Caseiros e Chás</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- FRENTE -->
+          <div class="bg-slate-950 border-2 border-slate-700 rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden">
+            <div class="space-y-3">
+              <div class="flex justify-between items-center">
+                <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">FRENTE DO CARTÃO</span>
+                <span class="text-xs font-mono text-rose-400">🚨 CONFIDENCIAL</span>
+              </div>
+              <h3 class="text-xs font-mono font-bold text-slate-400">CASO #06 — O CHÁ MILAGROSO DA INTERNET</h3>
+              <blockquote class="text-lg font-bold text-white leading-snug">
+                “Tomar chá de folha de mamão, suco de inhame ou água com alho cura a dengue rapidinho e substitui a necessidade da vacina!”
+              </blockquote>
+            </div>
+            <div class="pt-6 flex justify-between items-center text-xs font-mono text-slate-400 border-t border-slate-800">
+              <span>Ilustração: Caldeirão com poção mágica</span>
+              <span class="text-amber-400 font-bold">FATO OU FAKE?</span>
+            </div>
+          </div>
+
+          <!-- VERSO -->
+          <div class="bg-rose-950/20 border-2 border-rose-500/40 rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden">
+            <div class="space-y-3">
+              <div class="flex justify-between items-center">
+                <span class="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded bg-rose-500/20 text-rose-300 border border-rose-500/40">VERSO (RESPOSTA)</span>
+                <span class="text-xs font-mono text-amber-400 font-bold">⭐ +5 PTS</span>
+              </div>
+              
+              <div class="card-stamp-fake inline-block px-4 py-1.5 rounded-xl font-display font-black text-2xl tracking-wider uppercase bg-rose-950/80">
+                🚫 FAKE NEWS!
+              </div>
+
+              <p class="text-sm text-slate-200 leading-relaxed">
+                “Não existe nenhuma receita de internet que consiga matar o vírus da dengue no sangue! O que realmente salva vidas durante a doença é <b>muita hidratação (água e soro oral)</b> e acompanhamento médico. A vacina é a única prevenção testada pela ciência!”
+              </p>
+            </div>
+            <div class="pt-4 text-[11px] font-mono text-slate-400 border-t border-rose-500/20">
+              <b>Apoio ao Monitor:</b> Nenhum fitoterápico tem eficácia antiviral comprovada contra o DENV; atrasar a hidratação por confiar em chás pode levar ao choque.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="text-center py-6 text-xs text-slate-500 font-mono border-t border-slate-800 mt-12 no-print">
+    Projeto de Extensão em Parasitologia • SEMUNI Universidade de Brasília
+  </footer>
+
+</body>
+</html>

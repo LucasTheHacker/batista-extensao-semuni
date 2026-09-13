@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estação 5: Tribunal dos Peritos (Caso Clínico) | SEMUNI</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    @media print {
+      .no-print { display: none !important; }
+      body { background: white !important; color: black !important; }
+      .page-break { page-break-after: always; }
+      .card-evidence { border: 1px solid #64748b !important; box-shadow: none !important; color: black !important; background: white !important; }
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen selection:bg-amber-500 selection:text-slate-950">
+
+  <!-- BARRA DE TOPO -->
+  <header class="sticky top-0 z-40 bg-slate-900/90 backdrop-blur border-b border-slate-800 px-6 py-3.5 no-print">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <a href="hub_materiais.html" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-sky-400 text-xs font-mono font-bold flex items-center gap-1.5 transition-all">
+          <span>←</span> Hub Geral
+        </a>
+        <div class="border-l border-slate-800 pl-3">
+          <span class="font-mono text-[11px] text-amber-400 font-bold uppercase tracking-wider block">ESTAÇÃO 5 // TRIBUNAL DOS PERITOS</span>
+          <h1 class="text-sm font-bold text-white leading-none">Caso Clínico & Envelopes de Evidências</h1>
+        </div>
+      </div>
+
+      <button onclick="window.print()" class="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs font-mono rounded-lg transition-all flex items-center gap-2 shadow-lg shadow-amber-500/20 active:scale-95">
+        <span>🖨️</span> IMPRIMIR CASO E CARTAS
+      </button>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="max-w-6xl mx-auto px-4 py-8 space-y-10">
+
+    <!-- CABEÇALHO -->
+    <div class="bg-gradient-to-r from-slate-900 via-slate-900 to-amber-950/40 border border-slate-800 rounded-3xl p-6 sm:p-8 space-y-3">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-mono font-bold">
+        <span>⚖️ ESTAÇÃO 5: JULGAMENTO FINAL (3 MINUTOS)</span>
+      </div>
+      <h1 class="text-3xl font-black font-display text-white">
+        Dossiê de Marina & <span class="text-amber-400">Cartas de Investigação</span>
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-300 max-w-3xl leading-relaxed">
+        Nesta estação final, os alunos analisam o prontuário da paciente fictícia de 11 anos e classificam as cartas dos 2 envelopes nas caixas de perícia (Chefão do Crime, Comparsa, Arma, Descarte e Proteção).
+      </p>
+    </div>
+
+    <!-- 1. O PRONTUÁRIO MÉDICO (ESTILO FICHA HOSPITALAR) -->
+    <section class="space-y-3">
+      <div class="flex items-center gap-2 border-b border-slate-800 pb-2">
+        <span class="text-xl">📋</span>
+        <h2 class="text-xl font-bold text-white font-display uppercase tracking-wide">1. Prontuário Médico Confidencial (Imprimir para a Prancheta)</h2>
+      </div>
+
+      <div class="bg-slate-900 border-2 border-amber-500/50 rounded-2xl p-6 sm:p-8 font-mono text-xs sm:text-sm text-slate-200 shadow-2xl relative overflow-hidden">
+        <div class="absolute -right-12 -top-12 w-36 h-36 bg-amber-500/10 rounded-full blur-2xl"></div>
+        <div class="border-b-2 border-slate-800 pb-4 mb-4 flex justify-between items-start">
+          <div>
+            <span class="text-amber-400 font-black text-sm sm:text-base block">DIVISÃO DE INVESTIGAÇÃO DE VÍRUS (D.I.V.)</span>
+            <span class="text-slate-400 text-xs">UNIDADE DE PRONTO ATENDIMENTO • CASO CLÍNICO #2024</span>
+          </div>
+          <span class="px-3 py-1 bg-rose-500 text-white font-black text-xs rounded-full uppercase">URGENTE</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pb-4 border-b border-slate-800">
+          <div><b>PACIENTE:</b> Marina S. Costa (11 anos)</div>
+          <div><b>LOCAL:</b> UPA 24 Horas — Distrito Federal</div>
+          <div><b>ESCOLA:</b> E.M. Darcy Ribeiro</div>
+          <div><b>DATA DA ENTRADA:</b> 12 de Outubro — 14:20h</div>
+        </div>
+
+        <div class="py-4 space-y-3 border-b border-slate-800">
+          <p class="text-amber-300 font-bold uppercase">SINTOMAS REGISTRADOS NA TRIAGEM:</p>
+          <ul class="list-disc list-inside space-y-1 text-slate-300">
+            <li>Febre súbita e alta (39,4 ºC) iniciada há 2 dias.</li>
+            <li>Forte dor atrás dos olhos (“parece que os olhos vão pular da cara”).</li>
+            <li>Dores musculares e nas juntas (“o corpo todo dói, sem forças para levantar”).</li>
+            <li>Manchas vermelhas espalhadas pelos braços e tórax.</li>
+          </ul>
+        </div>
+
+        <div class="py-4 space-y-2 border-b border-slate-800">
+          <p class="text-amber-300 font-bold uppercase">HISTÓRICO AMBIENTAL (RELATO DA MÃE):</p>
+          <p class="text-slate-300 leading-relaxed">
+            Há 6 dias, Marina passou a tarde inteira brincando no quintal da casa da avó. Ela ajudou a regar plantas e construiu uma cabana usando pneus velhos encostados no muro. O quintal possui muitas garrafas de refrigerante destampadas e um balde que colhe água da chuva da calha. Marina tem um cachorrinho que fica solto no quintal. Nunca recebeu transfusão de sangue e ainda não tomou a vacina contra dengue.
+          </p>
+        </div>
+
+        <div class="pt-4 text-sky-400 font-bold text-center text-xs sm:text-sm">
+          🚨 MISSÃO DA PERÍCIA: Identificar o Chefão do Crime, o Comparsa que deu carona e a Arma Oficial!
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. ENVELOPE 1: BANCO DE SUSPEITOS (10 CARTÕES) -->
+    <section class="space-y-4">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+        <div class="flex items-center gap-2">
+          <span class="text-xl">🕵️‍♂️</span>
+          <h2 class="text-xl font-bold text-white font-display uppercase tracking-wide">2. Envelope 1: Banco de Suspeitos (10 Cartões 10x10cm)</h2>
+        </div>
+        <span class="text-xs font-mono text-slate-400">Recortar para os envelopes</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        
+        <!-- S-01 -->
+        <div class="bg-slate-900 border-2 border-rose-500/60 rounded-2xl p-4 space-y-2 card-evidence shadow-lg">
+          <div class="flex justify-between items-center text-[10px] font-mono font-bold">
+            <span class="text-rose-400">SUSPEITO #01</span>
+            <span class="bg-rose-500/20 text-rose-300 px-2 py-0.5 rounded">PATÓGENO</span>
+          </div>
+          <h3 class="font-bold text-white text-base">Vírus da Dengue (DENV)</h3>
+          <p class="text-xs text-slate-300 leading-snug">
+            Inimigo microscópico de RNA com 4 variantes perigosas. Invade células e causa febre alta e dores no corpo.
+          </p>
+          <div class="pt-2 text-[10px] font-mono text-slate-400 border-t border-slate-800">
+            Classificação: <b>CHEFÃO DO CRIME</b>
+          </div>
+        </div>
+
+        <!-- S-02 -->
+        <div class="bg-slate-900 border-2 border-sky-500/60 rounded-2xl p-4 space-y-2 card-evidence shadow-lg">
+          <div class="flex justify-between items-center text-[10px] font-mono font-bold">
+            <span class="text-sky-400">SUSPEITO #02</span>
+            <span class="bg-sky-500/20 text-sky-300 px-2 py-0.5 rounded">VETOR</span>
+          </div>
+          <h3 class="font-bold text-white text-base">Aedes aegypti (Adulto)</h3>
+          <p class="text-xs text-slate-300 leading-snug">
+            Inseto rajado de preto e listras brancas nas pernas. Pica de dia e transporta o vírus de uma pessoa para outra.
+          </p>
+          <div class="pt-2 text-[10px] font-mono text-slate-400 border-t border-slate-800">
+            Classificação: <b>O COMPARSA / TRANSPORTE</b>
+          </div>
+        </div>
+
+        <!-- S-03 -->
+        <div class="bg-slate-900 border-2 border-sky-500/40 rounded-2xl p-4 space-y-2 card-evidence shadow-lg">
+          <div class="flex justify-between items-center text-[10px] font-mono font-bold">
+            <span class="text-sky-400">SUSPEITO #03</span>
+            <span class="bg-sky-500/20 text-sky-300 px-2 py-0.5 rounded">FASE JOVEM</span>
+          </div>
+          <h3 class="font-bold text-white text-base">Larva de Aedes aegypti</h3>
+          <p class="text-xs text-slate-300 leading-snug">
+            Vive em água parada limpa ou turva. Nada serpenteando em "S" e foge da luz para o fundo do pote.
+          </p>
+          <div class="pt-2 text-[10px] font-mono text-slate-400 border-t border-slate-800">
+            Classificação: <b>FILHOTE DO COMPARSA</b>
+          </div>
+        </div>
+
+        <!-- S-04 -->
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl p-4 space-y-2 card-evidence shadow-lg">
+          <div class="flex justify-between items-center text-[10px] font-mono font-bold">
+            <span class="text-slate-400">SUSPEITO #04</span>
+            <span class="bg-slate-800 text-slate-300 px-2 py-0.5 rounded">VÍRUS</span>
+          </div>
+          <h3 class="font-bold text-white text-base">Vírus da Zika</h3>
+          <p class="text-xs text-slate-300 leading-snug">
+            Causa febre mais branda, olhos muito vermelhos e manchas que coçam intensamente. Não é o quadro de Marina.
+          </p>
+          <div class="pt-2 text-[10px] font-mono text-slate-400 border-t border-slate-800">
+            Classificação: <b>DESCARTE (INOCENTE NESTE CASO)</b>
+          </div>
+        </div>
+
+        <!-- S-05 -->
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl p-4 space-y-2 card-evidence shadow-lg">
+          <div class="flex justify-between items-center text-[10px] font-mono font-bold">
+            <span class="text-slate-400">SUSPEITO #05</span>
+            <span class="bg-slate-800 text-slate-300 px-2 py-0.5 rounded">VÍRUS</span>
+          </div>
+          <h3 class="font-bold text-white text-base">Vírus da Chikungunya</h3>
+          <p class="text-xs text-slate-300 leading-snug">
+            Especialista em causar dores articulares e inchaço crônico nas juntas que podem durar meses.
+          </p>
+          <div class="pt-2 text-[10px] font-mono text-slate-400 border-t border-slate-800">
+            Classificação: <b>DESCARTE (INOCENTE NESTE CASO)</b>
+          </div>
+        </div>
+
+        <!-- S-06 -->
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl p-4 space-y-2 card-evidence shadow-lg">
+          <div class="flex justify-between items-center text-[10px] font-mono font-bold">
+            <span class="text-slate-400">SUSPEITO #06</span>
+            <span class="bg-slate-800 text-slate-300 px-2 py-0.5 rounded">INSETO</span>
+          </div>
+          <h3 class="font-bold text-white text-base">Pernilongo Comum (Culex)</h3>
+          <p class="text-xs text-slate-300 leading-snug">
+            Marrom opaco, sem manchas brancas. Pica à noite no quarto e NÃO transmite Dengue, Zika ou Chikungunya.
+          </p>
+          <div class="pt-2 text-[10px] font-mono text-slate-400 border-t border-slate-800">
+            Classificação: <b>DESCARTE (INOCENTE)</b>
+          </div>
+        </div>
+
+        <!-- S-07 -->
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl p-4 space-y-2 card-evidence shadow-lg">
+          <div class="flex justify-between items-center text-[10px] font-mono font-bold">
+            <span class="text-slate-400">SUSPEITO #07</span>
+            <span class="bg-slate-800 text-slate-300 px-2 py-0.5 rounded">FASE JOVEM</span>
+          </div>
+          <h3 class="font-bold text-white text-base">Larva de Culex</h3>
+          <p class="text-xs text-slate-300 leading-snug">
+            Fica suspensa na vertical na superfície da água com sifão longo em esgotos e água rica em matéria orgânica.
+          </p>
+          <div class="pt-2 text-[10px] font-mono text-slate-400 border-t border-slate-800">
+            Classificação: <b>DESCARTE (INOCENTE)</b>
+          </div>
+        </div>
+
+        <!-- S-08 -->
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl p-4 space-y-2 card-evidence shadow-lg">
+          <div class="flex justify-between items-center text-[10px] font-mono font-bold">
+            <span class="text-slate-400">SUSPEITO #08</span>
+            <span class="bg-slate-800 text-slate-300 px-2 py-0.5 rounded">PERCEVEJO</span>
+          </div>
+          <h3 class="font-bold text-white text-base">Barbeiro (Triatoma)</h3>
+          <p class="text-xs text-slate-300 leading-snug">
+            Transmite o protozoário da Doença de Chagas através das fezes após a picada em casas de pau-a-pique.
+          </p>
+          <div class="pt-2 text-[10px] font-mono text-slate-400 border-t border-slate-800">
+            Classificação: <b>DESCARTE (OUTRO CRIME)</b>
+          </div>
+        </div>
+
+        <!-- S-09 -->
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl p-4 space-y-2 card-evidence shadow-lg">
+          <div class="flex justify-between items-center text-[10px] font-mono font-bold">
+            <span class="text-slate-400">SUSPEITO #09</span>
+            <span class="bg-slate-800 text-slate-300 px-2 py-0.5 rounded">LARVA</span>
+          </div>
+          <h3 class="font-bold text-white text-base">Larva de Mosca Doméstica</h3>
+          <p class="text-xs text-slate-300 leading-snug">
+            Larva branca sem cabeça que vive em matéria orgânica e lixo em decomposição. Não nada em água limpa.
+          </p>
+          <div class="pt-2 text-[10px] font-mono text-slate-400 border-t border-slate-800">
+            Classificação: <b>DESCARTE (INOCENTE)</b>
+          </div>
+        </div>
+
+        <!-- S-10 -->
+        <div class="bg-slate-900 border-2 border-emerald-500/60 rounded-2xl p-4 space-y-2 card-evidence shadow-lg">
+          <div class="flex justify-between items-center text-[10px] font-mono font-bold">
+            <span class="text-emerald-400">SUSPEITO #10</span>
+            <span class="bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded">ESCUDO</span>
+          </div>
+          <h3 class="font-bold text-white text-base">Vacina Tetravalente (SUS)</h3>
+          <p class="text-xs text-slate-300 leading-snug">
+            Imunizante que treina o corpo contra os 4 tipos de dengue. Marina ainda não tomou, deixando o corpo vulnerável.
+          </p>
+          <div class="pt-2 text-[10px] font-mono text-slate-400 border-t border-slate-800">
+            Classificação: <b>ESCUDO DE DEFESA</b>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. ENVELOPE 2: ARMAS DO CRIME E DESCARTE (5 CARTÕES) -->
+    <section class="space-y-4">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+        <div class="flex items-center gap-2">
+          <span class="text-xl">💣</span>
+          <h2 class="text-xl font-bold text-white font-display uppercase tracking-wide">3. Envelope 2: Armas do Crime & Falsas Pistas</h2>
+        </div>
+        <span class="text-xs font-mono text-slate-400">Recortar para os envelopes</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        
+        <!-- A-01 -->
+        <div class="bg-slate-900 border-2 border-rose-500/60 rounded-2xl p-4 space-y-2 card-evidence shadow-lg">
+          <div class="flex justify-between items-center text-[10px] font-mono font-bold">
+            <span class="text-rose-400">EVIDÊNCIA #A1</span>
+            <span class="bg-rose-500/20 text-rose-300 px-2 py-0.5 rounded">CRIADOURO</span>
+          </div>
+          <h3 class="font-bold text-white text-base">Água Parada no Pneu Velho</h3>
+          <p class="text-xs text-slate-300 leading-snug">
+            Ambiente escuro, protegido do vento e com água acumulada há dias. Berçário perfeito onde Marina brincou!
+          </p>
+          <div class="pt-2 text-[10px] font-mono text-slate-400 border-t border-slate-800">
+            Classificação: <b>ARMA OFICIAL DO CRIME</b>
+          </div>
+        </div>
+
+        <!-- A-02 -->
+        <div class="bg-slate-900 border-2 border-rose-500/60 rounded-2xl p-4 space-y-2 card-evidence shadow-lg">
+          <div class="flex justify-between items-center text-[10px] font-mono font-bold">
+            <span class="text-rose-400">EVIDÊNCIA #A2</span>
+            <span class="bg-rose-500/20 text-rose-300 px-2 py-0.5 rounded">TRANSMISSÃO</span>
+          </div>
+          <h3 class="font-bold text-white text-base">Picada do Mosquito Fêmea</h3>
+          <p class="text-xs text-slate-300 leading-snug">
+            Mecanismo direto de infecção: ao sugar sangue para amadurecer seus ovos, a fêmea injetou saliva com vírus.
+          </p>
+          <div class="pt-2 text-[10px] font-mono text-slate-400 border-t border-slate-800">
+            Classificação: <b>MECANISMO DO CRIME</b>
+          </div>
+        </div>
+
+        <!-- A-03 -->
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl p-4 space-y-2 card-evidence shadow-lg">
+          <div class="flex justify-between items-center text-[10px] font-mono font-bold">
+            <span class="text-slate-400">EVIDÊNCIA #A3</span>
+            <span class="bg-slate-800 text-slate-300 px-2 py-0.5 rounded">SUJEIRA</span>
+          </div>
+          <h3 class="font-bold text-white text-base">Fezes de Cachorro no Quintal</h3>
+          <p class="text-xs text-slate-300 leading-snug">
+            O cachorro faz sujeira, mas o mosquito da dengue NÃO se reproduz em fezes! Apenas atrai moscas comuns.
+          </p>
+          <div class="pt-2 text-[10px] font-mono text-slate-400 border-t border-slate-800">
+            Classificação: <b>DESCARTE (PISTA FALSA)</b>
+          </div>
+        </div>
+
+        <!-- A-04 -->
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl p-4 space-y-2 card-evidence shadow-lg">
+          <div class="flex justify-between items-center text-[10px] font-mono font-bold">
+            <span class="text-slate-400">EVIDÊNCIA #A4</span>
+            <span class="bg-slate-800 text-slate-300 px-2 py-0.5 rounded">HOSPITAL</span>
+          </div>
+          <h3 class="font-bold text-white text-base">Transfusão de Sangue</h3>
+          <p class="text-xs text-slate-300 leading-snug">
+            Marina nunca fez cirurgia nem recebeu sangue. Toda bolsa de sangue é testada com rigor antes do uso.
+          </p>
+          <div class="pt-2 text-[10px] font-mono text-slate-400 border-t border-slate-800">
+            Classificação: <b>DESCARTE (PISTA FALSA)</b>
+          </div>
+        </div>
+
+        <!-- A-05 -->
+        <div class="bg-slate-900 border-2 border-rose-500/40 rounded-2xl p-4 space-y-2 card-evidence shadow-lg">
+          <div class="flex justify-between items-center text-[10px] font-mono font-bold">
+            <span class="text-rose-400">EVIDÊNCIA #A5</span>
+            <span class="bg-rose-500/20 text-rose-300 px-2 py-0.5 rounded">FOCO</span>
+          </div>
+          <h3 class="font-bold text-white text-base">Garrafa Destampada no Chão</h3>
+          <p class="text-xs text-slate-300 leading-snug">
+            Pequeno gargalo que acumula poucos mililitros de água, suficientes para criar centenas de larvas.
+          </p>
+          <div class="pt-2 text-[10px] font-mono text-slate-400 border-t border-slate-800">
+            Classificação: <b>CRIADOURO SECUNDÁRIO</b>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. GABARITO DA MESA / MAPA DO TRIBUNAL -->
+    <section class="space-y-4">
+      <div class="flex items-center gap-2 border-b border-slate-800 pb-2">
+        <span class="text-xl">🗺️</span>
+        <h2 class="text-xl font-bold text-white font-display uppercase tracking-wide">4. Mapa de Classificação da Mesa (Gabarito do Monitor)</h2>
+      </div>
+
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-4 gap-3">
+          <div class="bg-rose-950/30 border border-rose-500/40 p-4 rounded-xl text-center space-y-1">
+            <span class="text-xl">👑</span>
+            <h3 class="font-bold text-rose-300 text-sm">CHEFÃO DO CRIME</h3>
+            <p class="text-xs text-slate-300 font-semibold">[Vírus da Dengue]</p>
+          </div>
+
+          <div class="bg-sky-950/30 border border-sky-500/40 p-4 rounded-xl text-center space-y-1">
+            <span class="text-xl">🚗</span>
+            <h3 class="font-bold text-sky-300 text-sm">O COMPARSA (TÁXI)</h3>
+            <p class="text-xs text-slate-300 font-semibold">[Aedes aegypti fêmea]</p>
+          </div>
+
+          <div class="bg-amber-950/30 border border-amber-500/40 p-4 rounded-xl text-center space-y-1">
+            <span class="text-xl">💣</span>
+            <h3 class="font-bold text-amber-300 text-sm">ARMA DO CRIME</h3>
+            <p class="text-xs text-slate-300 font-semibold">[Água parada no pneu / picada]</p>
+          </div>
+
+          <div class="bg-slate-800/40 border border-slate-700 p-4 rounded-xl text-center space-y-1">
+            <span class="text-xl">🗑️</span>
+            <h3 class="font-bold text-slate-400 text-sm">DESCARTE (INOCENTES)</h3>
+            <p class="text-xs text-slate-400 font-semibold">[Culex, Barbeiro, Fezes, Sangue]</p>
+          </div>
+        </div>
+
+        <div class="bg-emerald-950/30 border border-emerald-500/40 p-3.5 rounded-xl text-center">
+          <span class="text-emerald-400 font-mono font-bold text-xs">🛡️ ESCUDO DE PROTEÇÃO OFICIAL: [Vacina Tetravalente do SUS + 10 min de faxina]</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. A PERGUNTA DE OURO E CONDECORAÇÃO -->
+    <section class="bg-slate-900 border border-sky-500/30 rounded-3xl p-6 sm:p-8 space-y-4">
+      <h2 class="text-lg font-bold text-white flex items-center gap-2">
+        <span>📢</span> A Pergunta de Ouro & Rito de Formatura (Último Minuto)
+      </h2>
+      <div class="space-y-2 text-xs sm:text-sm text-slate-200">
+        <p><b>O Monitor simula rádio da UPA:</b> “Atenção Peritos! A médica acaba de avisar pelo rádio: <i>'Marina começou com vômitos incontroláveis, tontura ao levantar e dor severa na barriga!'</i> O que isso significa?”</p>
+        <p class="text-amber-400 font-bold">➔ Resposta em coro dos alunos: “É SINAL VERMELHO! Direto pra emergência do hospital!”</p>
+        <p class="border-t border-slate-800 pt-3 text-slate-300 italic">
+          <b>Fala Final do Monitor:</b> “Com o caso solucionado e 100 pontos acumulados, declaro todos vocês condecorados como Peritos de Elite da Saúde Pública!” (Cola o adesivo do distintivo no peito de cada um e entrega a balinha com o QR Code).
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-6 text-xs text-slate-500 font-mono border-t border-slate-800 mt-12 no-print">
+    Projeto de Extensão em Parasitologia • SEMUNI Universidade de Brasília
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hub de Materiais — Operação Detetives da Saúde | SEMUNI</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen selection:bg-sky-500 selection:text-slate-950">
+
+  <!-- CABEÇALHO DO PORTAL -->
+  <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50 px-6 py-4">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-xl">
+          🕵️‍♂️
+        </div>
+        <div>
+          <span class="font-mono text-xs text-sky-400 font-bold uppercase tracking-widest block">D.I.V. // SEMUNI UNB</span>
+          <h1 class="text-base font-extrabold text-white">Central de Materiais da Oficina</h1>
+        </div>
+      </div>
+
+      <a href="index.html" target="_blank" class="px-4 py-2 bg-gradient-to-r from-sky-500 to-blue-600 hover:brightness-110 text-slate-950 font-display font-black text-xs rounded-xl shadow-lg shadow-sky-500/25 transition-all flex items-center gap-1.5 active:scale-95">
+        <span>🎮</span> JOGAR AGORA
+      </a>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="max-w-6xl mx-auto px-4 py-10 space-y-10">
+
+    <!-- BANNER HERO -->
+    <div class="bg-gradient-to-r from-slate-900 via-slate-900 to-sky-950/60 border border-slate-800 rounded-3xl p-6 sm:p-10 relative overflow-hidden shadow-2xl space-y-4">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-mono font-bold">
+        <span>🧪 EXTENSÃO UNIVERSITÁRIA EM PARASITOLOGIA</span>
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-black font-display text-white tracking-tight">
+        Operação <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-teal-300 to-amber-400">Detetives</span> da Saúde
+      </h2>
+      <p class="text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed">
+        Todos os materiais da oficina de 15 minutos foram convertidos em páginas HTML responsivas, bem diagramadas e prontas para impressão com suporte a <code class="bg-slate-800 px-1.5 py-0.5 rounded text-sky-300">Ctrl + P</code>.
+      </p>
+    </div>
+
+    <!-- GRADE DE MATERIAIS -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- ITEM 1: JOGO WEB -->
+      <div class="bg-slate-900 border border-sky-500/40 rounded-3xl p-6 flex flex-col justify-between space-y-5 hover:border-sky-400 transition-all shadow-xl group">
+        <div class="space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+            🎮
+          </div>
+          <span class="text-[10px] font-mono text-sky-400 font-bold uppercase tracking-wider block">APLICAÇÃO WEB MOBILE</span>
+          <h3 class="text-lg font-bold text-white">Jogo Arcade Interativo</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Quiz investigativo com mascote animado, carimbo 3D, combo streak de fogo, power-up 50:50, efeitos sonoros sintetizados e confetes.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-slate-800 flex items-center gap-2">
+          <a href="index.html" target="_blank" class="flex-1 py-2.5 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-xs rounded-xl text-center transition-all">
+            Abrir Jogo Web →
+          </a>
+        </div>
+      </div>
+
+      <!-- ITEM 2: ROTEIRO DOS MONITORES -->
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 flex flex-col justify-between space-y-5 hover:border-slate-700 transition-all shadow-xl group">
+        <div class="space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+            ⏱️
+          </div>
+          <span class="text-[10px] font-mono text-amber-400 font-bold uppercase tracking-wider block">GUIA OPERACIONAL</span>
+          <h3 class="text-lg font-bold text-white">Roteiro dos Monitores</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Cronograma minuto a minuto (2m30s por estação), falas de ambientação policial, scripts das bancadas e protocolo corta-giro para atrasos.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-slate-800 flex items-center gap-2">
+          <a href="roteiro_monitores.html" class="flex-1 py-2.5 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-xl text-center transition-all border border-slate-700">
+            Ver Roteiro ➔
+          </a>
+        </div>
+      </div>
+
+      <!-- ITEM 3: CARTÕES FATO OU FAKE -->
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 flex flex-col justify-between space-y-5 hover:border-slate-700 transition-all shadow-xl group">
+        <div class="space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+            📁
+          </div>
+          <span class="text-[10px] font-mono text-rose-400 font-bold uppercase tracking-wider block">ESTAÇÃO 4 • VACINAS</span>
+          <h3 class="text-lg font-bold text-white">Cartões Fato ou Fake</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            6 dossiês diagramados frente e verso com selo carimbado, explicações com metáforas didáticas, pontuação e notas de apoio científico ao monitor.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-slate-800 flex items-center gap-2">
+          <a href="cartoes_fato_ou_fake.html" class="flex-1 py-2.5 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-xl text-center transition-all border border-slate-700">
+            Ver Cartões ➔
+          </a>
+        </div>
+      </div>
+
+      <!-- ITEM 4: CASO CLÍNICO E ENVELOPES -->
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 flex flex-col justify-between space-y-5 hover:border-slate-700 transition-all shadow-xl group">
+        <div class="space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+            ⚖️
+          </div>
+          <span class="text-[10px] font-mono text-amber-400 font-bold uppercase tracking-wider block">ESTAÇÃO 5 • RESOLUÇÃO</span>
+          <h3 class="text-lg font-bold text-white">Caso Clínico & Envelopes</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Prontuário médico de Marina (11 anos), 10 cartas do Banco de Suspeitos, 5 cartas de Armas do Crime e mapa do gabarito da mesa de julgamento.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-slate-800 flex items-center gap-2">
+          <a href="caso_clinico_peritos.html" class="flex-1 py-2.5 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-xl text-center transition-all border border-slate-700">
+            Ver Caso e Cartas ➔
+          </a>
+        </div>
+      </div>
+
+      <!-- ITEM 5: PASSAPORTE E MEDALHAS -->
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 flex flex-col justify-between space-y-5 hover:border-slate-700 transition-all shadow-xl group">
+        <div class="space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+            🎖️
+          </div>
+          <span class="text-[10px] font-mono text-emerald-400 font-bold uppercase tracking-wider block">INDIVIDUAL DO ALUNO</span>
+          <h3 class="text-lg font-bold text-white">Passaporte A5 & Distintivos</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Folha de bordo A5 com 4 caixas de carimbo (20 pts cada), termômetro de patentes e adesivos redondos de 5 cm de diâmetro para colar no peito.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-slate-800 flex items-center gap-2">
+          <a href="passaporte_e_medalhas.html" class="flex-1 py-2.5 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-xl text-center transition-all border border-slate-700">
+            Ver Passaportes ➔
+          </a>
+        </div>
+      </div>
+
+      <!-- ITEM 6: FOLDER TRÍPTICO PARA OS PAIS -->
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 flex flex-col justify-between space-y-5 hover:border-slate-700 transition-all shadow-xl group">
+        <div class="space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+            📰
+          </div>
+          <span class="text-[10px] font-mono text-purple-400 font-bold uppercase tracking-wider block">LEVAR PARA CASA</span>
+          <h3 class="text-lg font-bold text-white">Panfleto Tríptico A4</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Folder dobrável em 3 partes frente e verso com checklist semanal de 10 min, tabela de quando correr pra UPA e vacina no SUS.
+          </p>
+        </div>
+        <div class="pt-4 border-t border-slate-800 flex items-center gap-2">
+          <a href="panfleto_triptico.html" class="flex-1 py-2.5 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-xl text-center transition-all border border-slate-700">
+            Ver Panfleto ➔
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="text-center py-8 text-xs text-slate-500 font-mono border-t border-slate-800 mt-12">
+    Semana Universitária (SEMUNI) • Extensão em Parasitologia Médica • UnB
+  </footer>
+
+</body>
+</html>

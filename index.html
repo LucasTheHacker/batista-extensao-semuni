@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>D.I.V. — Operação Detetives da Saúde | SEMUNI UnB</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Canvas Confetti CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  
+  <!-- Google Fonts: Space Grotesk, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@600;700&family=Space+Grotesk:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            csi: {
+              dark: '#070a13',
+              card: '#0f172a',
+              border: '#1e293b',
+              accent: '#38bdf8',
+              gold: '#fbbf24',
+              fake: '#ef4444',
+              fato: '#10b981'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #070a13;
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.15) 0%, transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(245, 158, 11, 0.08) 0%, transparent 40%),
+        linear-gradient(to bottom, #070a13, #020617);
+      background-attachment: fixed;
+      touch-action: manipulation;
+    }
+
+    /* Screen Shake Animation */
+    @keyframes screenShake {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      15% { transform: translate(-6px, 4px) rotate(-1.5deg); }
+      30% { transform: translate(6px, -4px) rotate(1.5deg); }
+      45% { transform: translate(-5px, 2px) rotate(-1deg); }
+      60% { transform: translate(5px, -2px) rotate(1deg); }
+      75% { transform: translate(-2px, 1px) rotate(-0.5deg); }
+      90% { transform: translate(2px, -1px) rotate(0.5deg); }
+    }
+    .shake-active {
+      animation: screenShake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+    }
+
+    /* 3D Stamp Slam Animation */
+    @keyframes stampSlam {
+      0% {
+        opacity: 0;
+        transform: scale(3.5) rotate(-30deg);
+      }
+      70% {
+        opacity: 1;
+        transform: scale(0.9) rotate(-7deg);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) rotate(-8deg);
+      }
+    }
+    .stamp-animation {
+      animation: stampSlam 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+
+    /* Floating Points Indicator */
+    @keyframes floatUpFade {
+      0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+      50% {
+        opacity: 1;
+        transform: translateY(-25px) scale(1.15);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+      }
+    }
+    .floating-points {
+      animation: floatUpFade 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      pointer-events: none;
+    }
+
+    /* Pulse Glow */
+    @keyframes fireGlow {
+      0%, 100% { filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.8)); }
+      50% { filter: drop-shadow(0 0 20px rgba(239, 68, 68, 1)); }
+    }
+    .fire-pulse {
+      animation: fireGlow 1.2s infinite ease-in-out;
+    }
+
+    .badge-glow {
+      box-shadow: 0 0 45px -5px rgba(251, 191, 36, 0.4);
+    }
+  </style>
+</head>
+<body class="text-slate-100 min-h-screen flex flex-col justify-between selection:bg-sky-500 selection:text-black overflow-x-hidden">
+
+  <!-- ============================================================= -->
+  <!-- BARRA DE STATUS CSI & COMUNICAÇÃO CENTRAL                      -->
+  <!-- ============================================================= -->
+  <header class="border-b border-csi-border bg-csi-dark/90 backdrop-blur sticky top-0 z-50 px-4 py-2.5">
+    <div class="max-w-xl mx-auto flex items-center justify-between">
+      
+      <!-- Indicador de Status / Caso -->
+      <div class="flex items-center space-x-2">
+        <span class="relative flex h-3 w-3">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+        </span>
+        <div>
+          <span class="font-mono text-xs text-sky-400 font-extrabold tracking-wider uppercase block">D.I.V. // CASO #2024</span>
+          <span class="text-[10px] text-slate-400 font-mono hidden sm:inline">DIVISÃO DE INVESTIGAÇÃO DE VÍRUS</span>
+        </div>
+      </div>
+
+      <!-- Combo & Placar Rápido -->
+      <div class="flex items-center gap-2">
+        <div id="header-combo-badge" class="hidden px-2.5 py-0.5 rounded-full bg-gradient-to-r from-amber-500 to-rose-600 text-slate-950 font-black font-mono text-[11px] fire-pulse flex items-center gap-1 shadow-md">
+          <span>🔥</span> <span id="header-combo-text">COMBO x2!</span>
+        </div>
+
+        <div class="text-xs font-mono text-amber-300 font-bold bg-amber-500/10 border border-amber-500/30 px-3 py-1 rounded-lg flex items-center gap-1">
+          <span>⭐</span>
+          <span id="header-score">0</span> <span class="text-[10px] text-amber-400/80">PTS</span>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ============================================================= -->
+  <!-- CONTAINER CENTRAL (GAMEPLAY)                                  -->
+  <!-- ============================================================= -->
+  <main id="game-container" class="max-w-xl mx-auto w-full px-4 py-4 flex-1 flex flex-col justify-center relative">
+
+    <!-- MASCOTE ANIMADO REATIVO ("AGENTE GLÓBULO") -->
+    <div id="mascot-section" class="w-full flex items-center gap-3 bg-slate-900/80 border border-slate-800/90 rounded-2xl p-3 mb-4 shadow-lg backdrop-blur">
+      <!-- Avatar SVG Interativo -->
+      <div class="relative w-14 h-14 shrink-0 flex items-center justify-center">
+        <svg id="mascot-svg" class="w-full h-full transition-transform duration-300" viewBox="0 0 100 100">
+          <!-- Corpo / Célula de Defesa -->
+          <defs>
+            <radialGradient id="cellGrad" cx="40%" cy="40%" r="60%">
+              <stop offset="0%" stop-color="#38bdf8" />
+              <stop offset="60%" stop-color="#0284c7" />
+              <stop offset="100%" stop-color="#0369a1" />
+            </radialGradient>
+          </defs>
+          <!-- Núcleo celular com textura amigável -->
+          <circle cx="50" cy="52" r="38" fill="url(#cellGrad)" stroke="#7dd3fc" stroke-width="3" />
+          <circle cx="35" cy="35" r="7" fill="#bae6fd" opacity="0.5" />
+          
+          <!-- Chapéu de Detetive estilo Fedora -->
+          <path d="M22 30 C22 28 32 20 50 20 C68 20 78 28 78 30 L84 34 L16 34 Z" fill="#334155" stroke="#1e293b" stroke-width="2"/>
+          <ellipse cx="50" cy="33" rx="38" ry="5" fill="#1e293b" />
+          <rect x="36" y="27" width="28" height="4" fill="#fbbf24" rx="1" />
+
+          <!-- Olhos Normais -->
+          <g id="mascot-eyes-normal">
+            <ellipse cx="38" cy="52" rx="4" ry="6" fill="#ffffff" />
+            <circle cx="39" cy="53" r="2.5" fill="#0f172a" />
+            <ellipse cx="62" cy="52" rx="4" ry="6" fill="#ffffff" />
+            <circle cx="63" cy="53" r="2.5" fill="#0f172a" />
+          </g>
+
+          <!-- Olhos de Óculos Escuros (Modo Sucesso) -->
+          <g id="mascot-eyes-glasses" class="hidden">
+            <path d="M28 47 L47 47 L44 58 L31 58 Z" fill="#020617" stroke="#38bdf8" stroke-width="1.5" />
+            <path d="M53 47 L72 47 L69 58 L56 58 Z" fill="#020617" stroke="#38bdf8" stroke-width="1.5" />
+            <line x1="47" y1="50" x2="53" y2="50" stroke="#38bdf8" stroke-width="2" />
+            <line x1="33" y1="50" x2="42" y2="55" stroke="#ffffff" stroke-width="1" opacity="0.6" />
+            <line x1="58" y1="50" x2="67" y2="55" stroke="#ffffff" stroke-width="1" opacity="0.6" />
+          </g>
+
+          <!-- Olhos Espirais (Modo Erro / Tontura) -->
+          <g id="mascot-eyes-dizzy" class="hidden">
+            <path d="M34 52 C34 48 42 48 42 52 C42 56 36 56 36 52" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" />
+            <path d="M58 52 C58 48 66 48 66 52 C66 56 60 56 60 52" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" />
+          </g>
+
+          <!-- Boca -->
+          <path id="mascot-mouth" d="M42 66 Q50 72 58 66" fill="none" stroke="#0f172a" stroke-width="3" stroke-linecap="round" />
+        </svg>
+
+        <!-- Lupa na mãozinha -->
+        <div class="absolute -bottom-1 -right-1 text-lg">🔍</div>
+      </div>
+
+      <!-- Balão de Fala Dinâmico -->
+      <div class="flex-1 min-w-0">
+        <div class="flex items-center gap-1 text-[11px] font-mono text-sky-400 font-bold uppercase">
+          <span>Agente Glóbulo</span>
+          <span class="text-slate-500">• Central D.I.V.</span>
+        </div>
+        <p id="mascot-speech" class="text-xs sm:text-sm text-slate-200 font-medium leading-tight truncate-2-lines transition-all">
+          "Identifique-se, recruta! Temos um surto na cidade e precisamos da sua perícia!"
+        </p>
+      </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- TELA 1: CADASTRO DO AGENTE & BRIEFING                         -->
+    <!-- ============================================================= -->
+    <div id="screen-welcome" class="space-y-5">
+      <div class="text-center space-y-2">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-mono font-bold uppercase tracking-wider">
+          🚨 Missão Epidemiológica SEMUNI
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-black font-display tracking-tight text-white">
+          Operação <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-teal-300 to-amber-400">Detetives</span> da Saúde
+        </h1>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-md mx-auto">
+          Colete 6 evidências cruciais sobre <b>Dengue, Zika, Chikungunya e Vacinas</b>. Consiga a condecoração de Perito de Elite e leve a vitória para casa!
+        </p>
+      </div>
+
+      <!-- Card de Registro -->
+      <div class="bg-csi-card border border-csi-border rounded-2xl p-5 sm:p-6 shadow-2xl space-y-4">
+        <div>
+          <label for="agent-name" class="block font-mono text-xs uppercase tracking-wider text-slate-300 font-bold mb-1.5">
+            Nome ou Apelido do Perito:
+          </label>
+          <input 
+            type="text" 
+            id="agent-name" 
+            placeholder="Ex: Detetive Lucas, Agente Sofia..." 
+            maxlength="20"
+            class="w-full bg-slate-950 border-2 border-slate-700 focus:border-sky-400 focus:ring-2 focus:ring-sky-400/20 focus:outline-none rounded-xl px-4 py-3.5 text-white placeholder-slate-500 font-sans text-base transition-all"
+          />
+        </div>
+
+        <div class="grid grid-cols-2 gap-2 text-[11px] font-mono text-slate-300">
+          <div class="bg-slate-950/70 p-2.5 rounded-xl border border-slate-800 flex items-center gap-2">
+            <span class="text-base">🔥</span>
+            <span>Combo Streak (+PTS)</span>
+          </div>
+          <div class="bg-slate-950/70 p-2.5 rounded-xl border border-slate-800 flex items-center gap-2">
+            <span class="text-base">📻</span>
+            <span>Ajuda 50:50 da Central</span>
+          </div>
+        </div>
+
+        <button 
+          onclick="startGame()"
+          id="btn-start"
+          class="w-full py-4 px-6 bg-gradient-to-r from-sky-500 via-blue-600 to-sky-400 hover:brightness-110 text-slate-950 font-display font-black text-lg rounded-xl shadow-lg shadow-sky-500/30 transition-all transform active:scale-95 flex items-center justify-center gap-2">
+          <span>RECEBER DISTINTIVO E INICIAR</span>
+          <span class="text-xl">⚡</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- TELA 2: ÁREA DO QUIZ (EVIDÊNCIAS 1 A 6)                        -->
+    <!-- ============================================================= -->
+    <div id="screen-quiz" class="hidden space-y-4">
+      
+      <!-- Painel de Instrumentos (Progresso + Ajuda 50:50) -->
+      <div class="flex items-center justify-between gap-2">
+        
+        <!-- Indicador de Evidência -->
+        <div class="flex items-center gap-2">
+          <span id="quiz-progress-badge" class="px-2.5 py-1 rounded-lg bg-sky-500/10 border border-sky-500/30 text-sky-300 font-mono text-xs font-bold">
+            EVIDÊNCIA 1/6
+          </span>
+        </div>
+
+        <!-- Botão de Power-up 50:50 (Reforço da Central) -->
+        <button 
+          id="btn-powerup" 
+          onclick="usePowerUp()"
+          title="Elimina duas alternativas erradas"
+          class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-amber-500/40 text-amber-300 text-xs font-mono font-bold flex items-center gap-1.5 transition-all transform active:scale-95 shadow-sm">
+          <span>📻</span>
+          <span id="btn-powerup-text">Reforço 50:50</span>
+          <span class="bg-amber-400/20 text-amber-300 text-[10px] px-1.5 py-0.2 rounded font-mono">1x</span>
+        </button>
+
+      </div>
+
+      <!-- Barra de Progresso com Gradiente -->
+      <div class="w-full h-2.5 bg-slate-900 rounded-full overflow-hidden border border-slate-800 p-0.5">
+        <div id="quiz-progress-bar" class="h-full bg-gradient-to-r from-sky-400 via-teal-400 to-amber-400 rounded-full transition-all duration-500 shadow-sm" style="width: 16%"></div>
+      </div>
+
+      <!-- Card da Evidência -->
+      <div id="question-card" class="bg-csi-card border border-csi-border rounded-2xl p-5 sm:p-6 shadow-2xl space-y-4 relative overflow-hidden">
+        
+        <!-- Header da Pergunta -->
+        <div class="flex items-center justify-between text-xs font-mono text-slate-400 border-b border-slate-800/80 pb-2.5">
+          <span id="question-category" class="font-bold text-sky-400 tracking-wider uppercase">
+            CATEGORIA
+          </span>
+          <span class="bg-slate-950 px-2 py-0.5 rounded text-slate-400 border border-slate-800">
+            CONFIDENCIAL
+          </span>
+        </div>
+
+        <!-- Texto da Pergunta -->
+        <h2 id="question-text" class="text-base sm:text-lg font-bold text-white leading-relaxed min-h-[50px] flex items-center">
+          Carregando evidência...
+        </h2>
+
+        <!-- CARIMBO GIGANTE 3D (APARECE NO FATO OU FAKE VIA SLAM!) -->
+        <div id="stamp-container" class="hidden absolute inset-0 z-30 pointer-events-none flex items-center justify-center p-4">
+          <div id="stamp-element" class="px-6 py-3 border-4 rounded-2xl font-display font-black text-2xl sm:text-3xl tracking-widest uppercase shadow-2xl backdrop-blur-sm">
+            <!-- Texto dinâmico: FAKE NEWS! ou FATO REAL! -->
+          </div>
+        </div>
+
+        <!-- Container de Opções de Resposta -->
+        <div id="options-container" class="pt-1">
+          <!-- Injetado via Javascript -->
+        </div>
+
+        <!-- Card de Explicação Científica Pós-Resposta -->
+        <div id="feedback-card" class="hidden rounded-xl p-4 border transition-all space-y-2.5 bg-slate-950/90 relative z-20">
+          <div class="flex items-center justify-between">
+            <span id="feedback-badge" class="font-mono text-[10px] px-2.5 py-0.5 rounded font-bold uppercase"></span>
+            <span id="feedback-bonus" class="text-xs font-mono font-bold text-amber-300"></span>
+          </div>
+          <p id="feedback-explanation" class="text-xs sm:text-sm text-slate-200 leading-relaxed"></p>
+          
+          <button 
+            id="btn-next-question" 
+            onclick="nextQuestion()"
+            class="mt-2 w-full py-3 bg-gradient-to-r from-sky-400 to-blue-500 hover:from-sky-300 hover:to-blue-400 text-slate-950 font-display font-black text-sm rounded-xl transition-all shadow-md flex items-center justify-center gap-2 transform active:scale-98">
+            <span>AVANÇAR PARA A PRÓXIMA PISTA</span>
+            <span class="text-base">→</span>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- TELA 3: RELATÓRIO DO PERITO & DISTINTIVO OFICIAL               -->
+    <!-- ============================================================= -->
+    <div id="screen-result" class="hidden space-y-5 text-center">
+      
+      <div class="space-y-1">
+        <span class="inline-block px-3 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono font-bold uppercase tracking-wider">
+          ✓ Inquérito Finalizado com Êxito
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-black font-display text-white">
+          Laudo Pericial Oficial
+        </h2>
+        <p class="text-xs text-slate-400">
+          Você concluiu o treinamento oficial da SEMUNI / Universidade de Brasília!
+        </p>
+      </div>
+
+      <!-- DISTINTIVO OFICIAL PARA PRINT -->
+      <div id="digital-badge" class="badge-glow bg-gradient-to-b from-slate-900 via-csi-card to-slate-950 border-2 border-amber-400/80 rounded-3xl p-6 relative overflow-hidden shadow-2xl mx-auto text-center space-y-3 max-w-md">
+        
+        <!-- Luz de Fundo -->
+        <div class="absolute -right-8 -top-8 w-32 h-32 bg-amber-400/10 rounded-full blur-2xl pointer-events-none"></div>
+        <div class="absolute -left-8 -bottom-8 w-32 h-32 bg-sky-400/10 rounded-full blur-2xl pointer-events-none"></div>
+
+        <!-- Brasão do Distintivo -->
+        <div class="flex justify-center">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-amber-500/20 to-amber-300/10 border-2 border-amber-400/60 flex items-center justify-center text-3xl shadow-inner fire-pulse">
+            🛡️
+          </div>
+        </div>
+
+        <div>
+          <p class="text-[10px] font-mono text-amber-300 font-extrabold uppercase tracking-widest">
+            DIVISÃO DE INVESTIGAÇÃO DE VÍRUS • D.I.V.
+          </p>
+          <h3 id="badge-agent-name" class="text-2xl font-black text-white uppercase tracking-tight mt-0.5 font-display">
+            AGENTE
+          </h3>
+          <p id="badge-rank" class="text-xs font-bold text-sky-400 font-mono tracking-wider mt-0.5">
+            ⭐ PERITO CHEFE DE ELITE ⭐
+          </p>
+        </div>
+
+        <!-- Estatísticas da Partida -->
+        <div class="py-2.5 px-3 bg-slate-950/80 rounded-2xl border border-slate-800 grid grid-cols-3 gap-2 text-center">
+          <div>
+            <span class="block text-xl font-black text-amber-400 font-mono" id="final-score-display">0</span>
+            <span class="text-[9px] uppercase font-mono text-slate-400">Pontos</span>
+          </div>
+          <div class="border-x border-slate-800">
+            <span class="block text-xl font-black text-emerald-400 font-mono" id="final-accuracy-display">6/6</span>
+            <span class="text-[9px] uppercase font-mono text-slate-400">Acertos</span>
+          </div>
+          <div>
+            <span class="block text-xl font-black text-rose-400 font-mono" id="final-combo-display">x3</span>
+            <span class="text-[9px] uppercase font-mono text-slate-400">Maior Combo</span>
+          </div>
+        </div>
+
+        <p class="text-[11px] text-slate-300 italic leading-snug border-t border-slate-800/80 pt-2.5">
+          "Condecorado por desarmar fake news, identificar o vetor e proteger a família contra a Dengue, Zika e Chikungunya."
+        </p>
+
+        <div class="pt-1 flex items-center justify-center gap-1 text-[9px] font-mono text-slate-500">
+          <span>SEMUNI • EXTENSÃO EM PARASITOLOGIA UNB</span>
+        </div>
+      </div>
+
+      <!-- BOTÕES DE AÇÃO -->
+      <div class="space-y-3 pt-2 max-w-md mx-auto">
+        <p class="text-xs text-amber-300 font-mono">
+          📸 Tire um print deste distintivo para guardar sua medalha de Perito!
+        </p>
+
+        <div class="flex gap-2 justify-center">
+          <button 
+            onclick="restartGame()"
+            class="flex-1 py-3.5 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs sm:text-sm rounded-xl transition-all border border-slate-700 active:scale-95">
+            🔄 Jogar Novamente
+          </button>
+          <button 
+            onclick="triggerConfetti()"
+            class="py-3.5 px-5 bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-semibold text-xs sm:text-sm rounded-xl border border-amber-500/40 transition-all active:scale-95">
+            🎉 Mais Confetes!
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- RODAPÉ DISCRETO -->
+  <footer class="border-t border-csi-border py-3 text-center text-[10px] text-slate-500 font-mono">
+    Semana Universitária • Extensão em Parasitologia & Imunologia Médica
+  </footer>
+
+  <!-- ============================================================= -->
+  <!-- MOTOR DO JOGO (JAVASCRIPT VANILLA & WEB AUDIO API)            -->
+  <!-- ============================================================= -->
+  <script>
+    // --- 1. SINTETIZADOR NATIVO WEB AUDIO API (ZERO ARQUIVOS EXTERNOS) ---
+    let audioCtx = null;
+
+    function initAudio() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    function playSound(type) {
+      try {
+        initAudio();
+        if (!audioCtx) return;
+        const now = audioCtx.currentTime;
+
+        if (type === 'click') {
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(800, now);
+          osc.frequency.exponentialRampToValueAtTime(400, now + 0.05);
+          gain.gain.setValueAtTime(0.08, now);
+          gain.gain.linearRampToValueAtTime(0.001, now + 0.05);
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          osc.start(now);
+          osc.stop(now + 0.05);
+
+        } else if (type === 'correct') {
+          // Arpeggio alegre de acerto (Dó - Mi - Sol - Dó maior)
+          const notes = [523.25, 659.25, 783.99, 1046.50];
+          notes.forEach((freq, idx) => {
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(freq, now + idx * 0.07);
+            gain.gain.setValueAtTime(0.12, now + idx * 0.07);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.07 + 0.25);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start(now + idx * 0.07);
+            osc.stop(now + idx * 0.07 + 0.25);
+          });
+
+        } else if (type === 'wrong') {
+          // Tom de choque/erro pericial (sawtooth dissonante)
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = 'sawtooth';
+          osc.frequency.setValueAtTime(200, now);
+          osc.frequency.linearRampToValueAtTime(90, now + 0.3);
+          gain.gain.setValueAtTime(0.2, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          osc.start(now);
+          osc.stop(now + 0.35);
+
+        } else if (type === 'stamp') {
+          // Pancada percussiva ("SLAM!") do carimbo caindo na mesa
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(140, now);
+          osc.frequency.exponentialRampToValueAtTime(35, now + 0.2);
+          gain.gain.setValueAtTime(0.35, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.22);
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          osc.start(now);
+          osc.stop(now + 0.22);
+
+        } else if (type === 'radio') {
+          // Bipe de Walkie-Talkie militar da Central
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = 'square';
+          osc.frequency.setValueAtTime(1200, now);
+          osc.frequency.setValueAtTime(1800, now + 0.08);
+          gain.gain.setValueAtTime(0.08, now);
+          gain.gain.linearRampToValueAtTime(0.001, now + 0.18);
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          osc.start(now);
+          osc.stop(now + 0.18);
+
+        } else if (type === 'combo') {
+          // Som de poder/fogo subindo
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(440, now);
+          osc.frequency.exponentialRampToValueAtTime(1320, now + 0.3);
+          gain.gain.setValueAtTime(0.12, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          osc.start(now);
+          osc.stop(now + 0.3);
+
+        } else if (type === 'fanfare') {
+          // Acordes triunfantes de vitória
+          const chords = [523.25, 659.25, 783.99, 1046.50, 1318.51];
+          chords.forEach((f, i) => {
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(f, now + i * 0.09);
+            gain.gain.setValueAtTime(0.15, now + i * 0.09);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.09 + 0.5);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start(now + i * 0.09);
+            osc.stop(now + i * 0.09 + 0.5);
+          });
+        }
+      } catch (e) {
+        console.warn("Áudio não pôde ser reproduzido:", e);
+      }
+    }
+
+    // --- 2. BANCO DE PERGUNTAS E EVIDÊNCIAS PEDAGÓGICAS ---
+    const questionsBank = [
+      {
+        id: 1,
+        category: "IDENTIFICAÇÃO DO SUSPEITO",
+        text: "O mosquito Aedes aegypti possui uma 'impressão digital' no corpo que o diferencia do pernilongo comum. Que marca é essa?",
+        isFatoFake: false,
+        options: [
+          { text: "Pernas pretas com anéis e listras brancas nítidas", correct: true },
+          { text: "Asas gigantes e corpo completamente verde metálico", correct: false },
+          { text: "Cor marrom lisa sem nenhum traço ou detalhe branco", correct: false },
+          { text: "Zumbido estridente que só ataca na madrugada", correct: false }
+        ],
+        explanation: "O Aedes aegypti é preto e possui listras brancas bem visíveis nas pernas e na lira do tórax. Ele costuma picar de dia, enquanto o pernilongo comum (Culex) ataca à noite."
+      },
+      {
+        id: 2,
+        category: "CENA DO CRIME (PREVENÇÃO)",
+        text: "Qual é a 'Regra de Ouro dos 10 Minutos' para garantir que os ovos do mosquito nunca virem adultos na sua casa?",
+        isFatoFake: false,
+        options: [
+          { text: "Eliminar água parada e esfregar os potes 1 vez por semana", correct: true },
+          { text: "Limpar o quintal apenas uma vez a cada 6 meses", correct: false },
+          { text: "Deixar recipientes no sol quente achando que evapora", correct: false },
+          { text: "Borrifar aerossol tóxico nas paredes todos os dias", correct: false }
+        ],
+        explanation: "O mosquito leva de 7 a 10 dias para virar adulto. Vistoriar e esfregar os recipientes com bucha 1 vez por semana quebra o ciclo biológico antes do mosquito nascer!"
+      },
+      {
+        id: 3,
+        category: "SINAIS DE EMERGÊNCIA MÉDICA",
+        text: "A paciente teve febre alta e dor no corpo. No 4º dia a febre baixou, mas ela começou a vomitar sem parar e ter dor de barriga severa. Qual é a ordem pericial?",
+        isFatoFake: false,
+        options: [
+          { text: "SINAL VERMELHO: Correr imediatamente para a UPA ou hospital!", correct: true },
+          { text: "Ficar em casa relaxando porque a febre já foi embora", correct: false },
+          { text: "Tomar qualquer aspirina, AAS ou anti-inflamatório do armário", correct: false },
+          { text: "Apenas beber chá de alho quente e esperar até amanhã", correct: false }
+        ],
+        explanation: "A queda da febre é o momento crítico da Dengue! Vômito constante e dor na barriga são SINAIS DE ALARME de dengue grave. Vá direto à UPA e nunca tome AAS (risco de hemorragia)!"
+      },
+      {
+        id: 4,
+        category: "ARQUIVO CONFIDENCIAL: VACINA",
+        text: "“Tomar a vacina contra a dengue pode acabar me dando a própria doença porque ela tem o vírus dentro dela!”",
+        isFatoFake: true,
+        options: [
+          { text: "🚫 FAKE NEWS", correct: true },
+          { text: "✅ FATO REAL", correct: false }
+        ],
+        explanation: "O vírus da vacina é enfraquecido (atenuado). Ele funciona como um boneco de treino para os anticorpos aprenderem a lutar, sem força para desencadear a doença!"
+      },
+      {
+        id: 5,
+        category: "ARQUIVO CONFIDENCIAL: VACINA",
+        text: "“Quem já pegou dengue no ano passado não precisa se vacinar porque já fica imune para sempre.”",
+        isFatoFake: true,
+        options: [
+          { text: "🚫 FAKE NEWS", correct: true },
+          { text: "✅ FATO REAL", correct: false }
+        ],
+        explanation: "Existem 4 sorotipos do vírus da dengue. Ter tido um não protege contra os outros três! A reinfecção pode ser mais grave, e a vacina ensina o corpo a lutar contra os 4 tipos."
+      },
+      {
+        id: 6,
+        category: "ARQUIVO CONFIDENCIAL: SUS",
+        text: "“O SUS oferece gratuitamente no Brasil a nova vacina da dengue com foco prioritário nas crianças e jovens de 10 a 14 anos.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO COMPROVADO", correct: true },
+          { text: "🚫 FAKE NEWS", correct: false }
+        ],
+        explanation: "O Brasil foi pioneiro no mundo ao colocar a vacina Qdenga no SUS para o público de 10 a 14 anos, que é o grupo com maior taxa de internação hospitalar por dengue após os idosos."
+      }
+    ];
+
+    // --- 3. VARIÁVEIS DE ESTADO DO JOGO ---
+    let questions = [];
+    let currentQuestionIndex = 0;
+    let score = 0;
+    let correctCount = 0;
+    let currentStreak = 0;
+    let maxStreak = 0;
+    let agentName = "Agente Mirim";
+    let powerUpUsed = false;
+
+    // Função para embaralhar arrays (Fisher-Yates)
+    function shuffleArray(array) {
+      const arr = [...array];
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
+    // --- 4. REAÇÕES DO MASCOTE GLÓBULO ---
+    function setMascotState(state, speechText) {
+      const mascotSvg = document.getElementById('mascot-svg');
+      const eyesNormal = document.getElementById('mascot-eyes-normal');
+      const eyesGlasses = document.getElementById('mascot-eyes-glasses');
+      const eyesDizzy = document.getElementById('mascot-eyes-dizzy');
+      const mouth = document.getElementById('mascot-mouth');
+      const speech = document.getElementById('mascot-speech');
+
+      if (speechText) {
+        speech.innerText = speechText;
+      }
+
+      eyesNormal.classList.add('hidden');
+      eyesGlasses.classList.add('hidden');
+      eyesDizzy.classList.add('hidden');
+
+      if (state === 'correct') {
+        eyesGlasses.classList.remove('hidden');
+        mouth.setAttribute('d', 'M40 64 Q50 74 60 64'); // Sorriso aberto
+        mascotSvg.classList.add('scale-110');
+        setTimeout(() => mascotSvg.classList.remove('scale-110'), 400);
+      } else if (state === 'wrong') {
+        eyesDizzy.classList.remove('hidden');
+        mouth.setAttribute('d', 'M42 70 Q50 64 58 70'); // Boca triste/assustada
+        mascotSvg.classList.add('rotate-6');
+        setTimeout(() => mascotSvg.classList.remove('rotate-6'), 400);
+      } else {
+        eyesNormal.classList.remove('hidden');
+        mouth.setAttribute('d', 'M42 66 Q50 72 58 66');
+      }
+    }
+
+    // --- 5. INÍCIO DO JOGO ---
+    function startGame() {
+      const nameInput = document.getElementById('agent-name').value.trim();
+      if (nameInput) {
+        agentName = nameInput;
+      }
+
+      playSound('click');
+      initAudio();
+
+      // Embaralha as perguntas para variar o jogo
+      questions = questionsBank.map(q => {
+        return {
+          ...q,
+          options: q.isFatoFake ? q.options : shuffleArray(q.options)
+        };
+      });
+
+      currentQuestionIndex = 0;
+      score = 0;
+      correctCount = 0;
+      currentStreak = 0;
+      maxStreak = 0;
+      powerUpUsed = false;
+
+      updateScoreDisplay();
+
+      document.getElementById('screen-welcome').classList.add('hidden');
+      document.getElementById('screen-quiz').classList.remove('hidden');
+
+      const startPhrases = [
+        `"Excelente, ${agentName}! As evidências estão na mesa. Confio na sua perícia!"`,
+        `"${agentName} na escuta! Vamos desmascarar esse mosquito e proteger a cidade!"`
+      ];
+      setMascotState('neutral', startPhrases[Math.floor(Math.random() * startPhrases.length)]);
+
+      loadQuestion();
+    }
+
+    // --- 6. CARREGAMENTO DE CADA EVIDÊNCIA ---
+    function loadQuestion() {
+      const q = questions[currentQuestionIndex];
+
+      // Atualiza Badges de Progresso
+      document.getElementById('quiz-progress-badge').innerText = `EVIDÊNCIA ${currentQuestionIndex + 1} DE ${questions.length}`;
+      const pct = ((currentQuestionIndex + 1) / questions.length) * 100;
+      document.getElementById('quiz-progress-bar').style.width = `${pct}%`;
+
+      // Categoria e Texto
+      document.getElementById('question-category').innerText = q.category;
+      document.getElementById('question-text').innerText = q.text;
+
+      // Oculta Carimbos e Feedback anterior
+      document.getElementById('stamp-container').classList.add('hidden');
+      document.getElementById('feedback-card').classList.add('hidden');
+
+      // Botão Power-up (Só funciona em questões de 4 alternativas)
+      const btnPowerUp = document.getElementById('btn-powerup');
+      if (powerUpUsed || q.isFatoFake) {
+        btnPowerUp.classList.add('opacity-40', 'cursor-not-allowed');
+      } else {
+        btnPowerUp.classList.remove('opacity-40', 'cursor-not-allowed');
+      }
+
+      // Renderiza Opções
+      const container = document.getElementById('options-container');
+      container.innerHTML = '';
+
+      if (q.isFatoFake) {
+        // Layout 2 Colunas para FATO ou FAKE
+        container.className = "grid grid-cols-2 gap-3 pt-2";
+        q.options.forEach(opt => {
+          const btn = document.createElement('button');
+          const isFato = opt.text.includes('FATO');
+          btn.className = `py-4 px-3 rounded-2xl border-2 font-display font-black text-base sm:text-lg transition-all transform active:scale-95 shadow-md flex items-center justify-center gap-1.5 ${
+            isFato 
+              ? 'border-emerald-500/60 bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20' 
+              : 'border-rose-500/60 bg-rose-500/10 text-rose-300 hover:bg-rose-500/20'
+          }`;
+          btn.innerText = opt.text;
+          btn.onclick = (e) => selectOption(opt, btn, e);
+          container.appendChild(btn);
+        });
+      } else {
+        // Layout Múltipla Escolha Padrão
+        container.className = "space-y-2.5 pt-1";
+        q.options.forEach((opt, idx) => {
+          const btn = document.createElement('button');
+          btn.className = "option-btn w-full text-left p-3.5 rounded-xl border border-slate-700 bg-slate-900/90 hover:bg-slate-800 text-slate-200 text-xs sm:text-sm font-medium transition-all active:scale-98 flex items-center gap-3 shadow-sm";
+          
+          const badge = document.createElement('span');
+          badge.className = "w-6 h-6 rounded-lg bg-slate-800 border border-slate-700 text-sky-400 font-mono text-xs flex items-center justify-center font-bold shrink-0";
+          badge.innerText = String.fromCharCode(65 + idx);
+
+          const spanText = document.createElement('span');
+          spanText.className = "flex-1";
+          spanText.innerText = opt.text;
+
+          btn.appendChild(badge);
+          btn.appendChild(spanText);
+          btn.onclick = (e) => selectOption(opt, btn, e);
+          container.appendChild(btn);
+        });
+      }
+    }
+
+    // --- 7. POWER-UP 50:50 (REFORÇO DA CENTRAL) ---
+    function usePowerUp() {
+      if (powerUpUsed) return;
+      const q = questions[currentQuestionIndex];
+      if (q.isFatoFake) {
+        alert("Agente, nas perguntas de Fato ou Fake você deve usar seu raciocínio pericial direto!");
+        return;
+      }
+
+      powerUpUsed = true;
+      playSound('radio');
+
+      document.getElementById('btn-powerup').classList.add('opacity-40', 'cursor-not-allowed');
+      document.getElementById('btn-powerup-text').innerText = "Usado";
+
+      setMascotState('neutral', `"Tschhh! Central na escuta: Eliminamos duas pistas falsas para você, ${agentName}!"`);
+
+      const buttons = Array.from(document.querySelectorAll('.option-btn'));
+      let eliminated = 0;
+
+      buttons.forEach(btn => {
+        // Se não for a correta e ainda não eliminamos 2
+        const isCorrect = q.options.find(o => btn.innerText.includes(o.text))?.correct;
+        if (!isCorrect && eliminated < 2) {
+          btn.classList.add('opacity-25', 'line-through', 'pointer-events-none', 'bg-slate-950');
+          btn.querySelector('span:first-child').innerText = '✕';
+          eliminated++;
+        }
+      });
+    }
+
+    // --- 8. ANIMAÇÃO DE PONTOS FLUTUANTES ---
+    function spawnFloatingPoints(text, targetElement) {
+      const rect = targetElement.getBoundingClientRect();
+      const el = document.createElement('div');
+      el.className = "fixed font-mono font-black text-sm sm:text-base text-amber-300 floating-points z-50 pointer-events-none drop-shadow-md";
+      el.style.left = `${rect.left + rect.width / 2 - 30}px`;
+      el.style.top = `${rect.top}px`;
+      el.innerText = text;
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 900);
+    }
+
+    // --- 9. DISPARO DO CARIMBO SLAM (FATO OU FAKE) ---
+    function triggerStampSlam(isFato) {
+      const stampContainer = document.getElementById('stamp-container');
+      const stampElement = document.getElementById('stamp-element');
+      stampContainer.classList.remove('hidden');
+
+      if (isFato) {
+        stampElement.className = "px-6 py-3 border-4 border-emerald-400 bg-emerald-950/90 text-emerald-300 rounded-2xl font-display font-black text-2xl sm:text-3xl tracking-widest uppercase shadow-2xl stamp-animation";
+        stampElement.innerHTML = "✅ FATO COMPROVADO!";
+      } else {
+        stampElement.className = "px-6 py-3 border-4 border-rose-500 bg-rose-950/90 text-rose-300 rounded-2xl font-display font-black text-2xl sm:text-3xl tracking-widest uppercase shadow-2xl stamp-animation";
+        stampElement.innerHTML = "🚫 FAKE NEWS!";
+      }
+      playSound('stamp');
+    }
+
+    // --- 10. SELEÇÃO DA RESPOSTA ---
+    function selectOption(selectedOpt, btnElement, event) {
+      // Desativa botões
+      const allButtons = document.querySelectorAll('#options-container button');
+      allButtons.forEach(b => {
+        b.disabled = true;
+        b.classList.add('pointer-events-none');
+      });
+
+      const q = questions[currentQuestionIndex];
+      const feedbackCard = document.getElementById('feedback-card');
+      const feedbackBadge = document.getElementById('feedback-badge');
+      const feedbackBonus = document.getElementById('feedback-bonus');
+      const feedbackExp = document.getElementById('feedback-explanation');
+
+      feedbackCard.classList.remove('hidden');
+
+      if (selectedOpt.correct) {
+        // --- RESPOSTA CORRETA ---
+        playSound('correct');
+        correctCount++;
+        currentStreak++;
+        if (currentStreak > maxStreak) maxStreak = currentStreak;
+
+        // Cálculo de Pontos com Bônus de Streak
+        let pointsWon = 15;
+        let streakBonusText = "+15 PTS";
+
+        if (currentStreak >= 3) {
+          pointsWon += 10;
+          streakBonusText = "+25 PTS (🔥 COMBO EM CHAMAS!)";
+          playSound('combo');
+        } else if (currentStreak === 2) {
+          pointsWon += 5;
+          streakBonusText = "+20 PTS (COMBO x2!)";
+          playSound('combo');
+        }
+
+        score += pointsWon;
+        updateScoreDisplay();
+        spawnFloatingPoints(streakBonusText, btnElement);
+
+        btnElement.classList.add('ring-2', 'ring-emerald-400', '!bg-emerald-500/25', '!border-emerald-400');
+
+        feedbackCard.className = "rounded-xl p-4 border border-emerald-500/50 bg-emerald-950/50 text-emerald-200 space-y-2 relative z-20";
+        feedbackBadge.className = "font-mono text-[10px] px-2.5 py-0.5 rounded font-bold uppercase bg-emerald-500 text-slate-950";
+        feedbackBadge.innerText = "✓ PISTA VERDADEIRA CONFIRMADA";
+        feedbackBonus.innerText = streakBonusText;
+
+        const praisePhrases = [
+          "Elementar, meu caro perito! Você pegou a pista exata!",
+          "Dedução brilhante! Nem o vírus esperava por essa!",
+          "Excelente! A ciência venceu a mentira!",
+          "Na mosca! Sua investigação está implacável!"
+        ];
+        setMascotState('correct', praisePhrases[Math.floor(Math.random() * praisePhrases.length)]);
+
+      } else {
+        // --- RESPOSTA ERRADA ---
+        playSound('wrong');
+        currentStreak = 0;
+        updateScoreDisplay();
+
+        // Screen Shake
+        const gameContainer = document.getElementById('game-container');
+        gameContainer.classList.add('shake-active');
+        setTimeout(() => gameContainer.classList.remove('shake-active'), 400);
+
+        btnElement.classList.add('ring-2', 'ring-rose-500', '!bg-rose-500/25', '!border-rose-500');
+
+        feedbackCard.className = "rounded-xl p-4 border border-rose-500/50 bg-rose-950/50 text-rose-200 space-y-2 relative z-20";
+        feedbackBadge.className = "font-mono text-[10px] px-2.5 py-0.5 rounded font-bold uppercase bg-rose-500 text-white";
+        feedbackBadge.innerText = "✕ PISTA FALSA DETECTADA";
+        feedbackBonus.innerText = "COMBO ZERADO!";
+
+        const alertPhrases = [
+          "Opa! Quase caímos na fake news! Olhe a explicação científica:",
+          "Atenção, perito! Os boatos tentaram nos enganar!",
+          "Alerta da Central: Essa informação era uma armadilha!"
+        ];
+        setMascotState('wrong', alertPhrases[Math.floor(Math.random() * alertPhrases.length)]);
+      }
+
+      // Se for Fato ou Fake, ativa a animação de carimbo 3D
+      if (q.isFatoFake) {
+        const isFatoAnswer = q.options.find(o => o.correct).text.includes('FATO');
+        triggerStampSlam(isFatoAnswer);
+      }
+
+      feedbackExp.innerText = q.explanation;
+    }
+
+    // --- 11. ATUALIZAÇÃO DO PLACAR E COMBO ---
+    function updateScoreDisplay() {
+      document.getElementById('header-score').innerText = score;
+
+      const comboBadge = document.getElementById('header-combo-badge');
+      const comboText = document.getElementById('header-combo-text');
+
+      if (currentStreak >= 3) {
+        comboBadge.classList.remove('hidden');
+        comboText.innerText = `🔥 EM CHAMAS x${currentStreak}!`;
+      } else if (currentStreak === 2) {
+        comboBadge.classList.remove('hidden');
+        comboText.innerText = `COMBO x2!`;
+      } else {
+        comboBadge.classList.add('hidden');
+      }
+    }
+
+    // --- 12. PRÓXIMA QUESTÃO ---
+    function nextQuestion() {
+      playSound('click');
+      currentQuestionIndex++;
+      if (currentQuestionIndex < questions.length) {
+        setMascotState('neutral', `"Próximo caso! Vamos analisar a Evidência ${currentQuestionIndex + 1}!"`);
+        loadQuestion();
+      } else {
+        finishGame();
+      }
+    }
+
+    // --- 13. FINALIZAÇÃO E CONDECORAÇÃO ---
+    function finishGame() {
+      document.getElementById('screen-quiz').classList.add('hidden');
+      document.getElementById('screen-result').classList.remove('hidden');
+
+      // Bônus de finalização
+      const finalScore = Math.min(100, score + 10);
+
+      document.getElementById('badge-agent-name').innerText = agentName;
+      document.getElementById('final-score-display').innerText = finalScore;
+      document.getElementById('final-accuracy-display').innerText = `${correctCount}/${questions.length}`;
+      document.getElementById('final-combo-display').innerText = `x${maxStreak}`;
+
+      const rankElement = document.getElementById('badge-rank');
+      if (finalScore >= 85) {
+        rankElement.innerText = "⭐ PERITO CHEFE DE ELITE ⭐";
+      } else if (finalScore >= 60) {
+        rankElement.innerText = "🎖️ AGENTE ESPECIAL DA SAÚDE";
+      } else {
+        rankElement.innerText = "🔍 DETETIVE EPIDEMIOLÓGICO";
+      }
+
+      setMascotState('correct', `"Parabéns, ${agentName}! Você concluiu o caso com honras e salvou a comunidade!"`);
+
+      playSound('fanfare');
+      triggerConfetti();
+    }
+
+    // --- 14. CANNON DE CONFETES MULTICOLORIDOS ---
+    function triggerConfetti() {
+      if (typeof confetti !== 'function') return;
+
+      const count = 220;
+      const defaults = { origin: { y: 0.7 } };
+
+      function fire(particleRatio, opts) {
+        confetti({
+          ...defaults,
+          ...opts,
+          particleCount: Math.floor(count * particleRatio)
+        });
+      }
+
+      fire(0.25, { spread: 26, startVelocity: 55 });
+      fire(0.2, { spread: 60 });
+      fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
+      fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
+      fire(0.1, { spread: 120, startVelocity: 45 });
+    }
+
+    // --- 15. REINICIAR JOGO ---
+    function restartGame() {
+      playSound('click');
+      document.getElementById('screen-result').classList.add('hidden');
+      document.getElementById('screen-welcome').classList.remove('hidden');
+      setMascotState('neutral', `"Pronto para uma nova rodada de investigações, recruta?"`);
+    }
+  </script>
+</body>
+</html>

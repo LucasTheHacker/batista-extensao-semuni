@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roteiro dos Monitores — Operação Detetives da Saúde | SEMUNI</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    @media print {
+      .no-print { display: none !important; }
+      body { background: white !important; color: black !important; }
+      .page-break { page-break-before: always; }
+      .card-print { border: 1px solid #cbd5e1 !important; box-shadow: none !important; background: white !important; color: black !important; }
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen antialiased selection:bg-sky-500 selection:text-slate-950">
+
+  <!-- BARRA DE TOPO COM BOTÕES DE AÇÃO -->
+  <header class="sticky top-0 z-40 bg-slate-900/90 backdrop-blur border-b border-slate-800 px-6 py-3.5 no-print">
+    <div class="max-w-5xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <a href="hub_materiais.html" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-sky-400 text-xs font-mono font-bold flex items-center gap-1.5 transition-all">
+          <span>←</span> Hub Geral
+        </a>
+        <div class="border-l border-slate-800 pl-3">
+          <span class="font-mono text-[11px] text-sky-400 font-bold uppercase tracking-wider block">D.I.V. // MANUAL OPERACIONAL</span>
+          <h1 class="text-sm font-bold text-white leading-none">Guia dos Monitores — 15 Minutos</h1>
+        </div>
+      </div>
+
+      <button onclick="window.print()" class="px-4 py-2 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-xs font-mono rounded-lg transition-all flex items-center gap-2 shadow-lg shadow-sky-500/20 active:scale-95">
+        <span>🖨️</span> IMPRIMIR MANUAL
+      </button>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="max-w-5xl mx-auto px-4 py-8 space-y-8">
+    
+    <!-- CABEÇALHO DO DOCUMENTO -->
+    <div class="bg-gradient-to-r from-slate-900 via-slate-900 to-sky-950/40 border border-slate-800 rounded-3xl p-6 sm:p-8 relative overflow-hidden shadow-2xl card-print">
+      <div class="space-y-3">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-mono font-bold">
+          <span>⏱️ TEMPO LIMITE TOTAL: 15 MINUTOS (MAX: 18 MIN)</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-black font-display text-white tracking-tight">
+          Manual do Monitor: <span class="text-sky-400">Operação Detetives da Saúde</span>
+        </h1>
+        <p class="text-sm text-slate-300 max-w-2xl leading-relaxed">
+          Semana Universitária (SEMUNI) • Extensão em Parasitologia & Imunologia Médica (UnB)<br>
+          <b>Público:</b> Estudantes do Ensino Fundamental (10 a 14 anos) • <b>Estrutura:</b> 5 Bancadas Rotativas (1 monitor por estação).
+        </p>
+      </div>
+    </div>
+
+    <!-- 1. CRONOGRAMA MINUTO A MINUTO -->
+    <section class="space-y-4">
+      <div class="flex items-center gap-2 border-b border-slate-800 pb-2">
+        <span class="text-xl">⏱️</span>
+        <h2 class="text-xl font-bold text-white font-display uppercase tracking-wide">1. Cronograma Minuto a Minuto e Controle do Tempo</h2>
+      </div>
+
+      <div class="bg-amber-500/10 border-l-4 border-amber-500 p-4 rounded-r-xl text-xs sm:text-sm text-amber-200">
+        <b>🔔 REGRA DE OURO DO COORDENADOR DE PISTA:</b> Um monitor fica responsável pelo sinal sonoro (apito ou buzina de celular). Nenhuma bancada decide a hora de terminar. Todas as estações rodam simultaneamente a cada <b>2 minutos e meio</b>!
+      </div>
+
+      <!-- TIMELINE GRID -->
+      <div class="grid grid-cols-1 sm:grid-cols-5 gap-3">
+        <div class="bg-slate-900 border border-slate-800 p-4 rounded-2xl space-y-1.5 card-print">
+          <span class="font-mono text-xs text-sky-400 font-bold block">00:00 - 01:00</span>
+          <h3 class="font-bold text-sm text-white">Recepção & Briefing</h3>
+          <p class="text-xs text-slate-400">Convocação dos alunos como novos recrutas da D.I.V.</p>
+        </div>
+        <div class="bg-slate-900 border border-slate-800 p-4 rounded-2xl space-y-1.5 card-print">
+          <span class="font-mono text-xs text-sky-400 font-bold block">01:00 - 03:30 (🔔)</span>
+          <h3 class="font-bold text-sm text-white">Estação 1: Suspeito</h3>
+          <p class="text-xs text-slate-400">Listras brancas do mosquito e nado em "S" da larva.</p>
+        </div>
+        <div class="bg-slate-900 border border-slate-800 p-4 rounded-2xl space-y-1.5 card-print">
+          <span class="font-mono text-xs text-sky-400 font-bold block">03:45 - 06:15 (🔔)</span>
+          <h3 class="font-bold text-sm text-white">Estação 2: Cena do Crime</h3>
+          <p class="text-xs text-slate-400">7 Erros no quintal e a rotina dos 10 minutos semanais.</p>
+        </div>
+        <div class="bg-slate-900 border border-slate-800 p-4 rounded-2xl space-y-1.5 card-print">
+          <span class="font-mono text-xs text-sky-400 font-bold block">06:30 - 09:00 (🔔)</span>
+          <h3 class="font-bold text-sm text-white">Estação 3: A Vítima</h3>
+          <p class="text-xs text-slate-400">Sinais de alarme da dengue e quando correr pra UPA.</p>
+        </div>
+        <div class="bg-slate-900 border border-slate-800 p-4 rounded-2xl space-y-1.5 card-print">
+          <span class="font-mono text-xs text-amber-400 font-bold block">09:15 - 15:00 (🎓)</span>
+          <h3 class="font-bold text-sm text-white">Estação 4 & 5: Fechamento</h3>
+          <p class="text-xs text-slate-400">Fato ou Fake de Vacinas, Tribunal do Caso e Medalhas!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. BRIEFING POLICIAL INICIAL -->
+    <section class="space-y-4">
+      <div class="flex items-center gap-2 border-b border-slate-800 pb-2">
+        <span class="text-xl">🎙️</span>
+        <h2 class="text-xl font-bold text-white font-display uppercase tracking-wide">2. Fala de Ambientação Inicial (45 segundos)</h2>
+      </div>
+
+      <div class="bg-slate-900 border border-sky-500/30 rounded-2xl p-5 sm:p-6 space-y-3 card-print">
+        <p class="text-xs font-mono text-sky-400 font-bold uppercase tracking-wider">
+          Script do Monitor da Recepção (Voz empolgada e firme de filme de investigação):
+        </p>
+        <blockquote class="italic text-slate-200 text-sm sm:text-base border-l-4 border-sky-400 pl-4 py-1 leading-relaxed bg-slate-950/60 rounded-r-xl">
+          “Atenção, recrutas! Sejam bem-vindos à base de treinamento da D.I.V. — a Divisão de Investigação de Vírus! Um inimigo microscópico e perigoso invadiu nossa cidade e está deixando pessoas doentes. Vocês foram convocados como novos Peritos Mirins. Vocês têm exatamente 15 minutos para passar pelas nossas estações de perícia, coletar evidências, desarmar mentiras e fechar o caso. Quem completar o Passaporte do Detetive receberá o Distintivo Oficial de Agente da Saúde. O relógio começou a correr... Entrem na Estação 1 agora!”
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- 3. INSTRUÇÕES ESTAÇÃO POR ESTAÇÃO -->
+    <section class="space-y-6">
+      <div class="flex items-center gap-2 border-b border-slate-800 pb-2">
+        <span class="text-xl">📋</span>
+        <h2 class="text-xl font-bold text-white font-display uppercase tracking-wide">3. Diretrizes de Cada Estação (2m30s cada)</h2>
+      </div>
+
+      <!-- ESTAÇÃO 1 -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-3 card-print">
+        <div class="flex items-center justify-between">
+          <span class="px-2.5 py-0.5 rounded bg-sky-500/20 text-sky-300 font-mono text-xs font-bold">ESTAÇÃO 1 (01:00 - 03:30)</span>
+          <span class="text-xs font-mono text-slate-400">+20 Pontos de Perito</span>
+        </div>
+        <h3 class="text-lg font-bold text-white">🔍 Reconhecimento do Suspeito (Vetor & Larva)</h3>
+        <p class="text-xs text-slate-300"><b>Materiais:</b> Larvas vivas em pote selado com aviso "NÃO TOQUE", modelos didáticos de Aedes e Culex.</p>
+        <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800/80 text-xs text-slate-300 space-y-1.5">
+          <p><b>Script Rápido:</b> "Olhem para as perninhas dele: alguém consegue ver listras brancas? E na água, como essa larva nada? Ela foge da luz em formato de 'S'!"</p>
+          <p><b>Ponto Inegociável:</b> O mosquito <b>não é a doença</b>; ele é apenas o motorista de fuga que dá carona ao vírus.</p>
+          <p class="text-emerald-400 font-mono"><b>Ação de 10s:</b> Carimbar "Pista 1: Suspeito Identificado" no Passaporte.</p>
+        </div>
+      </div>
+
+      <!-- ESTAÇÃO 2 -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-3 card-print">
+        <div class="flex items-center justify-between">
+          <span class="px-2.5 py-0.5 rounded bg-sky-500/20 text-sky-300 font-mono text-xs font-bold">ESTAÇÃO 2 (03:45 - 06:15)</span>
+          <span class="text-xs font-mono text-slate-400">+20 Pontos de Perito</span>
+        </div>
+        <h3 class="text-lg font-bold text-white">🏚️ A Cena do Crime (Criadouros & Prevenção)</h3>
+        <p class="text-xs text-slate-300"><b>Materiais:</b> Banner plastificado do quintal e marcadores vermelhos tipo "X" em EVA com fita adesiva.</p>
+        <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800/80 text-xs text-slate-300 space-y-1.5">
+          <p><b>Script Rápido:</b> "Detetives, temos 60 segundos! Preguem os 'X' vermelhos em tudo que pode acumular água da chuva!"</p>
+          <p><b>Ponto Inegociável:</b> A regra dos <b>10 minutos semanais</b> (o ovo leva de 7 a 10 dias para virar mosquito; limpar todo sábado quebra o ciclo!).</p>
+          <p class="text-emerald-400 font-mono"><b>Ação de 10s:</b> Carimbar "Pista 2: Cenas Limpas" no Passaporte.</p>
+        </div>
+      </div>
+
+      <!-- ESTAÇÃO 3 -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-3 card-print">
+        <div class="flex items-center justify-between">
+          <span class="px-2.5 py-0.5 rounded bg-sky-500/20 text-sky-300 font-mono text-xs font-bold">ESTAÇÃO 3 (06:30 - 09:00)</span>
+          <span class="text-xs font-mono text-slate-400">+20 Pontos de Perito</span>
+        </div>
+        <h3 class="text-lg font-bold text-white">🚨 O Relatório da Vítima (Sinais de Alarme)</h3>
+        <p class="text-xs text-slate-300"><b>Materiais:</b> Quadro dividido em "Sinal Amarelo (Ficar de Olho)" vs "Sinal Vermelho (Correr pra UPA)".</p>
+        <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800/80 text-xs text-slate-300 space-y-1.5">
+          <p><b>Script Rápido:</b> "Febre alta e dor no corpo é comum, mas qual sintoma faz a sirene tocar pra correr pro hospital?"</p>
+          <p><b>Ponto Inegociável:</b> <b>Dor de barriga forte e vômito persistente</b> são sinais de Dengue Grave. Nunca tomar remédios com AAS/Aspirina!</p>
+          <p class="text-emerald-400 font-mono"><b>Ação de 10s:</b> Carimbar "Pista 3: Perícia Médica" no Passaporte.</p>
+        </div>
+      </div>
+
+      <!-- ESTAÇÃO 4 -->
+      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-3 card-print">
+        <div class="flex items-center justify-between">
+          <span class="px-2.5 py-0.5 rounded bg-sky-500/20 text-sky-300 font-mono text-xs font-bold">ESTAÇÃO 4 (09:15 - 11:45)</span>
+          <span class="text-xs font-mono text-slate-400">+20 Pontos de Perito</span>
+        </div>
+        <h3 class="text-lg font-bold text-white">🛡️ Arquivo Confidencial (Fato ou Fake sobre Vacina)</h3>
+        <p class="text-xs text-slate-300"><b>Materiais:</b> Cartões plastificados tamanho A5 (frente com afirmação vazada, verso com selo FATO/FAKE).</p>
+        <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800/80 text-xs text-slate-300 space-y-1.5">
+          <p><b>Script Rápido:</b> "Vou ler uma mensagem vazada na internet: no três vocês gritam se é FATO ou FAKE!"</p>
+          <p><b>Ponto Inegociável:</b> O vírus da vacina é enfraquecido (boneco de treino do corpo); quem já teve dengue ainda precisa vacinar; o SUS oferece de graça para 10 a 14 anos.</p>
+          <p class="text-emerald-400 font-mono"><b>Ação de 10s:</b> Carimbar "Pista 4: Desarmador de Fake News" no Passaporte.</p>
+        </div>
+      </div>
+
+      <!-- ESTAÇÃO 5 -->
+      <div class="bg-slate-900 border border-amber-500/30 rounded-2xl p-5 space-y-3 card-print">
+        <div class="flex items-center justify-between">
+          <span class="px-2.5 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono text-xs font-bold">ESTAÇÃO 5 (12:00 - 15:00)</span>
+          <span class="text-xs font-mono text-amber-300">Fechamento do Caso • 100 Pts</span>
+        </div>
+        <h3 class="text-lg font-bold text-white">⚖️ Tribunal de Resolução do Caso & Condecoração</h3>
+        <p class="text-xs text-slate-300"><b>Materiais:</b> Prancheta do Caso Clínico (Marina, 11 anos), 4 caixas de classificação, lote de distintivos/medalhas e balinhas.</p>
+        <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800/80 text-xs text-slate-300 space-y-1.5">
+          <p><b>Gabarito da Mesa:</b> Chefão = Vírus da Dengue; Comparsa = Mosquito Aedes fêmea; Arma = Água parada no pneu; Inocentes = Fezes de cão / Pernilongo comum.</p>
+          <p><b>Cerimônia das Medalhas (60s):</b> "Diante da perícia brilhante de vocês, declaro o caso resolvido! Vocês estão condecorados como Peritos de Elite da Saúde Pública!" (Cola o distintivo no peito e entrega a balinha).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. PROTOCOLO CORTA-GIRO (CONTINGÊNCIA) -->
+    <section class="space-y-4">
+      <div class="flex items-center gap-2 border-b border-slate-800 pb-2">
+        <span class="text-xl">⚠️</span>
+        <h2 class="text-xl font-bold text-white font-display uppercase tracking-wide">4. Protocolo "Corta-Giro" (Se o relógio bater 2 minutos)</h2>
+      </div>
+
+      <div class="overflow-x-auto rounded-2xl border border-slate-800 card-print">
+        <table class="w-full text-left text-xs sm:text-sm">
+          <thead class="bg-slate-900 font-mono text-sky-400 border-b border-slate-800">
+            <tr>
+              <th class="p-3">Estação</th>
+              <th class="p-3 text-rose-300">O que CORTAR imediatamente</th>
+              <th class="p-3 text-emerald-300">O que NUNCA pode ser cortado</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800 text-slate-300">
+            <tr>
+              <td class="p-3 font-bold text-white">Estação 1</td>
+              <td class="p-3">Discussão longa de larvas de outros insetos no quadro.</td>
+              <td class="p-3 text-emerald-400 font-medium">Foto das pernas listradas e nado em "S".</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-white">Estação 2</td>
+              <td class="p-3">Procura de todos os 7 erros da imagem.</td>
+              <td class="p-3 text-emerald-400 font-medium">Marcar os 3 maiores focos e a regra dos 10 minutos.</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-white">Estação 3</td>
+              <td class="p-3">Diferenciação profunda entre Zika e Chikungunya.</td>
+              <td class="p-3 text-emerald-400 font-medium">Os 2 sinais vermelhos: dor na barriga e vômito.</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-white">Estação 4</td>
+              <td class="p-3">Passar por todos os 6 cartões (faça apenas 2).</td>
+              <td class="p-3 text-emerald-400 font-medium">Vacina com vírus atenuado não causa a doença.</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-white">Estação 5</td>
+              <td class="p-3">Separação de cartas uma a uma pelos alunos.</td>
+              <td class="p-3 text-emerald-400 font-medium">A entrega cerimoniosa do distintivo e da balinha!</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-6 text-xs text-slate-500 font-mono border-t border-slate-800 mt-12 no-print">
+    Projeto de Extensão em Parasitologia • SEMUNI Universidade de Brasília
+  </footer>
+
+</body>
+</html>
