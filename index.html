@@ -254,27 +254,35 @@
           />
         </div>
 
-        <!-- SELETOR DE VERSÃO DO JOGO (SWITCH) -->
+        <!-- SELETOR DE VERSÃO DO JOGO (SWITCH COM 3 VERSÕES) -->
         <div class="space-y-2 pt-1">
           <label class="block font-mono text-xs uppercase tracking-wider text-slate-300 font-bold">
             Escolha a Versão do Jogo:
           </label>
-          <div class="grid grid-cols-2 gap-2 bg-slate-950 p-1.5 rounded-2xl border border-slate-800">
+          <div class="grid grid-cols-3 gap-1.5 bg-slate-950 p-1.5 rounded-2xl border border-slate-800">
             <button 
               type="button" 
               onclick="selectGameVersion(1)" 
               id="btn-mode-v1" 
-              class="py-2.5 px-2 rounded-xl font-display font-black text-xs transition-all flex flex-col items-center gap-0.5 border border-sky-500 bg-sky-500/20 text-sky-300 shadow-sm active:scale-95">
-              <span class="flex items-center gap-1"><span>🕵️</span> <span>Versão 1</span></span>
-              <span class="text-[10px] font-mono text-slate-400 font-normal">Missão Clássica (6 Pistas)</span>
+              class="py-2 px-1 rounded-xl font-display font-black text-xs transition-all flex flex-col items-center gap-0.5 border border-sky-500 bg-sky-500/20 text-sky-300 shadow-sm active:scale-95 text-center">
+              <span class="flex items-center gap-1"><span>🕵️</span> <span>V1</span></span>
+              <span class="text-[9px] font-mono text-slate-400 font-normal leading-tight">Clássica (6)</span>
             </button>
             <button 
               type="button" 
               onclick="selectGameVersion(2)" 
               id="btn-mode-v2" 
-              class="py-2.5 px-2 rounded-xl font-display font-black text-xs transition-all flex flex-col items-center gap-0.5 border border-transparent text-slate-400 hover:text-slate-200 active:scale-95">
-              <span class="flex items-center gap-1"><span>⚡</span> <span>Versão 2</span></span>
-              <span class="text-[10px] font-mono text-slate-400 font-normal">Super Fato/Fake (26 Pistas)</span>
+              class="py-2 px-1 rounded-xl font-display font-black text-xs transition-all flex flex-col items-center gap-0.5 border border-transparent text-slate-400 hover:text-slate-200 active:scale-95 text-center">
+              <span class="flex items-center gap-1"><span>⚡</span> <span>V2</span></span>
+              <span class="text-[9px] font-mono text-slate-400 font-normal leading-tight">Geral (26)</span>
+            </button>
+            <button 
+              type="button" 
+              onclick="selectGameVersion(3)" 
+              id="btn-mode-v3" 
+              class="py-2 px-1 rounded-xl font-display font-black text-xs transition-all flex flex-col items-center gap-0.5 border border-transparent text-slate-400 hover:text-slate-200 active:scale-95 text-center">
+              <span class="flex items-center gap-1"><span>💉</span> <span>V3</span></span>
+              <span class="text-[9px] font-mono text-slate-400 font-normal leading-tight">Vacinas (10)</span>
             </button>
           </div>
           <p id="mode-description" class="text-[11px] font-mono text-sky-400 text-center">
@@ -984,6 +992,120 @@
       }
     ];
 
+    // --- 2.3. BANCO DE QUESTÕES DA VERSÃO 3: VACINAS E LEGISLAÇÃO (10 DESAFIOS FATO OU FAKE) ---
+    const questionsBankV3 = [
+      {
+        id: "v1",
+        category: "💉 VACINAS // SOROTIPOS DA DENGUE",
+        text: "“A vacina contra a dengue disponível no Brasil protege todas as quatro cepas do vírus dengue.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: true },
+          { text: "🚫 FAKE NEWS", correct: false }
+        ],
+        explanation: "As vacinas disponíveis (como a Qdenga) são tetravalentes, o que significa que foram formuladas para conferir proteção contra os quatro sorotipos do vírus da dengue (DENV-1, DENV-2, DENV-3 e DENV-4)."
+      },
+      {
+        id: "v2",
+        category: "💉 VACINAS // DISPONIBILIDADE NO SUS",
+        text: "“O SUS oferece a vacina contra a dengue gratuitamente para todas as faixas etárias.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: false },
+          { text: "🚫 FAKE NEWS", correct: true }
+        ],
+        explanation: "Devido à capacidade limitada de produção global, o Ministério da Saúde priorizou faixas etárias específicas com maior taxa de hospitalização (como crianças e adolescentes de 10 a 14 anos) em municípios prioritários, não para todas as idades."
+      },
+      {
+        id: "v3",
+        category: "💉 VACINAS // VÍRUS ZIKA",
+        text: "“A vacina contra o vírus Zika ainda não está disponível para uso em larga escala.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: true },
+          { text: "🚫 FAKE NEWS", correct: false }
+        ],
+        explanation: "Atualmente, ainda não há vacina contra o vírus Zika aprovada e disponível comercialmente para a população geral. Há pesquisas e ensaios clínicos promissores em andamento."
+      },
+      {
+        id: "v4",
+        category: "💉 VACINAS // CHIKUNGUNYA",
+        text: "“A vacina contra a chikungunya já foi aprovada e está disponível no Brasil.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: false },
+          { text: "🚫 FAKE NEWS", correct: true }
+        ],
+        explanation: "Embora pesquisas estejam avançadas e já haja aprovação em agências internacionais (como o FDA nos EUA), a vacina contra a chikungunya ainda não está amplamente distribuída ou disponível na rede de saúde brasileira."
+      },
+      {
+        id: "v5",
+        category: "💉 VACINAS // FAIXA ETÁRIA",
+        text: "“A vacina contra a dengue é recomendada para pessoas a partir dos 9 anos de idade.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: true },
+          { text: "🚫 FAKE NEWS", correct: false }
+        ],
+        explanation: "A vacina Dengvaxia é indicada a partir dos 9 anos de idade (para indivíduos soropositivos), enquanto a Qdenga pode ser aplicada a partir dos 4 anos (e na campanha do SUS a partir dos 10 anos). Portanto, a recomendação inclui com certeza indivíduos a partir dos 9 anos."
+      },
+      {
+        id: "v6",
+        category: "💉 VACINAS // TECNOLOGIA ATENUADA",
+        text: "“Existem diferentes tipos de vacinas de dengue, incluindo vacinas baseadas em vírus vivos atenuados.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: true },
+          { text: "🚫 FAKE NEWS", correct: false }
+        ],
+        explanation: "Sim! As principais vacinas desenvolvidas (como Dengvaxia, Qdenga e a vacina do Instituto Butantan) usam tecnologia de vírus vivo atenuado — vírus enfraquecidos que não provocam a doença, mas ensinam nosso sistema imune a combatê-la."
+      },
+      {
+        id: "v7",
+        category: "⚖️ LEGISLAÇÃO // MENORES DE 5 ANOS",
+        text: "“Uma das leis brasileiras exige que a vacinação contra a dengue seja obrigatória para crianças menores de 5 anos.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: false },
+          { text: "🚫 FAKE NEWS", correct: true }
+        ],
+        explanation: "Não existe qualquer lei no Brasil que torne a vacinação contra dengue obrigatória para menores de 5 anos. Além disso, vacinas como a Dengvaxia nem sequer são autorizadas para essa faixa etária!"
+      },
+      {
+        id: "v8",
+        category: "💉 VACINAS // CEPAS E REGIÕES",
+        text: "“A vacina contra a dengue no Brasil é específica para a cepa que circula em cada região.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: false },
+          { text: "🚫 FAKE NEWS", correct: true }
+        ],
+        explanation: "A vacina não é regionalizada. Ela é tetravalente e protege igualmente contra os quatro sorotipos conhecidos do vírus da dengue em qualquer região do Brasil."
+      },
+      {
+        id: "v9",
+        category: "⚖️ LEGISLAÇÃO // CALENDÁRIO SUS",
+        text: "“A vacinação contra a chikungunya faz parte do calendário oficial do SUS atualmente.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: false },
+          { text: "🚫 FAKE NEWS", correct: true }
+        ],
+        explanation: "A imunização contra a chikungunya NÃO faz parte do calendário básico de rotina do SUS, pois ainda não foi incorporada ao Programa Nacional de Imunizações (PNI)."
+      },
+      {
+        id: "v10",
+        category: "⚖️ LEGISLAÇÃO // TRABALHO E SAÚDE",
+        text: "“A lei brasileira prevê a dispensa do trabalho para pessoas que precisam tomar vacinas contra arboviroses como dengue, zika e chikungunya.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: true },
+          { text: "🚫 FAKE NEWS", correct: false }
+        ],
+        explanation: "A legislação trabalhista e normas de vigilância em saúde pública garantem justificativas legais e abono para trabalhadores comparecerem a consultas de vacinação e cumprirem campanhas de imunização coletiva."
+      }
+    ];
+
     // --- 3. VARIÁVEIS DE ESTADO DO JOGO ---
     let selectedGameVersion = 1;
     let questions = [];
@@ -995,22 +1117,35 @@
     let agentName = "Agente Mirim";
     let powerUpUsed = false;
 
-    // Seletor de Versão do Jogo (Switch)
+    // Seletor de Versão do Jogo (Switch com 3 versões)
     function selectGameVersion(v) {
       selectedGameVersion = v;
       playSound('click');
       const btnV1 = document.getElementById('btn-mode-v1');
       const btnV2 = document.getElementById('btn-mode-v2');
+      const btnV3 = document.getElementById('btn-mode-v3');
       const desc = document.getElementById('mode-description');
+
+      const activeSky = "py-2 px-1 rounded-xl font-display font-black text-xs transition-all flex flex-col items-center gap-0.5 border border-sky-500 bg-sky-500/20 text-sky-300 shadow-sm active:scale-95 text-center";
+      const activeAmber = "py-2 px-1 rounded-xl font-display font-black text-xs transition-all flex flex-col items-center gap-0.5 border border-amber-500 bg-amber-500/20 text-amber-300 shadow-sm active:scale-95 text-center";
+      const activeEmerald = "py-2 px-1 rounded-xl font-display font-black text-xs transition-all flex flex-col items-center gap-0.5 border border-emerald-500 bg-emerald-500/20 text-emerald-300 shadow-sm active:scale-95 text-center";
+      const inactive = "py-2 px-1 rounded-xl font-display font-black text-xs transition-all flex flex-col items-center gap-0.5 border border-transparent text-slate-400 hover:text-slate-200 active:scale-95 text-center";
       
       if (v === 1) {
-        btnV1.className = "py-2.5 px-2 rounded-xl font-display font-black text-xs transition-all flex flex-col items-center gap-0.5 border border-sky-500 bg-sky-500/20 text-sky-300 shadow-sm active:scale-95";
-        btnV2.className = "py-2.5 px-2 rounded-xl font-display font-black text-xs transition-all flex flex-col items-center gap-0.5 border border-transparent text-slate-400 hover:text-slate-200 active:scale-95";
+        btnV1.className = activeSky;
+        btnV2.className = inactive;
+        btnV3.className = inactive;
         desc.innerText = "🎯 Versão 1: 6 evidências com múltipla escolha e fato ou fake.";
-      } else {
-        btnV2.className = "py-2.5 px-2 rounded-xl font-display font-black text-xs transition-all flex flex-col items-center gap-0.5 border border-amber-500 bg-amber-500/20 text-amber-300 shadow-sm active:scale-95";
-        btnV1.className = "py-2.5 px-2 rounded-xl font-display font-black text-xs transition-all flex flex-col items-center gap-0.5 border border-transparent text-slate-400 hover:text-slate-200 active:scale-95";
+      } else if (v === 2) {
+        btnV2.className = activeAmber;
+        btnV1.className = inactive;
+        btnV3.className = inactive;
         desc.innerText = "⚡ Versão 2: 26 desafios de Fato ou Fake sobre Dengue, Zika, Chikungunya e Prevenção!";
+      } else {
+        btnV3.className = activeEmerald;
+        btnV1.className = inactive;
+        btnV2.className = inactive;
+        desc.innerText = "💉 Versão 3: 10 desafios de Fato ou Fake sobre Vacinas, SUS e Legislação!";
       }
     }
 
@@ -1067,7 +1202,12 @@
       playSound('click');
       initAudio();
 
-      const bank = selectedGameVersion === 1 ? questionsBank : questionsBankV2;
+      let bank = questionsBank;
+      if (selectedGameVersion === 2) {
+        bank = questionsBankV2;
+      } else if (selectedGameVersion === 3) {
+        bank = questionsBankV3;
+      }
 
       // Prepara as perguntas do modo escolhido
       questions = bank.map(q => {
@@ -1089,15 +1229,20 @@
       document.getElementById('screen-welcome').classList.add('hidden');
       document.getElementById('screen-quiz').classList.remove('hidden');
 
-      const startPhrases = selectedGameVersion === 1 
-        ? [
-            `"Excelente, ${agentName}! As evidências da Versão 1 estão na mesa!"`,
-            `"${agentName} na escuta! Vamos desmascarar esse mosquito e proteger a cidade!"`
-          ]
-        : [
-            `"Atenção, ${agentName}! Iniciando a Versão 2: Super Fato ou Fake com 26 desafios!"`,
-            `"Dossiê Completo ativado! Mostre que você domina Dengue, Zika e Chikungunya!"`
-          ];
+      const startPhrasesV1 = [
+        `"Excelente, ${agentName}! As evidências da Versão 1 estão na mesa!"`,
+        `"${agentName} na escuta! Vamos desmascarar esse mosquito e proteger a cidade!"`
+      ];
+      const startPhrasesV2 = [
+        `"Atenção, ${agentName}! Iniciando a Versão 2: Super Fato ou Fake com 26 desafios!"`,
+        `"Dossiê Completo ativado! Mostre que você domina Dengue, Zika e Chikungunya!"`
+      ];
+      const startPhrasesV3 = [
+        `"Atenção, ${agentName}! Iniciando a Versão 3: Desafios de Vacinas e Legislação!"`,
+        `"Perícia de Imunização convocada! Mostre o que é ciência real sobre as vacinas, ${agentName}!"`
+      ];
+
+      const startPhrases = selectedGameVersion === 1 ? startPhrasesV1 : (selectedGameVersion === 2 ? startPhrasesV2 : startPhrasesV3);
       setMascotState('neutral', startPhrases[Math.floor(Math.random() * startPhrases.length)]);
 
       loadQuestion();

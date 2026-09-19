@@ -1,0 +1,2545 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia Mestre do Semestre 2026.2 | Estratégia Acadêmica FM/UnB</title>
+  <style>
+    :root {
+      --primary: #0f172a;
+      --primary-light: #1e293b;
+      --accent: #0284c7;
+      --accent-hover: #0369a1;
+      --parasito: #059669;
+      --parasito-bg: #ecfdf5;
+      --parasito-border: #a7f3d0;
+      --sfc: #d97706;
+      --sfc-bg: #fffbeb;
+      --sfc-border: #fde68a;
+      --farmaco: #7c3aed;
+      --farmaco-bg: #f5f3ff;
+      --farmaco-border: #ddd6fe;
+      --danger: #dc2626;
+      --danger-bg: #fef2f2;
+      --danger-border: #fecaca;
+      --warning: #f59e0b;
+      --success: #10b981;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --border-dark: #cbd5e1;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --radius: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
+
+    /* Top Navigation Bar */
+    .top-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 23, 42, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: var(--shadow);
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-badge {
+      background: linear-gradient(135deg, #38bdf8, #0284c7);
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-link {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 0.4rem 0.85rem;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    /* Hero / Banner */
+    .hero {
+      background: linear-gradient(180deg, var(--primary) 0%, #1e293b 100%);
+      color: white;
+      padding: 3.5rem 1.5rem 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 950px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 1rem;
+      border-radius: 9999px;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: #38bdf8;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      color: #94a3b8;
+      font-size: 1.05rem;
+      max-width: 800px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .sync-notice {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #a7f3d0;
+      padding: 0.4rem 1rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* KPI Summary Cards */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      max-width: 1250px;
+      margin: -2rem auto 2.5rem;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .kpi-card {
+      background: var(--card-bg);
+      padding: 1.25rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .kpi-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .kpi-value {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .kpi-sub {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Section Styling */
+    .section-block {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow-sm);
+      scroll-margin-top: 80px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      color: white;
+      background: var(--primary);
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--primary);
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Discipline Overview Cards */
+    .disciplines-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .disc-card {
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .disc-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+    }
+
+    .disc-card.parasito::before { background: var(--parasito); }
+    .disc-card.sfc::before { background: var(--sfc); }
+    .disc-card.farmaco::before { background: var(--farmaco); }
+
+    .disc-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .disc-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .disc-code {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+
+    .disc-stat-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      background: var(--bg);
+      padding: 0.75rem;
+      border-radius: 8px;
+    }
+
+    .disc-stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .disc-stat-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    .disc-stat-val {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .disc-box {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.85rem;
+      font-size: 0.85rem;
+    }
+
+    .disc-box-title {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .disc-box ul {
+      padding-left: 1.25rem;
+      margin: 0;
+    }
+
+    .disc-box li {
+      margin-bottom: 0.3rem;
+    }
+
+    /* Alerts & Bottleneck Cards */
+    .gargalo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .gargalo-card {
+      border-radius: var(--radius);
+      border-left: 6px solid var(--danger);
+      background: #fff;
+      border-top: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .gargalo-tag {
+      align-self: flex-start;
+      background: var(--danger-bg);
+      color: var(--danger);
+      border: 1px solid var(--danger-border);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .gargalo-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .gargalo-impact {
+      font-size: 0.85rem;
+      color: #475569;
+    }
+
+    .gargalo-action {
+      background: #f8fafc;
+      padding: 0.6rem 0.75rem;
+      border-radius: 6px;
+      border-left: 3px solid var(--accent);
+      font-size: 0.8rem;
+      color: #0f172a;
+      font-weight: 500;
+    }
+
+    /* Filters and Controls */
+    .control-panel {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg);
+      padding: 1rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      margin-bottom: 1.5rem;
+    }
+
+    .filter-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .filter-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-right: 0.25rem;
+    }
+
+    .filter-btn {
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: white;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .filter-btn:hover {
+      background: #f1f5f9;
+    }
+
+    .filter-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .filter-btn.active.parasito-btn { background: var(--parasito); border-color: var(--parasito); }
+    .filter-btn.active.sfc-btn { background: var(--sfc); border-color: var(--sfc); }
+    .filter-btn.active.farmaco-btn { background: var(--farmaco); border-color: var(--farmaco); }
+    .filter-btn.active.produto-btn { background: #0284c7; border-color: #0284c7; }
+
+    .search-input {
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-dark);
+      font-size: 0.85rem;
+      width: 260px;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .search-input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    }
+
+    /* Master Schedule Table */
+    .table-responsive {
+      overflow-x: auto;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .master-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.875rem;
+    }
+
+    .master-table thead {
+      background: #0f172a;
+      color: white;
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .master-table th {
+      padding: 0.9rem 1rem;
+      border-bottom: 2px solid var(--border);
+      white-space: nowrap;
+    }
+
+    .master-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+
+    .master-table tbody tr {
+      transition: background-color 0.15s;
+    }
+
+    .master-table tbody tr:hover {
+      background-color: #f8fafc;
+    }
+
+    .master-table tbody tr.row-critico {
+      background-color: #fffafb;
+    }
+
+    .master-table tbody tr.row-critico:hover {
+      background-color: #fef2f2;
+    }
+
+    /* Badges */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .badge-parasito { background: var(--parasito-bg); color: var(--parasito); border: 1px solid var(--parasito-border); }
+    .badge-sfc { background: var(--sfc-bg); color: var(--sfc); border: 1px solid var(--sfc-border); }
+    .badge-farmaco { background: var(--farmaco-bg); color: var(--farmaco); border: 1px solid var(--farmaco-border); }
+    .badge-geral { background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }
+
+    .badge-critico { background: var(--danger-bg); color: var(--danger); border: 1px solid var(--danger-border); }
+    .badge-medio { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; }
+    .badge-baixo { background: #f1f5f9; color: #64748b; border: 1px solid #e2e8f0; }
+    .badge-retificado { background: #fef3c7; color: #b45309; border: 1px solid #fde68a; font-size: 0.7rem; }
+    
+    .badge-produto {
+      background: #f0f9ff;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      display: inline-block;
+      margin-top: 0.3rem;
+    }
+
+    .date-cell {
+      font-weight: 800;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+
+    .date-day {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* Rectification Table */
+    .rect-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+
+    .rect-table th {
+      background: #f1f5f9;
+      padding: 0.75rem 1rem;
+      border-bottom: 2px solid var(--border);
+      text-align: left;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .rect-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .rect-table tbody tr:hover {
+      background: #fafafa;
+    }
+
+    /* Checklist Section */
+    .progress-wrap {
+      background: #f1f5f9;
+      border-radius: 9999px;
+      height: 14px;
+      overflow: hidden;
+      margin: 1rem 0 1.5rem;
+      border: 1px solid var(--border);
+    }
+
+    .progress-bar {
+      background: linear-gradient(90deg, #10b981, #059669);
+      height: 100%;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .checklist-stats {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .checklist-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+
+    .checklist-table th {
+      background: #f8fafc;
+      padding: 0.75rem 0.85rem;
+      border-bottom: 2px solid var(--border);
+      text-align: left;
+    }
+
+    .checklist-table td {
+      padding: 0.75rem 0.85rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+
+    .checklist-table tr.completed {
+      background-color: #f0fdf4;
+      opacity: 0.85;
+    }
+
+    .checkbox-custom {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+      accent-color: var(--parasito);
+    }
+
+    /* Accordion for Syllabi */
+    .accordion-item {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .accordion-header {
+      background: #f8fafc;
+      padding: 1rem 1.25rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 700;
+      color: var(--primary);
+      transition: background 0.2s;
+    }
+
+    .accordion-header:hover {
+      background: #f1f5f9;
+    }
+
+    .accordion-content {
+      padding: 1.25rem;
+      display: none;
+      background: white;
+      border-top: 1px solid var(--border);
+    }
+
+    .accordion-content.open {
+      display: block;
+    }
+
+    .biblio-list {
+      list-style-type: decimal;
+      padding-left: 1.5rem;
+      font-size: 0.85rem;
+      color: #334155;
+    }
+
+    .biblio-list li {
+      margin-bottom: 0.6rem;
+    }
+
+    .biblio-list a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .biblio-list a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      padding: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Print Styles */
+    @media print {
+      .top-header, .control-panel, .btn, .nav-actions, .progress-wrap, .checklist-stats {
+        display: none !important;
+      }
+      body {
+        padding: 0;
+        background: white;
+        color: black;
+      }
+      .section-block {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        margin-bottom: 2rem;
+        page-break-inside: avoid;
+      }
+      .master-table th, .master-table td {
+        padding: 0.4rem 0.5rem;
+        font-size: 0.75rem;
+      }
+      .accordion-content {
+        display: block !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Top Header -->
+  <header class="top-header">
+    <div class="nav-container">
+      <div class="brand">
+        <span>FM/UnB 2026.2</span>
+        <span class="brand-badge">Guia Mestre Sincronizado</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#regras" class="nav-link">1. Visão Geral</a>
+        <a href="#gargalos" class="nav-link">Zonas de Gargalo</a>
+        <a href="#cronograma" class="nav-link">2. Cronograma Unificado</a>
+        <a href="#matriz" class="nav-link">3. Matriz Temática</a>
+        <a href="#retificacoes" class="nav-link">4. Retificações</a>
+        <a href="#checklist" class="nav-link">5. Checklist Operacional</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn btn-secondary" onclick="window.print()">🖨️ Imprimir / PDF</button>
+        <button class="btn btn-primary" onclick="resetChecklist()">🔄 Reset Checklist</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <div class="hero">
+    <div class="hero-content">
+      <span class="hero-tag">Estratégia & Operações Acadêmicas FM/UnB</span>
+      <h1>Guia Mestre Integrado do Semestre (2026.2)</h1>
+      <p>Consolidação definitiva à prova de falhas: cronograma cruzado de Parasitologia Médica, Saúde da Família e Comunidade 2 e Farmacologia Médica, com integração total aos documentos de retificação mais recentes.</p>
+      <div class="sync-notice">
+        <span>⚡ <strong>Status:</strong> Cronograma retificado de SFC 2 (2026.2) e comunicado da Profa. Nadjar Nitz 100% incorporados com rastreamento de "Produtos/Entregáveis".</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- KPI Cards -->
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <span class="kpi-title">Disciplinas Mapeadas</span>
+      <span class="kpi-value">3</span>
+      <span class="kpi-sub">Parasito • SFC 2 • Farmaco</span>
+    </div>
+    <div class="kpi-card">
+      <span class="kpi-title">Eventos Cronológicos</span>
+      <span class="kpi-value">55</span>
+      <span class="kpi-sub">Aulas, práticas, entregas e provas</span>
+    </div>
+    <div class="kpi-card">
+      <span class="kpi-title">Avaliações Críticas</span>
+      <span class="kpi-value">16</span>
+      <span class="kpi-sub">Provas, Casos, OSCE e Gamificações</span>
+    </div>
+    <div class="kpi-card">
+      <span class="kpi-title">Zonas de Gargalo</span>
+      <span class="kpi-value" style="color: var(--danger);">5</span>
+      <span class="kpi-sub">Semanas de sobrecarga simultânea</span>
+    </div>
+    <div class="kpi-card">
+      <span class="kpi-title">Progresso do Checklist</span>
+      <span class="kpi-value" id="kpiProgress" style="color: var(--parasito);">0%</span>
+      <span class="kpi-sub" id="kpiDoneCount">0 de 18 semanas</span>
+    </div>
+  </div>
+
+  <main class="container">
+
+    <!-- SEÇÃO 1: VISÃO GERAL DAS DISCIPLINAS -->
+    <section id="regras" class="section-block">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-icon">⚖️</div>
+          <div>
+            <h2 class="section-title">1. Visão Geral das Disciplinas e Regras do Jogo</h2>
+            <p class="section-subtitle">Normas de avaliação, limites regimentais de frequência, matriz de "Produtos" e canais oficiais</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="disciplines-grid">
+        <!-- Card Parasito -->
+        <div class="disc-card parasito">
+          <div class="disc-header">
+            <div>
+              <h3 class="disc-title">Parasitologia Médica</h3>
+              <span class="text-muted" style="font-size:0.8rem;">Faculdade de Medicina - UnB</span>
+            </div>
+            <span class="disc-code">FMD0034</span>
+          </div>
+          <div class="disc-stat-row">
+            <div class="disc-stat-item">
+              <span class="disc-stat-label">Carga / Créditos</span>
+              <span class="disc-stat-val">60h (4 créditos)</span>
+            </div>
+            <div class="disc-stat-item">
+              <span class="disc-stat-label">Perfil de Horas</span>
+              <span class="disc-stat-val">2T / 1P / 1 Extensão</span>
+            </div>
+          </div>
+          <div class="disc-box">
+            <div class="disc-box-title">👨‍🏫 Corpo Docente</div>
+            <p style="font-size:0.8rem; color:#475569;">Profa. Mariana Hecht, Profa. Nadjar Nitz, Profa. Juliana Lott e Prof. Rodrigo Gurgel.</p>
+          </div>
+          <div class="disc-box">
+            <div class="disc-box-title">📊 Sistema de Avaliação</div>
+            <ul>
+              <li><strong>AT (Avaliações Teóricas - 2): 45%</strong> <em>(Critério: Média AT ≥ 5,0)</em></li>
+              <li><strong>CC (Casos Clínicos - 4): 20%</strong> <em>(1 folha A4 individual manuscrita)</em></li>
+              <li><strong>AP (Avaliações Práticas - 2): 15%</strong> <em>(Bônus +1,0 na AP2 via Ativ. Integradora)</em></li>
+              <li><strong>TE (Trabalho de Extensão - 1): 10%</strong> <em>(Comunidade / SEMUNI)</em></li>
+              <li><strong>AI (Atividade Integradora - 1): 10%</strong> <em>(Seminário/pôster)</em></li>
+              <li>Menção mínima para aprovação: <strong>MM (≥ 5,0)</strong> com AT ≥ 5,0.</li>
+            </ul>
+          </div>
+          <div class="disc-box">
+            <div class="disc-box-title">⏱️ Frequência & Regras de Bancada</div>
+            <ul>
+              <li>Limite de faltas: <strong>Máximo 25%</strong> (Art. 123 - Reprovação SR).</li>
+              <li>Sem abono de falta médica (atestado só serve para reposição).</li>
+              <li><strong>Tolerância de atraso:</strong> 15 min no laboratório prático.</li>
+              <li><strong>Obrigatório:</strong> Calçado fechado e jaleco longo de bancada.</li>
+            </ul>
+          </div>
+          <div class="disc-box">
+            <div class="disc-box-title">📬 Canais Oficiais</div>
+            <p style="font-size:0.75rem; color:#64748b;">SIGAA UnB • E-mails: marianahecht@gmail.com | nadjarnitz@gmail.com | julianalott@gmail.com | gurgelrg@hotmail.com</p>
+          </div>
+        </div>
+
+        <!-- Card SFC 2 -->
+        <div class="disc-card sfc">
+          <div class="disc-header">
+            <div>
+              <h3 class="disc-title">Saúde da Família e Comunidade 2</h3>
+              <span class="text-muted" style="font-size:0.8rem;">Eixo Saúde Coletiva e MFC</span>
+            </div>
+            <span class="disc-code">FMD0015</span>
+          </div>
+          <div class="disc-stat-row">
+            <div class="disc-stat-item">
+              <span class="disc-stat-label">Carga / Créditos</span>
+              <span class="disc-stat-val">60h (4 créditos)</span>
+            </div>
+            <div class="disc-stat-item">
+              <span class="disc-stat-label">Turma & Horário</span>
+              <span class="disc-stat-val">Turma 120 (Qua 14h-17h40)</span>
+            </div>
+          </div>
+          <div class="disc-box">
+            <div class="disc-box-title">👨‍🏫 Corpo Docente</div>
+            <p style="font-size:0.8rem; color:#475569;">Profa. Maria Luiza Barros Fernandes Bezerra, Prof. Estevão Cubas Rolim e Profa. Gilvânia Coutinho Silva Feijó.</p>
+          </div>
+          <div class="disc-box">
+            <div class="disc-box-title">📊 Sistema de Avaliação & "Produtos"</div>
+            <ul>
+              <li><strong>Provas Teóricas (70%):</strong> P1 (35%) em 21/10 + P2 (35%) em 09/12.</li>
+              <li><strong>Integração Interdisciplinar (20%):</strong> Seminário HUB (10% em 30/10 e 05/11) + OSCE Integrador (10% em 13/11).</li>
+              <li><strong>Produtos de Prática e Sala (10%):</strong> Estudo Dirigido 2 (09/09), Avaliação de Prática 1 (16/09), Apresentação de Casos Práticas 1 e 2 (07/10), Estudo Dirigido 3 (14/10), Discussão de Caso Prática 3 (18/11), Caso Prática 4 (25/11) e Discussão Prática 4 (02/12).</li>
+              <li>Plágio: Menção zero imediata sem substitutiva (Parecer SEI 10029945).</li>
+            </ul>
+          </div>
+          <div class="disc-box">
+            <div class="disc-box-title">⏱️ Frequência & Práticas de Campo</div>
+            <ul>
+              <li>Limite de faltas: <strong>Máximo 25%</strong> de ausências (Reprovação SR).</li>
+              <li><strong>Tolerância de entrada:</strong> 10 minutos (sala teórica e práticas).</li>
+              <li><strong>Práticas Paranoá/Itapoã:</strong> Ponto de encontro: Hospital Regional Leste (14h30-17h30).</li>
+              <li><strong>Materiais obrigatórios:</strong> Estetoscópio, esfigmomanômetro, caneta e jaleco.</li>
+            </ul>
+          </div>
+          <div class="disc-box">
+            <div class="disc-box-title">📬 Canais Oficiais</div>
+            <p style="font-size:0.75rem; color:#64748b;">Sala FM B2 116/13 • SIGAA UnB • Secretaria: cgradmed@unb.br</p>
+          </div>
+        </div>
+
+        <!-- Card Farmacologia -->
+        <div class="disc-card farmaco">
+          <div class="disc-header">
+            <div>
+              <h3 class="disc-title">Farmacologia Médica</h3>
+              <span class="text-muted" style="font-size:0.8rem;">Departamento de Farmacologia</span>
+            </div>
+            <span class="disc-code">Farmacologia</span>
+          </div>
+          <div class="disc-stat-row">
+            <div class="disc-stat-item">
+              <span class="disc-stat-label">Carga / Créditos</span>
+              <span class="disc-stat-val">60h (4 créditos)</span>
+            </div>
+            <div class="disc-stat-item">
+              <span class="disc-stat-label">Horário das Aulas</span>
+              <span class="disc-stat-val">Segunda 14h às 18h (4h)</span>
+            </div>
+          </div>
+          <div class="disc-box">
+            <div class="disc-box-title">👨‍🏫 Coordenação & Docentes</div>
+            <p style="font-size:0.8rem; color:#475569;">Prof. Klaus Rocha (Coord.), Profa. Laís, Prof. Antônio Aurélio, Prof. Marcelo Palmeira, Prof. Felipe von Glehn, Profa. Fabíola Zucchi, Profa. Cátia Gouveia, Prof. Raphael Boechat, Prof. Hugo Paes, Prof. Gustavo Romero, Profa. Elza Noronha e Profa. Verônica Amado.</p>
+          </div>
+          <div class="disc-box">
+            <div class="disc-box-title">📊 Sistema de Avaliação</div>
+            <ul>
+              <li><strong>Metodologia Ativa I:</strong> Gamificação 1 (Avaliação Teórica 1 em 26/10).</li>
+              <li><strong>Metodologia Ativa II:</strong> Sala de Aula Invertida em 07/12 (Grupos 1 ao 4).</li>
+              <li><strong>Metodologia Ativa I:</strong> Gamificação 2 (Avaliação Teórica 2 em 07/12).</li>
+              <li><strong>Avaliação Geral:</strong> Exame final obrigatório para média final &lt; 50% (&lt; 5,0).</li>
+              <li><strong>Prova Substitutiva:</strong> Em 14/12 para faltas justificadas.</li>
+            </ul>
+          </div>
+          <div class="disc-box">
+            <div class="disc-box-title">⏱️ Frequência & Formato Virtual</div>
+            <ul>
+              <li>Frequência mínima: <strong>75% de presença</strong> (Artigo 123 UnB).</li>
+              <li>Local físico: BSA S B1 47/10 (Tempos: 14h-15h, 15h-16h, 16h-17h, 17h-18h).</li>
+              <li><strong>Aulas EAD Assíncronas:</strong> AINEs, AAS, Corticoides e Opioides (Profa. Verônica Amado) via plataforma Aprender 3 / Moodle.</li>
+            </ul>
+          </div>
+          <div class="disc-box">
+            <div class="disc-box-title">📬 Canais Oficiais</div>
+            <p style="font-size:0.75rem; color:#64748b;">SIGAA • Aprender 3 UnB • Coordenação: Prof. Klaus Rocha</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ZONAS DE GARGALO -->
+    <section id="gargalos" class="section-block" style="border-left: 6px solid var(--danger);">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-icon" style="background: var(--danger);">⚠️</div>
+          <div>
+            <h2 class="section-title">Zonas de Gargalo Operacional (Alertas de Sobrecarga)</h2>
+            <p class="section-subtitle">Semanas críticas com 2 ou mais avaliações ou entregas de alta densidade cognitiva simultâneas</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gargalo-grid">
+        <!-- Gargalo 1 -->
+        <div class="gargalo-card">
+          <span class="gargalo-tag">Gargalo 1 • 28/09 a 08/10</span>
+          <h3 class="gargalo-title">Virada Setembro / Outubro</h3>
+          <p class="gargalo-impact">Discussão do CC2 de Parasito (retificado para 29/09-01/10) colada nas provas <strong>AT1 (22,5%)</strong> e <strong>AP1 (7,5%)</strong> em 06 e 08/10, mais o produto <strong>Apresentação de Casos Clínicos das Práticas 1 e 2</strong> de SFC 2 em 07/10.</p>
+          <div class="gargalo-action">
+            <strong>Plano de Ação:</strong> Antecipar a folha A4 manuscrita do CC2 durante a Semana Universitária (21-25/09). Organizar a apresentação dos casos das Práticas 1 e 2 no início de outubro.
+          </div>
+        </div>
+
+        <!-- Gargalo 2 -->
+        <div class="gargalo-card" style="border-left-color: #b91c1c;">
+          <span class="gargalo-tag" style="background:#fee2e2; color:#991b1b;">Gargalo 2 • 20/10 a 30/10 (Zona Vermelha)</span>
+          <h3 class="gargalo-title">Superconcentração de Fim de Outubro</h3>
+          <p class="gargalo-impact">Quatro avaliações somativas em 10 dias: <strong>CC3 Parasito (5%)</strong>, <strong>P1 SFC2 (35%)</strong> em 21/10, <strong>Gamificação 1 Farmaco</strong> em 26/10 e <strong>Seminário Integrador HUB (10%)</strong> em 30/10.</p>
+          <div class="gargalo-action">
+            <strong>Plano de Ação:</strong> Fechar o estudo das DCNT (HAS, DM e Obesidade) até 18/10. Assistir aos vídeos EAD da Profa. Verônica Amado impreterivelmente antes de 24/10.
+          </div>
+        </div>
+
+        <!-- Gargalo 3 -->
+        <div class="gargalo-card">
+          <span class="gargalo-tag">Gargalo 3 • 10/11 a 13/11</span>
+          <h3 class="gargalo-title">Avaliação Clínica Realística</h3>
+          <p class="gargalo-impact">Discussão do <strong>CC4 de Parasito</strong> (10 ou 12/11) na mesma semana do <strong>OSCE Integrador de SFC 2 (13/11 - 10%)</strong> e da aula teórica dupla de ICC 2 + Saúde do Idoso 1 em 11/11.</p>
+          <div class="gargalo-action">
+            <strong>Plano de Ação:</strong> Treinar simulação prática de anamnese SOAP e exame físico cardiovascular para a estação cronometrada de 10 min do OSCE.
+          </div>
+        </div>
+
+        <!-- Gargalo 4 -->
+        <div class="gargalo-card">
+          <span class="gargalo-tag">Gargalo 4 • 23/11 a 26/11</span>
+          <h3 class="gargalo-title">Reta Final de Parasitologia</h3>
+          <p class="gargalo-impact">Aplicação consecutiva de <strong>AT2 (22,5%)</strong> e <strong>AP2 (7,5%)</strong> de Helmintos e Ectoparasitos, com densa aula de antimicrobianos complexos em Farmacologia no dia 23/11 e Prática 4 de SFC 2 no dia 25/11.</p>
+          <div class="gargalo-action">
+            <strong>Plano de Ação:</strong> Entregar o formulário da oficina integradora em 17/11 para garantir a bonificação de <strong>+1,0 ponto extra</strong> na prova prática AP2.
+          </div>
+        </div>
+
+        <!-- Gargalo 5 -->
+        <div class="gargalo-card" style="border-left-color: #7f1d1d;">
+          <span class="gargalo-tag" style="background:#fee2e2; color:#7f1d1d;">Gargalo 5 • 04/12 a 09/12 (Clímax Final)</span>
+          <h3 class="gargalo-title">Sobrecarga de Fechamento do Semestre</h3>
+          <p class="gargalo-impact">Apresentação da <strong>Atividade Integradora (04/12)</strong>, <strong>Gamificação 2 + Sala Invertida de Farmaco (07/12)</strong> e <strong>P2 de SFC 2 (35% em 09/12)</strong> em menos de 120h.</p>
+          <div class="gargalo-action">
+            <strong>Plano de Ação:</strong> Bloqueio total da rotina de 01 a 09/12. Resumos de Geriatria/DCNT e antimicrobianos de Farmaco prontos até 30/11.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 2: CRONOGRAMA UNIFICADO INTEGRADO -->
+    <section id="cronograma" class="section-block">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-icon">📅</div>
+          <div>
+            <h2 class="section-title">2. Cronograma Unificado Integrado (Linha do Tempo Mestra)</h2>
+            <p class="section-subtitle">Matriz cronológica aula a aula de 10/08 a 14/12 com "Produtos" esperados e filtros dinâmicos</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filtros e Busca -->
+      <div class="control-panel">
+        <div class="filter-group">
+          <span class="filter-label">Disciplina:</span>
+          <button class="filter-btn active" onclick="filterSchedule('all', this)">Todas</button>
+          <button class="filter-btn parasito-btn" onclick="filterSchedule('parasito', this)">Parasitologia</button>
+          <button class="filter-btn sfc-btn" onclick="filterSchedule('sfc', this)">SFC 2</button>
+          <button class="filter-btn farmaco-btn" onclick="filterSchedule('farmaco', this)">Farmacologia</button>
+        </div>
+
+        <div class="filter-group">
+          <span class="filter-label">Prioridade / Tipo:</span>
+          <button class="filter-btn active" onclick="filterPriority('all', this)">Todas</button>
+          <button class="filter-btn" style="color:var(--danger);" onclick="filterPriority('critico', this)">🔥 Crítico</button>
+          <button class="filter-btn" style="color:#1d4ed8;" onclick="filterPriority('medio', this)">Médio</button>
+          <button class="filter-btn" style="color:#64748b;" onclick="filterPriority('baixo', this)">Baixo</button>
+          <button class="filter-btn produto-btn" onclick="filterPriority('produto', this)">📦 Apenas com Produto</button>
+        </div>
+
+        <div>
+          <input type="text" id="scheduleSearch" class="search-input" placeholder="🔍 Buscar conteúdo, produto, data..." oninput="searchSchedule()">
+        </div>
+      </div>
+
+      <!-- Tabela Mestra -->
+      <div class="table-responsive">
+        <table class="master-table" id="scheduleTable">
+          <thead>
+            <tr>
+              <th>Data / Dia</th>
+              <th>Horário</th>
+              <th>Disciplina</th>
+              <th>Evento / Conteúdo Programático & Produto Associado</th>
+              <th>Professor(es)</th>
+              <th>Prioridade</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- AGOSTO -->
+            <tr data-disc="farmaco" data-prio="baixo" data-has-product="false">
+              <td class="date-cell">10/08/26<span class="date-day">Segunda</span></td>
+              <td>14h-18h</td>
+              <td><span class="badge badge-farmaco">Farmacologia</span></td>
+              <td>Abertura do Semestre / Semana de Acolhimento</td>
+              <td>Coordenação</td>
+              <td><span class="badge badge-baixo">Baixo</span></td>
+            </tr>
+            <tr data-disc="parasito" data-prio="medio" data-has-product="true">
+              <td class="date-cell">11/08/26<span class="date-day">Terça</span></td>
+              <td>14h-16h</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td>
+                Introdução à Parasitologia; Amebas parasitas e de vida livre; Amebíase e Encefalite Amebiana
+                <br><span class="badge badge-produto">📦 Produto: Entrega da ementa e formação dos grupos de extensão</span>
+              </td>
+              <td>Mariana Hecht</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="parasito" data-prio="medio" data-has-product="false">
+              <td class="date-cell">11 ou 13/08<span class="date-day">Ter / Qui</span></td>
+              <td>Conf. Turma</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td><strong>Aula Prática 1:</strong> Identificação de amebas e flagelados do trato gênito-urinário</td>
+              <td>Mariana Hecht</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="sfc" data-prio="medio" data-has-product="true">
+              <td class="date-cell">12/08/26<span class="date-day">Quarta</span></td>
+              <td>14h-17h40</td>
+              <td><span class="badge badge-sfc">SFC 2</span></td>
+              <td>
+                Apresentação da Disciplina e Princípios da Assistência Domiciliar
+                <br><span class="badge badge-produto">📦 Produto: Avaliação 1 e 2 (Base conceitual teórica)</span>
+              </td>
+              <td>Maria Luiza</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="farmaco" data-prio="medio" data-has-product="false">
+              <td class="date-cell">17/08/26<span class="date-day">Segunda</span></td>
+              <td>14h-16h</td>
+              <td><span class="badge badge-farmaco">Farmacologia</span></td>
+              <td>Farmacologia: Princípios Gerais (Farmacocinética e Farmacodinâmica)</td>
+              <td>Klaus Rocha</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="farmaco" data-prio="medio" data-has-product="false">
+              <td class="date-cell">17/08/26<span class="date-day">Segunda</span></td>
+              <td>16h-18h</td>
+              <td><span class="badge badge-farmaco">Farmacologia</span></td>
+              <td>Farmacologia para o controle da Insuficiência Cardíaca</td>
+              <td>Antônio / Laís</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="parasito" data-prio="medio" data-has-product="true">
+              <td class="date-cell">18/08/26<span class="date-day">Terça</span></td>
+              <td>14h-16h</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td>
+                Planejamento da Extensão
+                <br><span class="badge badge-produto">📦 Produto: Disponibilização do Caso Clínico 1 (CC1)</span>
+              </td>
+              <td>Corpo Docente</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="parasito" data-prio="baixo" data-has-product="false">
+              <td class="date-cell">18 ou 20/08<span class="date-day">Ter / Qui</span></td>
+              <td>Conf. Turma</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td>Oficina de desenvolvimento dos materiais educativos de extensão</td>
+              <td>Corpo Docente</td>
+              <td><span class="badge badge-baixo">Baixo</span></td>
+            </tr>
+            <tr data-disc="sfc" data-prio="medio" data-has-product="true">
+              <td class="date-cell">19/08/26<span class="date-day">Quarta</span></td>
+              <td>14h-17h40</td>
+              <td><span class="badge badge-sfc">SFC 2</span></td>
+              <td>
+                Estilo de Vida, Risco Cardiovascular e Obesidade
+                <br><span class="badge badge-produto">📦 Produto: Avaliação 1 e 2</span>
+              </td>
+              <td>Estevão</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="farmaco" data-prio="medio" data-has-product="false">
+              <td class="date-cell">24/08/26<span class="date-day">Segunda</span></td>
+              <td>14h-16h</td>
+              <td><span class="badge badge-farmaco">Farmacologia</span></td>
+              <td>Farmacologia para controle da Asma e da DPOC</td>
+              <td>Marcelo Palmeira</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="farmaco" data-prio="medio" data-has-product="false">
+              <td class="date-cell">24/08/26<span class="date-day">Segunda</span></td>
+              <td>16h-18h</td>
+              <td><span class="badge badge-farmaco">Farmacologia</span></td>
+              <td>Farmacologia para a Cardiopatia Isquêmica</td>
+              <td>Antônio / Laís</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="parasito" data-prio="medio" data-has-product="false">
+              <td class="date-cell">25/08/26<span class="date-day">Terça</span></td>
+              <td>14h-16h</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td><em>Giardia duodenalis</em> (giardíase) e <em>Trichomonas vaginalis</em> (tricomoníase)</td>
+              <td>Mariana Hecht</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="parasito" data-prio="critico" data-has-product="true" class="row-critico">
+              <td class="date-cell">25 ou 27/08<span class="date-day">Ter / Qui</span></td>
+              <td>Conf. Turma</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td>
+                🔥 <strong>DISCUSSÃO DO CASO CLÍNICO 1 (CC1 - 5%)</strong>
+                <br><span class="badge badge-produto">📦 Produto: Entrega da folha A4 manuscrita individual ao final</span>
+              </td>
+              <td>Mariana / Nadjar</td>
+              <td><span class="badge badge-critico">Crítico</span></td>
+            </tr>
+            <tr data-disc="sfc" data-prio="medio" data-has-product="true">
+              <td class="date-cell">26/08/26<span class="date-day">Quarta</span></td>
+              <td>14h-17h40</td>
+              <td><span class="badge badge-sfc">SFC 2</span></td>
+              <td>
+                Hipertensão Arterial Sistêmica (HAS): Diretrizes e metas na APS
+                <br><span class="badge badge-produto">📦 Produto: Avaliação 1 e 2</span>
+              </td>
+              <td>Estevão</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="farmaco" data-prio="medio" data-has-product="false">
+              <td class="date-cell">31/08/26<span class="date-day">Segunda</span></td>
+              <td>14h-16h</td>
+              <td><span class="badge badge-farmaco">Farmacologia</span></td>
+              <td>Farmacologia das doenças neoplásicas (hemato-oncologia)</td>
+              <td>Klaus Rocha</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="farmaco" data-prio="medio" data-has-product="false">
+              <td class="date-cell">31/08/26<span class="date-day">Segunda</span></td>
+              <td>16h-18h</td>
+              <td><span class="badge badge-farmaco">Farmacologia</span></td>
+              <td>Farmacologia para o controle de Arritmias (Bradi e Taqui)</td>
+              <td>Antônio / Laís</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+
+            <!-- SETEMBRO -->
+            <tr data-disc="parasito" data-prio="medio" data-has-product="true">
+              <td class="date-cell">01/09/26<span class="date-day">Terça</span></td>
+              <td>14h-16h</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td>
+                <em>Leishmania</em> sp. e as Leishmanioses
+                <br><span class="badge badge-produto">📦 Produto: Envio do Caso Clínico 2 (CC2)</span>
+              </td>
+              <td>Nadjar Nitz</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="parasito" data-prio="medio" data-has-product="false">
+              <td class="date-cell">01 ou 03/09<span class="date-day">Ter / Qui</span></td>
+              <td>Conf. Turma</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td><strong>Aula Prática 2:</strong> Tripanossomatídeos (<em>Leishmania</em> sp. e <em>Trypanosoma cruzi</em>)</td>
+              <td>Nadjar Nitz</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="sfc" data-prio="critico" data-has-product="true" class="row-critico">
+              <td class="date-cell">02/09/26<span class="date-day">Quarta</span></td>
+              <td>14h-17h40</td>
+              <td><span class="badge badge-sfc">SFC 2</span></td>
+              <td>
+                🔥 <strong>TESTE DE PROGRESSO INSTITUCIONAL</strong> <span class="badge badge-retificado">Ajuste Oficial SFC 2</span>
+                <br><span class="badge badge-produto">📦 Produto: Realização e computação do Teste de Progresso</span>
+              </td>
+              <td>Colegiado FM</td>
+              <td><span class="badge badge-critico">Crítico</span></td>
+            </tr>
+            <tr data-disc="geral" data-prio="baixo" data-has-product="false">
+              <td class="date-cell">07/09/26<span class="date-day">Segunda</span></td>
+              <td>Integral</td>
+              <td><span class="badge badge-geral">Feriado</span></td>
+              <td>FERIADO NACIONAL – Independência do Brasil</td>
+              <td>-</td>
+              <td><span class="badge badge-baixo">Baixo</span></td>
+            </tr>
+            <tr data-disc="parasito" data-prio="medio" data-has-product="false">
+              <td class="date-cell">08/09/26<span class="date-day">Terça</span></td>
+              <td>14h-16h</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td><em>Plasmodium</em> sp. e a Malária humana <span class="badge badge-retificado">Ajuste Nadjar Nitz</span></td>
+              <td>Mariana Hecht</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="parasito" data-prio="medio" data-has-product="false">
+              <td class="date-cell">08 ou 10/09<span class="date-day">Ter / Qui</span></td>
+              <td>Conf. Turma</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td><strong>Aula Prática 3:</strong> Apicomplexa (<em>Plasmodium</em>, <em>Toxoplasma</em>, coccídeos) <span class="badge badge-retificado">Ajuste</span></td>
+              <td>Mariana Hecht</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="sfc" data-prio="medio" data-has-product="true">
+              <td class="date-cell">09/09/26<span class="date-day">Quarta</span></td>
+              <td>14h30-17h30</td>
+              <td><span class="badge badge-sfc">SFC 2</span></td>
+              <td>
+                <strong>Aula Prática 1 (HRL Paranoá):</strong> Vivência domiciliar com equipe NRAD
+                <br><span class="badge badge-produto">📦 Produto: Caso Clínico + Estudo Dirigido 2</span>
+              </td>
+              <td>Maria Luiza</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="farmaco" data-prio="medio" data-has-product="false">
+              <td class="date-cell">14/09/26<span class="date-day">Segunda</span></td>
+              <td>14h-16h</td>
+              <td><span class="badge badge-farmaco">Farmacologia</span></td>
+              <td>Farmacologia para o controle da HAS</td>
+              <td>Antônio Aurélio</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="farmaco" data-prio="medio" data-has-product="false">
+              <td class="date-cell">14/09/26<span class="date-day">Segunda</span></td>
+              <td>16h-18h</td>
+              <td><span class="badge badge-farmaco">Farmacologia</span></td>
+              <td>Farmacologia para controle da Dislipidemia</td>
+              <td>Antônio Aurélio</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="parasito" data-prio="baixo" data-has-product="false">
+              <td class="date-cell">15/09/26<span class="date-day">Terça</span></td>
+              <td>14h-16h</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td>Finalização e montagem do material da atividade de extensão</td>
+              <td>Corpo Docente</td>
+              <td><span class="badge badge-baixo">Baixo</span></td>
+            </tr>
+            <tr data-disc="parasito" data-prio="baixo" data-has-product="false">
+              <td class="date-cell">15 ou 17/09<span class="date-day">Ter / Qui</span></td>
+              <td>Conf. Turma</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td>Alinhamento técnico dos grupos e simulação das bancadas educativas</td>
+              <td>Corpo Docente</td>
+              <td><span class="badge badge-baixo">Baixo</span></td>
+            </tr>
+            <tr data-disc="sfc" data-prio="medio" data-has-product="true">
+              <td class="date-cell">16/09/26<span class="date-day">Quarta</span></td>
+              <td>14h30-17h30</td>
+              <td><span class="badge badge-sfc">SFC 2</span></td>
+              <td>
+                <strong>Aula Prática 2 (HRL Paranoá):</strong> Atendimento e acompanhamento familiar
+                <br><span class="badge badge-produto">📦 Produto: Avaliação 1</span>
+              </td>
+              <td>Maria Luiza</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="geral" data-prio="baixo" data-has-product="false">
+              <td class="date-cell">21 a 25/09<span class="date-day">Semana</span></td>
+              <td>Integral</td>
+              <td><span class="badge badge-geral">Semana UnB</span></td>
+              <td>SEMANA UNIVERSITÁRIA DA UnB (Aulas teóricas suspensas)</td>
+              <td>-</td>
+              <td><span class="badge badge-baixo">Baixo</span></td>
+            </tr>
+            <tr data-disc="parasito" data-prio="critico" data-has-product="true" class="row-critico">
+              <td class="date-cell">22/09/26<span class="date-day">Terça</span></td>
+              <td>Manhã/Tarde</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td>
+                🔥 <strong>EXECUÇÃO DA ATIVIDADE DE EXTENSÃO (TE - 10%)</strong>
+                <br><span class="badge badge-produto">📦 Produto: Ação educativa com a comunidade / SEMUNI</span>
+              </td>
+              <td>Todos os docentes</td>
+              <td><span class="badge badge-critico">Crítico</span></td>
+            </tr>
+            <tr data-disc="farmaco" data-prio="medio" data-has-product="false">
+              <td class="date-cell">28/09/26<span class="date-day">Segunda</span></td>
+              <td>14h-18h</td>
+              <td><span class="badge badge-farmaco">Farmacologia</span></td>
+              <td>Neurofarmacologia do SNP e SNC + Farmacologia da Epilepsia</td>
+              <td>Felipe von Glehn / Fabíola Zucchi</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="parasito" data-prio="medio" data-has-product="false">
+              <td class="date-cell">29/09/26<span class="date-day">Terça</span></td>
+              <td>14h-16h</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td><em>Toxoplasma gondii</em> e Toxoplasmose <span class="badge badge-retificado">Ajuste Nadjar Nitz</span></td>
+              <td>Nadjar Nitz</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="parasito" data-prio="critico" data-has-product="true" class="row-critico">
+              <td class="date-cell">29/09 ou 01/10<span class="date-day">Ter / Qui</span></td>
+              <td>Conf. Turma</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td>
+                🔥 <strong>DISCUSSÃO DO CASO CLÍNICO 2 (CC2 - 5%)</strong> <span class="badge badge-retificado">Data Ajustada</span>
+                <br><span class="badge badge-produto">📦 Produto: Entrega da folha A4 manuscrita individual ao final</span>
+              </td>
+              <td>Nadjar / Mariana / Rodrigo</td>
+              <td><span class="badge badge-critico">Crítico</span></td>
+            </tr>
+            <tr data-disc="sfc" data-prio="medio" data-has-product="true">
+              <td class="date-cell">30/09/26<span class="date-day">Quarta</span></td>
+              <td>14h-15h40</td>
+              <td><span class="badge badge-sfc">SFC 2</span></td>
+              <td>Diabetes Mellitus (DM - Aula 1): Abordagem clínica e metas na APS</td>
+              <td>Estevão</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="sfc" data-prio="medio" data-has-product="true">
+              <td class="date-cell">30/09/26<span class="date-day">Quarta</span></td>
+              <td>15h40-17h40</td>
+              <td><span class="badge badge-sfc">SFC 2</span></td>
+              <td>
+                Orientação do Seminário Integrador HUB
+                <br><span class="badge badge-produto">📦 Produto: Avaliação 1 e 2</span>
+              </td>
+              <td>Gilvânia</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+
+            <!-- OUTUBRO -->
+            <tr data-disc="farmaco" data-prio="medio" data-has-product="false">
+              <td class="date-cell">05/10/26<span class="date-day">Segunda</span></td>
+              <td>14h-18h</td>
+              <td><span class="badge badge-farmaco">Farmacologia</span></td>
+              <td>Farmacologia dos Anestésicos Locais, Gerais e Gases Terapêuticos</td>
+              <td>Cátia Gouveia</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="parasito" data-prio="critico" data-has-product="true" class="row-critico">
+              <td class="date-cell">06/10/26<span class="date-day">Terça</span></td>
+              <td>14h-16h</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td>
+                🔥 <strong>1ª AVALIAÇÃO TEÓRICA DE PARASITOLOGIA (AT1 - 22,5%)</strong>
+                <br><span class="badge badge-produto">📦 Produto: Prova teórica individual de Protozoologia</span>
+              </td>
+              <td>Mariana Hecht</td>
+              <td><span class="badge badge-critico">Crítico</span></td>
+            </tr>
+            <tr data-disc="parasito" data-prio="critico" data-has-product="true" class="row-critico">
+              <td class="date-cell">06 ou 08/10<span class="date-day">Ter / Qui</span></td>
+              <td>Conf. Turma</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td>
+                🔥 <strong>1ª AVALIAÇÃO PRÁTICA DE PARASITOLOGIA (AP1 - 7,5%)</strong>
+                <br><span class="badge badge-produto">📦 Produto: Prova prática de lâminas de microscopia</span>
+              </td>
+              <td>Mariana Hecht</td>
+              <td><span class="badge badge-critico">Crítico</span></td>
+            </tr>
+            <tr data-disc="sfc" data-prio="medio" data-has-product="true">
+              <td class="date-cell">07/10/26<span class="date-day">Quarta</span></td>
+              <td>14h-17h40</td>
+              <td><span class="badge badge-sfc">SFC 2</span></td>
+              <td>
+                DM – Aula 2 (Estevão) + <strong>Apresentação de casos clínicos (Prática 1 e 2)</strong> (Maria Luiza)
+                <br><span class="badge badge-produto">📦 Produto: Avaliação 1 e 2 (Defesa dos casos de campo)</span>
+              </td>
+              <td>Estevão / Maria Luiza</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="geral" data-prio="baixo" data-has-product="false">
+              <td class="date-cell">12/10/26<span class="date-day">Segunda</span></td>
+              <td>Integral</td>
+              <td><span class="badge badge-geral">Feriado</span></td>
+              <td>FERIADO NACIONAL – N. Sra. Aparecida</td>
+              <td>-</td>
+              <td><span class="badge badge-baixo">Baixo</span></td>
+            </tr>
+            <tr data-disc="parasito" data-prio="medio" data-has-product="true">
+              <td class="date-cell">13/10/26<span class="date-day">Terça</span></td>
+              <td>14h-16h</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td>
+                Teníase e Cisticercose humana
+                <br><span class="badge badge-produto">📦 Produto: Envio do Caso Clínico 3 para a turma</span>
+              </td>
+              <td>Juliana Lott</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="parasito" data-prio="medio" data-has-product="false">
+              <td class="date-cell">13 ou 15/10<span class="date-day">Ter / Qui</span></td>
+              <td>Conf. Turma</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td><strong>Aula Prática 4:</strong> Platelmintos (<em>Taenia</em>, <em>Schistosoma</em>)</td>
+              <td>Juliana Lott</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="sfc" data-prio="medio" data-has-product="true">
+              <td class="date-cell">14/10/26<span class="date-day">Quarta</span></td>
+              <td>14h30-17h30</td>
+              <td><span class="badge badge-sfc">SFC 2</span></td>
+              <td>
+                <strong>Aula Prática 3 (HRL Paranoá):</strong> Atendimento domiciliar e manejo crônico
+                <br><span class="badge badge-produto">📦 Produto: Caso Clínico + Estudo Dirigido 3</span>
+              </td>
+              <td>Maria Luiza</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="farmaco" data-prio="medio" data-has-product="false">
+              <td class="date-cell">19/10/26<span class="date-day">Segunda</span></td>
+              <td>14h-16h</td>
+              <td><span class="badge badge-farmaco">Farmacologia</span></td>
+              <td>Farmacologia para controle dos transtornos depressivos e ansiedade</td>
+              <td>Raphael Boechat</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="farmaco" data-prio="medio" data-has-product="false">
+              <td class="date-cell">19/10/26<span class="date-day">Segunda</span></td>
+              <td>16h-18h</td>
+              <td><span class="badge badge-farmaco">Farmacologia</span></td>
+              <td>Farmacologia para controle da psicose e da mania (Estabilizadores de humor)</td>
+              <td>Raphael Boechat</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="parasito" data-prio="medio" data-has-product="false">
+              <td class="date-cell">20/10/26<span class="date-day">Terça</span></td>
+              <td>14h-16h</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td>Ancilostomose (<em>A. duodenale</em>, <em>N. americanus</em>), <em>Larva migrans</em> e Ascaridíase</td>
+              <td>Juliana Lott</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="parasito" data-prio="critico" data-has-product="true" class="row-critico">
+              <td class="date-cell">20 ou 22/10<span class="date-day">Ter / Qui</span></td>
+              <td>Conf. Turma</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td>
+                🔥 <strong>DISCUSSÃO DO CASO CLÍNICO 3 (CC3 - 5%)</strong>
+                <br><span class="badge badge-produto">📦 Produto: Entrega da folha A4 manuscrita individual ao final</span>
+              </td>
+              <td>Juliana / Nadjar / Mariana</td>
+              <td><span class="badge badge-critico">Crítico</span></td>
+            </tr>
+            <tr data-disc="sfc" data-prio="critico" data-has-product="true" class="row-critico">
+              <td class="date-cell">21/10/26<span class="date-day">Quarta</span></td>
+              <td>14h-17h40</td>
+              <td><span class="badge badge-sfc">SFC 2</span></td>
+              <td>
+                🔥 <strong>AVALIAÇÃO DE CONHECIMENTO 1 (P1 - 35%)</strong> <span class="badge badge-retificado">Ajuste Oficial SFC 2</span>
+                <br><span class="badge badge-produto">📦 Produto: Avaliação teórica individual presencial</span>
+              </td>
+              <td>Gilvânia</td>
+              <td><span class="badge badge-critico">Crítico</span></td>
+            </tr>
+            <tr data-disc="farmaco" data-prio="medio" data-has-product="false">
+              <td class="date-cell">26/10/26<span class="date-day">Segunda</span></td>
+              <td>14h-16h</td>
+              <td><span class="badge badge-farmaco">Farmacologia</span></td>
+              <td>Antimicrobianos I – Antifúngicos</td>
+              <td>Hugo Paes</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="farmaco" data-prio="critico" data-has-product="true" class="row-critico">
+              <td class="date-cell">26/10/26<span class="date-day">Segunda</span></td>
+              <td>16h-18h</td>
+              <td><span class="badge badge-farmaco">Farmacologia</span></td>
+              <td>
+                🔥 <strong>METODOLOGIA ATIVA I – GAMIFICAÇÃO 1 (AVALIAÇÃO TEÓRICA 1)</strong>
+                <br><span class="badge badge-produto">📦 Produto: Pontuação avaliativa individual somativa</span>
+              </td>
+              <td>Klaus Rocha / Laís</td>
+              <td><span class="badge badge-critico">Crítico</span></td>
+            </tr>
+            <tr data-disc="parasito" data-prio="medio" data-has-product="true">
+              <td class="date-cell">27/10/26<span class="date-day">Terça</span></td>
+              <td>14h-16h</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td>
+                Estrongiloidíase, Oxiuríase e Tricuríase
+                <br><span class="badge badge-produto">📦 Produto: Envio do Caso Clínico 4 para a turma</span>
+              </td>
+              <td>Juliana Lott</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="parasito" data-prio="medio" data-has-product="false">
+              <td class="date-cell">27 ou 29/10<span class="date-day">Ter / Qui</span></td>
+              <td>Conf. Turma</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td><strong>Aula Prática 5:</strong> Identificação de Geo-helmintos em amostras fecais</td>
+              <td>Juliana Lott</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="sfc" data-prio="critico" data-has-product="true" class="row-critico">
+              <td class="date-cell">30/10/26<span class="date-day">Sexta</span></td>
+              <td>Horário HUB</td>
+              <td><span class="badge badge-sfc">SFC 2</span></td>
+              <td>
+                🔥 <strong>INTEGRADOR – SEMINÁRIO HUB (ETAPA 1 - 10%)</strong>
+                <br><span class="badge badge-produto">📦 Produto: Apresentação e defesa de caso clínico real do HUB</span>
+              </td>
+              <td>Gilvânia / Banca HUB</td>
+              <td><span class="badge badge-critico">Crítico</span></td>
+            </tr>
+
+            <!-- NOVEMBRO -->
+            <tr data-disc="geral" data-prio="baixo" data-has-product="false">
+              <td class="date-cell">02/11/26<span class="date-day">Segunda</span></td>
+              <td>Integral</td>
+              <td><span class="badge badge-geral">Feriado</span></td>
+              <td>FERIADO NACIONAL – Finados</td>
+              <td>-</td>
+              <td><span class="badge badge-baixo">Baixo</span></td>
+            </tr>
+            <tr data-disc="parasito" data-prio="medio" data-has-product="false">
+              <td class="date-cell">03/11/26<span class="date-day">Terça</span></td>
+              <td>14h-16h</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td>Vetores biológicos e mecânicos de doenças parasitárias</td>
+              <td>Rodrigo Gurgel</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="parasito" data-prio="medio" data-has-product="false">
+              <td class="date-cell">03 ou 05/11<span class="date-day">Ter / Qui</span></td>
+              <td>Conf. Turma</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td><strong>Aula Prática 6:</strong> Artrópodes Vetores e Ectoparasitos</td>
+              <td>Rodrigo Gurgel</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="sfc" data-prio="medio" data-has-product="true">
+              <td class="date-cell">04/11/26<span class="date-day">Quarta</span></td>
+              <td>14h-17h40</td>
+              <td><span class="badge badge-sfc">SFC 2</span></td>
+              <td>
+                Insuficiência Cardíaca (ICC 1): Diagnóstico, rastreio e estadiamento na APS
+                <br><span class="badge badge-produto">📦 Produto: Avaliação 2</span>
+              </td>
+              <td>Estevão</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="sfc" data-prio="critico" data-has-product="true" class="row-critico">
+              <td class="date-cell">05/11/26<span class="date-day">Quinta</span></td>
+              <td>Horário HUB</td>
+              <td><span class="badge badge-sfc">SFC 2</span></td>
+              <td>
+                🔥 <strong>INTEGRADOR – SEMINÁRIO HUB (ETAPA 2 / CONCLUSÃO)</strong>
+                <br><span class="badge badge-produto">📦 Produto: Arguição e conclusão da nota do Integrador (10%)</span>
+              </td>
+              <td>Gilvânia / Banca HUB</td>
+              <td><span class="badge badge-critico">Crítico</span></td>
+            </tr>
+            <tr data-disc="farmaco" data-prio="medio" data-has-product="false">
+              <td class="date-cell">09/11/26<span class="date-day">Segunda</span></td>
+              <td>14h-16h</td>
+              <td><span class="badge badge-farmaco">Farmacologia</span></td>
+              <td>Antimicrobianos II – Princípios Gerais e Mecanismos de Resistência</td>
+              <td>Gustavo Romero</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="farmaco" data-prio="medio" data-has-product="false">
+              <td class="date-cell">09/11/26<span class="date-day">Segunda</span></td>
+              <td>16h-18h</td>
+              <td><span class="badge badge-farmaco">Farmacologia</span></td>
+              <td>Antimicrobianos III – Betalactâmicos (Penicilinas, Cefalosporinas, Carbapenéns)</td>
+              <td>Gustavo Romero</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="parasito" data-prio="medio" data-has-product="false">
+              <td class="date-cell">10/11/26<span class="date-day">Terça</span></td>
+              <td>14h-16h</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td>Ectoparasitoses humanas (Escabiose, Pediculose, Míiases)</td>
+              <td>Rodrigo Gurgel</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="parasito" data-prio="critico" data-has-product="true" class="row-critico">
+              <td class="date-cell">10 ou 12/11<span class="date-day">Ter / Qui</span></td>
+              <td>Conf. Turma</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td>
+                🔥 <strong>DISCUSSÃO DO CASO CLÍNICO 4 (CC4 - 5%)</strong>
+                <br><span class="badge badge-produto">📦 Produto: Entrega da folha A4 manuscrita individual ao final</span>
+              </td>
+              <td>Rodrigo / Juliana / Mariana</td>
+              <td><span class="badge badge-critico">Crítico</span></td>
+            </tr>
+            <tr data-disc="sfc" data-prio="medio" data-has-product="true">
+              <td class="date-cell">11/11/26<span class="date-day">Quarta</span></td>
+              <td>14h-17h40</td>
+              <td><span class="badge badge-sfc">SFC 2</span></td>
+              <td>
+                ICC 2 (Estevão) + <strong>Saúde do Idoso 1</strong> (Maria Luiza) <span class="badge badge-retificado">Ajuste Oficial SFC 2</span>
+                <br><span class="badge badge-produto">📦 Produto: Avaliação 2</span>
+              </td>
+              <td>Estevão / Maria Luiza</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="sfc" data-prio="critico" data-has-product="true" class="row-critico">
+              <td class="date-cell">13/11/26<span class="date-day">Sexta</span></td>
+              <td>Escala Especial</td>
+              <td><span class="badge badge-sfc">SFC 2</span></td>
+              <td>
+                🔥 <strong>OSCE INTEGRADOR (SIMULAÇÃO REALÍSTICA - 10%)</strong>
+                <br><span class="badge badge-produto">📦 Produto: Atendimento simulado de 10 min por estação</span>
+              </td>
+              <td>Estevão / Maria Luiza / Gilvânia</td>
+              <td><span class="badge badge-critico">Crítico</span></td>
+            </tr>
+            <tr data-disc="farmaco" data-prio="medio" data-has-product="false">
+              <td class="date-cell">16/11/26<span class="date-day">Segunda</span></td>
+              <td>14h-16h</td>
+              <td><span class="badge badge-farmaco">Farmacologia</span></td>
+              <td>Antimicrobianos IV – Tetraciclinas e Aminoglicosídeos</td>
+              <td>Gustavo Romero</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="farmaco" data-prio="medio" data-has-product="false">
+              <td class="date-cell">16/11/26<span class="date-day">Segunda</span></td>
+              <td>16h-18h</td>
+              <td><span class="badge badge-farmaco">Farmacologia</span></td>
+              <td>Antimicrobianos V – Macrolídeos e Quinolonas</td>
+              <td>Elza Noronha</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="parasito" data-prio="medio" data-has-product="true">
+              <td class="date-cell">17/11/26<span class="date-day">Terça</span></td>
+              <td>14h-16h</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td>
+                Discussão e Oficina da Atividade Integradora
+                <br><span class="badge badge-produto">📦 Produto: Formulário com Bônus de até +1,0 na AP2</span>
+              </td>
+              <td>Rodrigo / Juliana</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="parasito" data-prio="baixo" data-has-product="false">
+              <td class="date-cell">17 ou 19/11<span class="date-day">Ter / Qui</span></td>
+              <td>-</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td>Dispensa Regimental: Não haverá aula de laboratório</td>
+              <td>-</td>
+              <td><span class="badge badge-baixo">Baixo</span></td>
+            </tr>
+            <tr data-disc="sfc" data-prio="medio" data-has-product="true">
+              <td class="date-cell">18/11/26<span class="date-day">Quarta</span></td>
+              <td>14h-17h40</td>
+              <td><span class="badge badge-sfc">SFC 2</span></td>
+              <td>
+                Saúde do Idoso 2 (Os 5 Is) + <strong>Discussão de Caso clínico prática 3</strong> <span class="badge badge-retificado">Ajuste Oficial SFC 2</span>
+                <br><span class="badge badge-produto">📦 Produto: Avaliação 2</span>
+              </td>
+              <td>Maria Luiza</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="farmaco" data-prio="medio" data-has-product="false">
+              <td class="date-cell">23/11/26<span class="date-day">Segunda</span></td>
+              <td>14h-16h</td>
+              <td><span class="badge badge-farmaco">Farmacologia</span></td>
+              <td>Antimicrobianos VI – Glicopeptídeos, Lipopeptídeos e Oxazolidinonas</td>
+              <td>Elza Noronha</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="farmaco" data-prio="medio" data-has-product="false">
+              <td class="date-cell">23/11/26<span class="date-day">Segunda</span></td>
+              <td>16h-18h</td>
+              <td><span class="badge badge-farmaco">Farmacologia</span></td>
+              <td>Antimicrobianos VII – Antivirais e Antirretrovirais</td>
+              <td>Elza Noronha</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="parasito" data-prio="critico" data-has-product="true" class="row-critico">
+              <td class="date-cell">24/11/26<span class="date-day">Terça</span></td>
+              <td>14h-16h</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td>
+                🔥 <strong>2ª AVALIAÇÃO TEÓRICA DE PARASITOLOGIA (AT2 - 22,5%)</strong>
+                <br><span class="badge badge-produto">📦 Produto: Prova teórica de Helmintos e Ectoparasitos</span>
+              </td>
+              <td>Rodrigo Gurgel</td>
+              <td><span class="badge badge-critico">Crítico</span></td>
+            </tr>
+            <tr data-disc="parasito" data-prio="critico" data-has-product="true" class="row-critico">
+              <td class="date-cell">24 ou 26/11<span class="date-day">Ter / Qui</span></td>
+              <td>Conf. Turma</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td>
+                🔥 <strong>2ª AVALIAÇÃO PRÁTICA DE PARASITOLOGIA (AP2 - 7,5% + Bônus)</strong>
+                <br><span class="badge badge-produto">📦 Produto: Prova prática de lâminas (+ até 1,0 ponto do bônus)</span>
+              </td>
+              <td>Rodrigo / Juliana</td>
+              <td><span class="badge badge-critico">Crítico</span></td>
+            </tr>
+            <tr data-disc="sfc" data-prio="medio" data-has-product="true">
+              <td class="date-cell">25/11/26<span class="date-day">Quarta</span></td>
+              <td>14h30-17h30</td>
+              <td><span class="badge badge-sfc">SFC 2</span></td>
+              <td>
+                <strong>Aula Prática 4 (HRL Paranoá):</strong> Atendimento domiciliar e encerramento de campo
+                <br><span class="badge badge-produto">📦 Produto: Caso Clínico</span>
+              </td>
+              <td>Maria Luiza</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="geral" data-prio="baixo" data-has-product="false">
+              <td class="date-cell">30/11/26<span class="date-day">Segunda</span></td>
+              <td>Integral</td>
+              <td><span class="badge badge-geral">Feriado</span></td>
+              <td>FERIADO DISTRITAL – Dia do Evangélico</td>
+              <td>-</td>
+              <td><span class="badge badge-baixo">Baixo</span></td>
+            </tr>
+
+            <!-- DEZEMBRO -->
+            <tr data-disc="parasito" data-prio="critico" data-has-product="true" class="row-critico">
+              <td class="date-cell">01/12/26<span class="date-day">Terça</span></td>
+              <td>14h-16h</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td>
+                🔥 <strong>PROVA DE REPOSIÇÃO DE PARASITOLOGIA</strong>
+                <br><span class="badge badge-produto">📦 Produto: 2ª chamada justificada para faltas com atestado deferido</span>
+              </td>
+              <td>Rodrigo Gurgel</td>
+              <td><span class="badge badge-critico">Crítico</span></td>
+            </tr>
+            <tr data-disc="sfc" data-prio="medio" data-has-product="true">
+              <td class="date-cell">02/12/26<span class="date-day">Quarta</span></td>
+              <td>14h-17h40</td>
+              <td><span class="badge badge-sfc">SFC 2</span></td>
+              <td>
+                Cuidados do Paciente Pós IAM e AVC + <strong>Discussão de caso Clínico Prática 4</strong> <span class="badge badge-retificado">Ajuste Oficial SFC 2</span>
+                <br><span class="badge badge-produto">📦 Produto: Avaliação 2</span>
+              </td>
+              <td>Maria Luiza</td>
+              <td><span class="badge badge-medio">Médio</span></td>
+            </tr>
+            <tr data-disc="parasito" data-prio="critico" data-has-product="true" class="row-critico">
+              <td class="date-cell">04/12/26<span class="date-day">Sexta</span></td>
+              <td>Integral</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td>
+                🔥 <strong>APRESENTAÇÃO DA ATIVIDADE INTEGRADORA (AI - 10%)</strong>
+                <br><span class="badge badge-produto">📦 Produto: Seminário / Apresentação de pôster interdisciplinar</span>
+              </td>
+              <td>Bancas Integradas</td>
+              <td><span class="badge badge-critico">Crítico</span></td>
+            </tr>
+            <tr data-disc="farmaco" data-prio="critico" data-has-product="true" class="row-critico">
+              <td class="date-cell">07/12/26<span class="date-day">Segunda</span></td>
+              <td>14h-16h</td>
+              <td><span class="badge badge-farmaco">Farmacologia</span></td>
+              <td>
+                🔥 <strong>METODOLOGIA ATIVA II – SALA DE AULA INVERTIDA (Grupos 1 ao 4)</strong>
+                <br><span class="badge badge-produto">📦 Produto: Arguição e produção em grupo</span>
+              </td>
+              <td>Klaus Rocha / Laís</td>
+              <td><span class="badge badge-critico">Crítico</span></td>
+            </tr>
+            <tr data-disc="farmaco" data-prio="critico" data-has-product="true" class="row-critico">
+              <td class="date-cell">07/12/26<span class="date-day">Segunda</span></td>
+              <td>16h-18h</td>
+              <td><span class="badge badge-farmaco">Farmacologia</span></td>
+              <td>
+                🔥 <strong>METODOLOGIA ATIVA I – GAMIFICAÇÃO 2 (AVALIAÇÃO TEÓRICA 2)</strong>
+                <br><span class="badge badge-produto">📦 Produto: Pontuação avaliativa somativa teórica 2</span>
+              </td>
+              <td>Klaus Rocha / Laís</td>
+              <td><span class="badge badge-critico">Crítico</span></td>
+            </tr>
+            <tr data-disc="sfc" data-prio="critico" data-has-product="true" class="row-critico">
+              <td class="date-cell">09/12/26<span class="date-day">Quarta</span></td>
+              <td>14h-17h40</td>
+              <td><span class="badge badge-sfc">SFC 2</span></td>
+              <td>
+                🔥 <strong>AVALIAÇÃO DE CONHECIMENTOS 2 (P2 - 35%)</strong> <span class="badge badge-retificado">Ajuste Oficial SFC 2</span>
+                <br><span class="badge badge-produto">📦 Produto: Avaliação 2 (Exame teórico individual presencial)</span>
+              </td>
+              <td>Gilvânia</td>
+              <td><span class="badge badge-critico">Crítico</span></td>
+            </tr>
+            <tr data-disc="parasito" data-prio="baixo" data-has-product="false">
+              <td class="date-cell">10/12/26<span class="date-day">Quinta</span></td>
+              <td>-</td>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td>Divulgação das menções finais no SIGAA</td>
+              <td>Secretaria</td>
+              <td><span class="badge badge-baixo">Baixo</span></td>
+            </tr>
+            <tr data-disc="farmaco" data-prio="critico" data-has-product="true" class="row-critico">
+              <td class="date-cell">14/12/26<span class="date-day">Segunda</span></td>
+              <td>14h-16h</td>
+              <td><span class="badge badge-farmaco">Farmacologia</span></td>
+              <td>
+                🔥 <strong>AVALIAÇÃO TEÓRICA SUBSTITUTIVA</strong>
+                <br><span class="badge badge-produto">📦 Produto: Prova de reposição para faltas justificadas</span>
+              </td>
+              <td>Klaus Rocha / Laís</td>
+              <td><span class="badge badge-critico">Crítico</span></td>
+            </tr>
+            <tr data-disc="farmaco" data-prio="critico" data-has-product="true" class="row-critico">
+              <td class="date-cell">14/12/26<span class="date-day">Segunda</span></td>
+              <td>16h-18h</td>
+              <td><span class="badge badge-farmaco">Farmacologia</span></td>
+              <td>
+                🔥 <strong>AVALIAÇÃO GERAL (RECUPERAÇÃO PARA MÉDIA FINAL &lt; 50%)</strong>
+                <br><span class="badge badge-produto">📦 Produto: Exame final de recuperação obrigatório</span>
+              </td>
+              <td>Klaus Rocha / Laís</td>
+              <td><span class="badge badge-critico">Crítico</span></td>
+            </tr>
+            <tr data-disc="farmaco" data-prio="baixo" data-has-product="false">
+              <td class="date-cell">14/12/26<span class="date-day">Segunda</span></td>
+              <td>18h</td>
+              <td><span class="badge badge-farmaco">Farmacologia</span></td>
+              <td>Consolidação final das notas e encerramento do semestre</td>
+              <td>Klaus Rocha</td>
+              <td><span class="badge badge-baixo">Baixo</span></td>
+            </tr>
+            <tr data-disc="farmaco" data-prio="critico" data-has-product="true" class="row-critico">
+              <td class="date-cell">EAD Assíncrono<span class="date-day">Virtual</span></td>
+              <td>Aprender 3</td>
+              <td><span class="badge badge-farmaco">Farmacologia</span></td>
+              <td>
+                🔥 <strong>Módulos EAD:</strong> Farmacologia Anti-inflamatória (AINE, AAS, Esteroides) e Dor (Opioides)
+                <br><span class="badge badge-produto">📦 Produto: Assistir e resumir antes da Gamificação 1 (26/10)</span>
+              </td>
+              <td>Verônica Amado</td>
+              <td><span class="badge badge-critico">Crítico</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 3: MATRIZ TEMÁTICA DE CONTEÚDOS -->
+    <section id="matriz" class="section-block">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-icon">📚</div>
+          <div>
+            <h2 class="section-title">3. Matriz Temática de Conteúdos e Bibliografia</h2>
+            <p class="section-subtitle">Ementas modulares, roteiro aula a aula e acervo bibliográfico oficial obrigatório e complementar</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion SFC 2 -->
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <span>🩺 Saúde da Família e Comunidade 2 (FMD0015) • Módulos, Roteiro Retificado e Produtos</span>
+          <span>▼</span>
+        </div>
+        <div class="accordion-content open">
+          <h4 style="margin-bottom:0.5rem; color:var(--primary);">Ementa Dividida por Blocos Temáticos:</h4>
+          <ul style="padding-left:1.5rem; font-size:0.875rem; margin-bottom:1rem;">
+            <li><strong>Módulo I: Clínica Ampliada & Método Clínico Centrado na Pessoa (MCCP)</strong> (Relação médico-paciente, consulta sistematizada SOAP, Projeto Terapêutico Singular, Atenção Domiciliar e cuidado compartilhado com o NRAD).</li>
+            <li><strong>Módulo II: Doenças Crônicas Não Transmissíveis (DCNT) & Prevenção</strong> (Risco cardiovascular, exames de rastreamento na APS, manejo integrado da Hipertensão Arterial Sistêmica, Diabetes Mellitus tipo 2, Tabagismo e Obesidade).</li>
+            <li><strong>Módulo III: Complicações Cardiovasculares Graves na APS</strong> (Insuficiência Cardíaca Congestiva - ICC 1 e ICC 2, seguimento e reabilitação ambulatorial pós-AVC e pós-IAM).</li>
+            <li><strong>Módulo IV: Atenção Integral à Saúde da Pessoa Idosa</strong> (Avaliação Geriátrica Ampla - AGA, abordagem sistemática dos 5 Is da Geriatria: Incontinência, Insuficiência Cerebral, Iatrogenia, Instabilidade Postural e Imobilidade).</li>
+            <li><strong>Módulo V: Avaliação Integrada Prática</strong> (Seminário Integrador HUB de casos reais e OSCE Integrador multidisciplinar).</li>
+          </ul>
+
+          <h4 style="margin-bottom:0.5rem; color:var(--primary);">Sequência Aula a Aula e Matriz Oficial de "Produtos" (SFC 2 – 2026.2):</h4>
+          <table style="width:100%; border-collapse:collapse; font-size:0.8rem; margin-bottom:1.5rem;">
+            <thead style="background:#f8fafc; border-bottom:2px solid var(--border);">
+              <tr>
+                <th style="padding:0.5rem;">Data</th>
+                <th style="padding:0.5rem;">Docente</th>
+                <th style="padding:0.5rem;">Assunto</th>
+                <th style="padding:0.5rem;">Produto / Destino Avaliativo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td style="padding:0.4rem; font-weight:700;">12/08</td><td>Maria Luiza</td><td>Apresentação da Disciplina + Assistência Domiciliar</td><td><span class="badge badge-produto">Avaliação 1 e 2</span></td></tr>
+              <tr><td style="padding:0.4rem; font-weight:700;">19/08</td><td>Estevão</td><td>Estilo de Vida, Risco cardiovascular, Obesidade</td><td><span class="badge badge-produto">Avaliação 1 e 2</span></td></tr>
+              <tr><td style="padding:0.4rem; font-weight:700;">26/08</td><td>Estevão</td><td>Hipertensão Arterial Sistêmica (HAS)</td><td><span class="badge badge-produto">Avaliação 1 e 2</span></td></tr>
+              <tr style="background:#fff7ed;"><td style="padding:0.4rem; font-weight:700; color:var(--danger);">02/09</td><td>Colegiado</td><td><strong>TESTE DE PROGRESSO INSTITUCIONAL</strong></td><td><em>Retificado: Substituiu a Prática 1</em></td></tr>
+              <tr><td style="padding:0.4rem; font-weight:700;">09/09</td><td>Maria Luiza</td><td><strong>Aula Prática 1 (HRL Paranoá)</strong></td><td><span class="badge badge-produto">Caso Clínico + Estudo Dirigido 2</span></td></tr>
+              <tr><td style="padding:0.4rem; font-weight:700;">16/09</td><td>Maria Luiza</td><td><strong>Aula Prática 2 (HRL Paranoá)</strong></td><td><span class="badge badge-produto">Avaliação 1</span></td></tr>
+              <tr><td style="padding:0.4rem; font-weight:700;">30/09</td><td>Estevão / Gilvânia</td><td>DM Aula 1 (14h-15h40) + Orientação Seminário Integrador (15h40-17h40)</td><td><span class="badge badge-produto">Avaliação 1 e 2</span></td></tr>
+              <tr style="background:#fff7ed;"><td style="padding:0.4rem; font-weight:700;">07/10</td><td>Estevão / Maria Luiza</td><td>DM Aula 2 + <strong>Apresentação de casos clínicos (Pratica 1 e 2)</strong></td><td><span class="badge badge-produto">Avaliação 1 e 2 (Defesa dos Casos)</span></td></tr>
+              <tr><td style="padding:0.4rem; font-weight:700;">14/10</td><td>Maria Luiza</td><td><strong>Aula Prática 3 (HRL Paranoá)</strong></td><td><span class="badge badge-produto">Caso Clínico + Estudo Dirigido 3</span></td></tr>
+              <tr style="background:#fef2f2;"><td style="padding:0.4rem; font-weight:700; color:var(--danger);">21/10</td><td>Gilvânia</td><td>🔥 <strong>AVALIAÇÃO DE CONHECIMENTO 1 (P1 - 35%)</strong></td><td><span class="badge badge-critico">Avaliação (Prova 1)</span></td></tr>
+              <tr style="background:#fef2f2;"><td style="padding:0.4rem; font-weight:700; color:var(--danger);">30/10</td><td>Gilvânia</td><td>🔥 <strong>INTEGRADOR – SEMINÁRIO HUB (ETAPA 1)</strong></td><td><span class="badge badge-critico">Integrador (10%)</span></td></tr>
+              <tr><td style="padding:0.4rem; font-weight:700;">04/11</td><td>Estevão</td><td>Insuficiência Cardíaca Congestiva 1 (ICC 1)</td><td><span class="badge badge-produto">Avaliação 2</span></td></tr>
+              <tr style="background:#fef2f2;"><td style="padding:0.4rem; font-weight:700; color:var(--danger);">05/11</td><td>Gilvânia</td><td>🔥 <strong>INTEGRADOR – SEMINÁRIO HUB (ETAPA 2 / FINAL)</strong></td><td><span class="badge badge-critico">Integrador (10%)</span></td></tr>
+              <tr style="background:#fff7ed;"><td style="padding:0.4rem; font-weight:700;">11/11</td><td>Estevão / Maria Luiza</td><td>ICC 2 + <strong>Saúde do Idoso 1</strong></td><td><span class="badge badge-produto">Avaliação 2 (Tarde Dupla)</span></td></tr>
+              <tr style="background:#fef2f2;"><td style="padding:0.4rem; font-weight:700; color:var(--danger);">13/11</td><td>Estevão, Maria Luiza e Gilvânia</td><td>🔥 <strong>OSCE INTEGRADOR (SIMULAÇÃO REALÍSTICA)</strong></td><td><span class="badge badge-critico">OSCE (10%)</span></td></tr>
+              <tr style="background:#fff7ed;"><td style="padding:0.4rem; font-weight:700;">18/11</td><td>Maria Luiza</td><td>Saúde do Idoso 2 + <strong>Discussão de Caso clínico prática 3</strong></td><td><span class="badge badge-produto">Avaliação 2</span></td></tr>
+              <tr><td style="padding:0.4rem; font-weight:700;">25/11</td><td>Maria Luiza</td><td><strong>Aula Prática 4 (HRL Paranoá)</strong></td><td><span class="badge badge-produto">Caso Clínico</span></td></tr>
+              <tr style="background:#fff7ed;"><td style="padding:0.4rem; font-weight:700;">02/12</td><td>Maria Luiza</td><td>Cuidados do Paciente Pós IAM e AVC + <strong>Discussão de caso Clínico Prática 4</strong></td><td><span class="badge badge-produto">Avaliação 2</span></td></tr>
+              <tr style="background:#fef2f2;"><td style="padding:0.4rem; font-weight:700; color:var(--danger);">09/12</td><td>Gilvânia</td><td>🔥 <strong>AVALIAÇÃO DE CONHECIMENTOS 2 (P2 - 35%)</strong></td><td><span class="badge badge-critico">Avaliação 2 (Prova 2)</span></td></tr>
+            </tbody>
+          </table>
+
+          <h4 style="margin-bottom:0.5rem; color:var(--primary);">Bibliografia Central Obrigatória:</h4>
+          <ol class="biblio-list">
+            <li>GUSSO, Gustavo; LOPES, José M. C.; DIAS, Lêda C. <strong>Tratado de Medicina de Família e Comunidade: princípios, formação e prática</strong>. 2 volumes. Grupo A, 2019. ISBN 9788582715369. <a href="https://integrada.minhabiblioteca.com.br/#/books/9788582715369/" target="_blank">Acessar Minha Biblioteca ↗</a></li>
+            <li>DUNCAN, Bruce B. et al. <strong>Medicina Ambulatorial: condutas de atenção primária baseadas em evidências</strong>. Grupo A, 2022. ISBN 9786558820437. <a href="https://integrada.minhabiblioteca.com.br/#/books/9786558820437/" target="_blank">Acessar Minha Biblioteca ↗</a></li>
+            <li>STARFIELD, Barbara. <strong>Atenção Primária: equilíbrio entre necessidades de saúde, serviços e tecnologia</strong>. Edição nº 1. Brasília: UNESCO, 2002.</li>
+            <li>SAVASSI, L. C. M. et al. <strong>Tratado de Atenção Domiciliar</strong>. 1ª ed. Santana de Parnaíba: Manole, 2022. ISBN 9786555767513.</li>
+            <li>BRASIL. Ministério da Saúde. <strong>Cadernos de Atenção Básica</strong>: Caderno 35 (DCNT, 2014); Caderno 36 (Diabetes Mellitus, 2013); Caderno 37 (Hipertensão Arterial Sistêmica, 2013); Caderno 38 (Obesidade, 2014); Cuidado da Pessoa Tabagista (2015).</li>
+          </ol>
+
+          <h4 style="margin:1rem 0 0.5rem; color:var(--primary);">Bibliografia Complementar Recomendada:</h4>
+          <ol class="biblio-list">
+            <li>STEWART, Moira et al. <strong>Medicina Centrada na Pessoa: transformando o método clínico</strong>. 3ª ed. Porto Alegre: Artmed, 2017. ISBN 9788582714256.</li>
+            <li>DOHMS, M.; GUSSO, G. <strong>Comunicação Clínica: aperfeiçoando os encontros em saúde</strong>. Porto Alegre: Artmed, 2021. ISBN 9786581335250.</li>
+            <li>MANSUR, Carlos G. <strong>Psiquiatria para o Médico Generalista</strong>. Grupo A, 2013. ISBN 9788536327921.</li>
+            <li>HOSPITAL SÍRIO-LIBANÊS / MINISTÉRIO DA SAÚDE. <strong>Manual de Cuidados Paliativos</strong>. São Paulo, 2020.</li>
+            <li>BRASIL. Ministério da Saúde. <strong>Cadernos de Atenção Básica nº 28 (Acolhimento à Demanda Espontânea) e nº 29 (Rastreamento)</strong>. Brasília, 2010-2011.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Accordion Parasitologia -->
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <span>🔬 Parasitologia Médica (FMD0034) • Módulos e Bibliografia Oficial</span>
+          <span>▼</span>
+        </div>
+        <div class="accordion-content">
+          <h4 style="margin-bottom:0.5rem; color:var(--primary);">Ementa Dividida por Blocos Temáticos:</h4>
+          <ul style="padding-left:1.5rem; font-size:0.875rem; margin-bottom:1rem;">
+            <li><strong>Módulo I: Protozoologia Médica & Vetores</strong> (Amebas de vida livre e intestinais, flagelados urogenitais e entéricos, <em>Leishmania</em> e calazar, <em>Trypanosoma cruzi</em> e doença de Chagas, complexo Apicomplexa: <em>Plasmodium</em> spp. e malária, <em>Toxoplasma gondii</em> e coccídeos oportunistas no HIV).</li>
+            <li><strong>Módulo II: Helmintologia Médica</strong> (Platelmintos: teníase e cisticercose humana, esquistossomose mansônica; Nematódeos/Geo-helmintos: ancilostomíase, *Ascaris lumbricoides*, *Strongyloides*, oxiúros e tricuríase).</li>
+            <li><strong>Módulo III: Artrópodes & Ectoparasitos de Importância Médica</strong> (Sarna sarcóptica, carrapatos vetores, tungíase, pediculose, fitiríase e dípteros causadores de míiases primárias e secundárias).</li>
+            <li><strong>Módulo IV: Extensão Comunitária em Saúde</strong> (Projetos: Caça ao Mosquito/Arboviroses; Missão Malária/Vacinas; Mãos Limpas, Saúde Garantida; Quebrando Tabus: ISTs e HPV).</li>
+          </ul>
+
+          <h4 style="margin-bottom:0.5rem; color:var(--primary);">Bibliografia Central Obrigatória:</h4>
+          <ol class="biblio-list">
+            <li>REY, Luís. <strong>Parasitologia</strong>. 4ª ed. Grupo GEN, 2008. ISBN 978-85-277-2027-4. <a href="https://integrada.minhabiblioteca.com.br/#/books/978-85-277-2027-4/" target="_blank">Acessar Minha Biblioteca ↗</a></li>
+            <li>FERREIRA, Marcelo U. <strong>Parasitologia Contemporânea</strong>. Grupo GEN, 2020. ISBN 9788527737166. <a href="https://integrada.minhabiblioteca.com.br/#/books/9788527737166/" target="_blank">Acessar Minha Biblioteca ↗</a></li>
+            <li>COURA, José R. <strong>Dinâmica das Doenças Infecciosas e Parasitárias</strong>. 2ª ed. Grupo GEN, 2013. ISBN 978-85-277-2275-9. <a href="https://integrada.minhabiblioteca.com.br/#/books/978-85-277-2275-9/" target="_blank">Acessar Minha Biblioteca ↗</a></li>
+            <li>NEVES, David Pereira. <strong>Parasitologia Humana</strong>. 14ª ed. Rio de Janeiro: Editora Atheneu, 2022.</li>
+          </ol>
+
+          <h4 style="margin:1rem 0 0.5rem; color:var(--primary);">Bibliografia Complementar Recomendada:</h4>
+          <ol class="biblio-list">
+            <li>REY, Luís. <strong>Bases da Parasitologia Médica</strong>. 3ª ed. Rio de Janeiro: Guanabara Koogan/GEN, 2009. ISBN 978-85-277-2026-7.</li>
+            <li>SIQUEIRA-BATISTA, Rodrigo. <strong>Parasitologia - Fundamentos e Prática Clínica</strong>. Grupo GEN, 2020. ISBN 9788527736473.</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Accordion Farmacologia -->
+      <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+          <span>💊 Farmacologia Médica • Módulos e Bibliografia Padrão</span>
+          <span>▼</span>
+        </div>
+        <div class="accordion-content">
+          <h4 style="margin-bottom:0.5rem; color:var(--primary);">Ementa Dividida por Blocos Temáticos:</h4>
+          <ul style="padding-left:1.5rem; font-size:0.875rem; margin-bottom:1rem;">
+            <li><strong>Módulo I: Farmacologia Cardiovascular, Renal & Respiratória</strong> (Princípios gerais, farmacoterapia da insuficiência cardíaca, asma e DPOC, cardiopatia isquêmica, arritmias, hipertensão arterial e dislipidemias).</li>
+            <li><strong>Módulo II: Neurofarmacologia, Anestesiologia & Psicofarmacologia</strong> (SN Periférico, SN Central, epilepsia, anestésicos locais e gerais, transtornos depressivos, ansiedade, psicose e transtorno bipolar/mania).</li>
+            <li><strong>Módulo III: Quimioterapia Antimicrobiana</strong> (Antifúngicos, princípios gerais, betalactâmicos, tetraciclinas, aminoglicosídeos, macrolídeos, quinolonas, glicopeptídeos, lipopeptídeos, oxazolidinonas, antivirais e antirretrovirais).</li>
+            <li><strong>Módulo IV: Aulas EAD Assíncronas (Profa. Verônica Amado)</strong> (Farmacologia anti-inflamatória: AINE, AAS, esteroides e Farmacologia do controle da dor: opioides e adjuvantes).</li>
+          </ul>
+
+          <h4 style="margin-bottom:0.5rem; color:var(--primary);">Bibliografia Central Recomendada:</h4>
+          <ol class="biblio-list">
+            <li>BRUNTON, Laurence L.; HILAL-DANDAN, Randa; KNOLLMANN, Björn C. <strong>As Bases Farmacológicas da Terapêutica de Goodman & Gilman</strong>. 13ª ou 14ª ed. Porto Alegre: AMGH / McGraw-Hill.</li>
+            <li>RANG, H. P.; DALE, M. M.; RITTER, J. M. et al. <strong>Rang & Dale: Farmacologia</strong>. 9ª ed. Rio de Janeiro: Elsevier.</li>
+            <li>KATZUNG, Bertram G.; VANDERAH, Todd W. <strong>Farmacologia Básica e Clínica</strong>. 15ª ed. Porto Alegre: AMGH.</li>
+            <li>GOLAN, David E. et al. <strong>Princípios de Farmacologia: A Base Fisiopatológica da Farmacoterapia</strong>. 4ª ed. Guanabara Koogan.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 4: REGISTRO DE RETIFICAÇÕES E ALTERAÇÕES -->
+    <section id="retificacoes" class="section-block">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-icon">🔄</div>
+          <div>
+            <h2 class="section-title">4. Registro de Retificações e Alterações Normativas</h2>
+            <p class="section-subtitle">Aplicação estrita da Regra de Precedência: substituições formais cruzadas com o plano original</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="rect-table">
+          <thead>
+            <tr>
+              <th style="width: 14%;">Disciplina</th>
+              <th style="width: 28%;">Plano Original Anterior</th>
+              <th style="width: 29%;">Retificação Oficial Vigente</th>
+              <th style="width: 29%;">Impacto Prático e Operacional</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="badge badge-sfc">SFC 2</span></td>
+              <td>
+                • <strong>02/09:</strong> Aula Prática 1 no HRL (Caso Clínico + Estudo Dirigido 1)
+              </td>
+              <td>
+                <span class="badge badge-retificado">Ajuste Oficial SFC 2 – 2026.2</span><br>
+                • <strong>02/09:</strong> <strong>TESTE DE PROGRESSO INSTITUCIONAL</strong><br>
+                • <strong>09/09:</strong> Realização da Aula Prática 1 (Caso Clínico + Estudo Dirigido 2)
+              </td>
+              <td>
+                Deslocamento de todo o bloco de práticas no Hospital Regional Leste em 1 semana. A preparação para o Teste de Progresso não concorre com atendimento prático.
+              </td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-sfc">SFC 2</span></td>
+              <td>
+                • <strong>16/09:</strong> Aula teórica de Saúde do Idoso 1 + Discussão de Casos
+              </td>
+              <td>
+                <span class="badge badge-retificado">Ajuste Oficial SFC 2 – 2026.2</span><br>
+                • <strong>16/09:</strong> <strong>Aula Prática 2 (HRL Paranoá)</strong> - Produto: Avaliação 1
+              </td>
+              <td>
+                Saúde do Idoso 1 foi retirada de setembro e remanejada para novembro (11/11), mantendo a sequência de práticas antes da Semana Universitária.
+              </td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-sfc">SFC 2</span></td>
+              <td>
+                • <strong>07/10:</strong> Apenas aula teórica expositiva "DM - Aula 2" (Estevão)
+              </td>
+              <td>
+                <span class="badge badge-retificado">Ajuste Oficial SFC 2 – 2026.2</span><br>
+                • <strong>07/10:</strong> DM – Aula 2 + <strong>Apresentação de casos clínicos (Pratica1 e2)</strong> com Maria Luiza
+              </td>
+              <td>
+                Entrega e defesa dos casos acompanhados em campo com peso direto na nota de participação e produtos (10%).
+              </td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-sfc">SFC 2</span></td>
+              <td>
+                • <strong>14/10:</strong> Avaliação de Conhecimentos 1 (P1)<br>
+                • <strong>21/10:</strong> Aula Prática 3
+              </td>
+              <td>
+                <span class="badge badge-retificado">Ajuste Oficial SFC 2 – 2026.2</span><br>
+                • <strong>14/10:</strong> Aula Prática 3 (Caso Clínico + Estudo Dirigido 3)<br>
+                • <strong>21/10:</strong> <strong>AVALIAÇÃO DE CONHECIMENTO 1 (P1 - 35%)</strong>
+              </td>
+              <td>
+                <strong>Adiamento da P1 em 7 dias:</strong> Mais tempo para fixar DCNT, porém colou a prova com o CC3 de Parasito (20-22/10) e a Gamificação 1 de Farmaco (26/10).
+              </td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-sfc">SFC 2</span></td>
+              <td>
+                • <strong>11/11:</strong> Apenas aula teórica "ICC 2"
+              </td>
+              <td>
+                <span class="badge badge-retificado">Ajuste Oficial SFC 2 – 2026.2</span><br>
+                • <strong>11/11:</strong> ICC 2 (Estevão) + <strong>Saúde do Idoso 1 (Maria Luiza)</strong>
+              </td>
+              <td>
+                <strong>Sessão Teórica Dupla:</strong> Condensa o manejo da insuficiência cardíaca e introdução à geriatria dois dias antes do OSCE Integrador (13/11).
+              </td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-sfc">SFC 2</span></td>
+              <td>
+                • <strong>18/11 e 02/12:</strong> Discussões genéricas de casos clínicos
+              </td>
+              <td>
+                <span class="badge badge-retificado">Ajuste Oficial SFC 2 – 2026.2</span><br>
+                • <strong>18/11:</strong> Saúde do Idoso 2 + Discussão de Caso da Prática 3<br>
+                • <strong>02/12:</strong> Pós IAM/AVC + Discussão de Caso da Prática 4
+              </td>
+              <td>
+                Vinculação obrigatória das discussões teóricas com as experiências domiciliares vivenciadas na prática pelo discente.
+              </td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-parasito">Parasitologia</span></td>
+              <td>
+                • <strong>08/09:</strong> <em>Toxoplasma gondii</em><br>
+                • <strong>08 ou 10/09:</strong> Discussão do Caso Clínico 2 (CC2)<br>
+                • <strong>29/09:</strong> <em>Plasmodium</em> e Malária<br>
+                • <strong>29/09 ou 01/10:</strong> Prática Apicomplexa
+              </td>
+              <td>
+                <span class="badge badge-retificado">Comunicado Profa. Nadjar Nitz</span><br>
+                • <strong>08/09:</strong> <em>Plasmodium</em> e Malária (Mariana Hecht)<br>
+                • <strong>08 ou 10/09:</strong> Prática Apicomplexa<br>
+                • <strong>29/09:</strong> <em>Toxoplasma gondii</em> (Nadjar Nitz)<br>
+                • <strong>29/09 ou 01/10:</strong> <strong>Discussão do CC2</strong>
+              </td>
+              <td>
+                <strong>Inversão Temática:</strong> Alivia a semana de 08/09 e empurra a discussão avaliativa do CC2 para 29/09-01/10, exatamente 7 dias antes da 1ª Avaliação Teórica (06/10), servindo como revisão aplicada direta.
+              </td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-farmaco">Farmacologia</span></td>
+              <td>
+                • Previsão teórica geral em plano clássico presencial
+              </td>
+              <td>
+                <span class="badge badge-retificado">Nota de Rodapé do Cronograma</span><br>
+                • Aulas da Profa. Verônica Amado (Anti-inflamatórios e Dor) <strong>100% no formato EAD Assíncrono</strong>
+              </td>
+              <td>
+                Não consomem as 4 horas presenciais de segunda-feira. O aluno precisa assistir e resumir os vídeos no Ambiente Virtual antes da Gamificação 1 (26/10).
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 5: CHECKLIST OPERACIONAL DE EXECUÇÃO -->
+    <section id="checklist" class="section-block">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-icon">✅</div>
+          <div>
+            <h2 class="section-title">5. Checklist Operacional de Execução (Semana a Semana)</h2>
+            <p class="section-subtitle">Acompanhamento contínuo de leituras, exercícios, resumos e produtos com salvamento automático no navegador</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="checklist-stats">
+        <span>Progresso Semanal Concluído</span>
+        <span id="checklistPercentage">0%</span>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="checklist-table">
+          <thead>
+            <tr>
+              <th style="text-align:center; width: 40px;">OK</th>
+              <th style="width: 60px;">Sem.</th>
+              <th style="width: 135px;">Intervalo</th>
+              <th>Tópicos & Conteúdos da Semana</th>
+              <th style="width: 120px; text-align:center;">Leitura/Resumo</th>
+              <th style="width: 120px; text-align:center;">Exercícios/Casos</th>
+              <th style="width: 120px; text-align:center;">Revisão Feita</th>
+              <th>Produtos Críticos & Entregas</th>
+            </tr>
+          </thead>
+          <tbody id="checklistBody">
+            <!-- Gerado via JS para garantir persistência no localStorage -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p><strong>Guia Mestre do Semestre 2026.2</strong> • Faculdade de Medicina da Universidade de Brasília (FM/UnB)</p>
+    <p style="font-size:0.75rem; margin-top:0.3rem; color:#94a3b8;">Documento consolidado de alta densidade técnico-operacional • Total conformidade com SFC 2 (2026.2) e retificações de Parasitologia.</p>
+  </footer>
+
+  <script>
+    // Dados do Checklist Semanal atualizados rigorosamente com a retificação de SFC 2
+    const weeksData = [
+      {
+        id: "w1", sem: "01", dates: "10/08 a 14/08",
+        topics: "Acolhimento Farmaco; Intro e Amebas em Parasito; Apresentação e Assistência Domiciliar em SFC 2.",
+        critical: "📦 Grupos de extensão de Parasito formados & Base teórica de SFC 2 (Avaliação 1 e 2)."
+      },
+      {
+        id: "w2", sem: "02", dates: "17/08 a 21/08",
+        topics: "Princípios gerais e IC em Farmaco; Planejamento extensão Parasito; Estilo de vida/obesidade em SFC 2.",
+        critical: "📦 Recebimento do Caso Clínico 1 (CC1) de Parasitologia."
+      },
+      {
+        id: "w3", sem: "03", dates: "24/08 a 28/08",
+        topics: "Asma/DPOC e Isquemia em Farmaco; Giardíase e Tricomoníase em Parasito; HAS na APS em SFC 2.",
+        critical: "🔥 25 ou 27/08: DISCUSSÃO DO CC1 (5%) [Folha A4 individual manuscrita]."
+      },
+      {
+        id: "w4", sem: "04", dates: "31/08 a 04/09",
+        topics: "Hemato-onco e Arritmias em Farmaco; Leishmanioses em Parasito; Teste de Progresso institucional.",
+        critical: "🔥 02/09: TESTE DE PROGRESSO (SFC 2) [Substituiu Prática 1] & Envio do CC2 de Parasito."
+      },
+      {
+        id: "w5", sem: "05", dates: "07/09 a 11/09",
+        topics: "07/09 Feriado; Malária humana e Apicomplexa em Parasito [Retificado]; Aula Prática 1 SFC 2 no HRL.",
+        critical: "📦 09/09: PRÁTICA 1 SFC 2 (HRL) -> Produto: Caso Clínico + Estudo Dirigido 2."
+      },
+      {
+        id: "w6", sem: "06", dates: "14/09 a 18/09",
+        topics: "HAS e Dislipidemias em Farmaco; Montagem da extensão Parasito; Aula Prática 2 SFC 2 no HRL.",
+        critical: "📦 16/09: PRÁTICA 2 SFC 2 (HRL) -> Produto: Avaliação 1."
+      },
+      {
+        id: "w7", sem: "07", dates: "21/09 a 25/09",
+        topics: "SEMANA UNIVERSITÁRIA UnB (Sem aulas teóricas regulares).",
+        critical: "🔥 22/09: EXECUÇÃO DA ATIVIDADE DE EXTENSÃO EM CAMPO (TE - 10%)."
+      },
+      {
+        id: "w8", sem: "08", dates: "28/09 a 02/10",
+        topics: "Neurofarmacologia (SNP, SNC, Epilepsia); Toxoplasmose [Retificado]; DM 1 e tutoria HUB em SFC 2.",
+        critical: "🔥 29/09 ou 01/10: DISCUSSÃO DO CC2 (5%) [Folha A4] & Alinhamento Seminário Integrador."
+      },
+      {
+        id: "w9", sem: "09", dates: "05/10 a 09/10",
+        topics: "Anestésicos Locais e Gerais Farmaco; DM Aula 2 + Defesa de casos em SFC 2.",
+        critical: "🔥 06/10: 1ª PROVA TEÓRICA PARASITO (AT1 - 22,5%) & 06 ou 08/10: AP1 (7,5%) & 📦 07/10: Apresentação de casos das Práticas 1 e 2 (SFC 2)."
+      },
+      {
+        id: "w10", sem: "10", dates: "12/10 a 16/10",
+        topics: "12/10 Feriado; Teníase e Cisticercose em Parasito; Aula Prática 3 SFC 2 no HRL.",
+        critical: "📦 13/10: Envio CC3 Parasito & 14/10: PRÁTICA 3 SFC 2 -> Produto: Caso Clínico + Estudo Dirigido 3."
+      },
+      {
+        id: "w11", sem: "11", dates: "19/10 a 23/10",
+        topics: "Antidepressivos e Antipsicóticos Farmaco; Geo-helmintos; Avaliação de Conhecimento SFC 2.",
+        critical: "🔥 20 ou 22/10: DISCUSSÃO CC3 (5%) & 🔥 21/10: AVALIAÇÃO DE CONHECIMENTO 1 SFC 2 (P1 - 35%)."
+      },
+      {
+        id: "w12", sem: "12", dates: "26/10 a 30/10",
+        topics: "Antifúngicos Farmaco; Estrongiloidíase/Tricuríase Parasito; Seminário Integrador HUB.",
+        critical: "🔥 26/10: GAMIFICAÇÃO 1 FARMACO (PROVA TEÓRICA 1) & 🔥 30/10: INTEGRADOR HUB - ETAPA 1 (10%)."
+      },
+      {
+        id: "w13", sem: "13", dates: "02/11 a 06/11",
+        topics: "02/11 Feriado; Vetores de parasitos; ICC 1 na APS em SFC 2; Integrador HUB Etapa 2.",
+        critical: "🔥 05/11: INTEGRADOR HUB - ETAPA 2 / FINAL (SFC 2)."
+      },
+      {
+        id: "w14", sem: "14", dates: "09/11 a 13/11",
+        topics: "Betalactâmicos Farmaco; Ectoparasitos Parasito; ICC 2 + Saúde do Idoso 1 em SFC 2.",
+        critical: "🔥 10 ou 12/11: DISCUSSÃO CC4 (5%) & 🔥 13/11: OSCE INTEGRADOR SFC 2 (SIMULAÇÃO REALÍSTICA - 10%)."
+      },
+      {
+        id: "w15", sem: "15", dates: "16/11 a 20/11",
+        topics: "Tetraciclinas, Macrolídeos e Quinolonas Farmaco; Saúde do Idoso 2 + Caso Prática 3 em SFC 2.",
+        critical: "📦 17/11: Oficina Integradora Parasito (BÔNUS +1,0 na AP2) & 18/11: Discussão Caso Prática 3 SFC 2."
+      },
+      {
+        id: "w16", sem: "16", dates: "23/11 a 27/11",
+        topics: "Glicopeptídeos e Antivirais Farmaco; Avaliações de Helmintos Parasito; Aula Prática 4 SFC 2 no HRL.",
+        critical: "🔥 24/11: AT2 (22,5%) & 24 ou 26/11: AP2 (7,5%) Parasito & 📦 25/11: Prática 4 SFC 2 (Caso Clínico)."
+      },
+      {
+        id: "w17", sem: "17", dates: "30/11 a 04/12",
+        topics: "30/11 Feriado; Cuidados pós-IAM/AVC + Caso Prática 4 em SFC 2; Apresentação Integradora Parasito.",
+        critical: "01/12: Prova de Reposição Parasito & 02/12: Discussão Caso Prática 4 SFC 2 & 🔥 04/12: INTEGRADOR PARASITO (10%)."
+      },
+      {
+        id: "w18", sem: "18", dates: "07/12 a 11/12",
+        topics: "Fechamento de notas e menções semestrais.",
+        critical: "🔥 07/12: SALA INVERTIDA + GAMIFICAÇÃO 2 FARMACO & 🔥 09/12: AVALIAÇÃO DE CONHECIMENTOS 2 SFC 2 (P2 - 35%)."
+      }
+    ];
+
+    // Renderiza a tabela de checklist dinamicamente com persistência no localStorage
+    function renderChecklist() {
+      const tbody = document.getElementById("checklistBody");
+      tbody.innerHTML = "";
+      const saved = JSON.parse(localStorage.getItem("med_checklist_2026_2") || "{}");
+
+      weeksData.forEach((w) => {
+        const itemState = saved[w.id] || { done: false, read: false, quest: false, rev: false };
+        const tr = document.createElement("tr");
+        if (itemState.done) tr.classList.add("completed");
+
+        tr.innerHTML = `
+          <td style="text-align:center;">
+            <input type="checkbox" class="checkbox-custom" ${itemState.done ? "checked" : ""} onchange="updateWeekState('${w.id}', 'done', this.checked)">
+          </td>
+          <td style="font-weight:800; color:var(--primary);">${w.sem}</td>
+          <td style="font-size:0.8rem; font-weight:600; color:var(--text-muted);">${w.dates}</td>
+          <td style="font-size:0.85rem;">${w.topics}</td>
+          <td style="text-align:center;">
+            <input type="checkbox" class="checkbox-custom" ${itemState.read ? "checked" : ""} onchange="updateWeekState('${w.id}', 'read', this.checked)">
+          </td>
+          <td style="text-align:center;">
+            <input type="checkbox" class="checkbox-custom" ${itemState.quest ? "checked" : ""} onchange="updateWeekState('${w.id}', 'quest', this.checked)">
+          </td>
+          <td style="text-align:center;">
+            <input type="checkbox" class="checkbox-custom" ${itemState.rev ? "checked" : ""} onchange="updateWeekState('${w.id}', 'rev', this.checked)">
+          </td>
+          <td style="font-size:0.82rem; font-weight:600; color:#b91c1c;">${w.critical}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      calculateProgress();
+    }
+
+    function updateWeekState(weekId, field, value) {
+      const saved = JSON.parse(localStorage.getItem("med_checklist_2026_2") || "{}");
+      if (!saved[weekId]) saved[weekId] = { done: false, read: false, quest: false, rev: false };
+      saved[weekId][field] = value;
+      localStorage.setItem("med_checklist_2026_2", JSON.stringify(saved));
+      renderChecklist();
+    }
+
+    function calculateProgress() {
+      const saved = JSON.parse(localStorage.getItem("med_checklist_2026_2") || "{}");
+      let completedCount = 0;
+      weeksData.forEach((w) => {
+        if (saved[w.id] && saved[w.id].done) completedCount++;
+      });
+      const pct = Math.round((completedCount / weeksData.length) * 100);
+      document.getElementById("progressBar").style.width = pct + "%";
+      document.getElementById("checklistPercentage").innerText = pct + "%";
+      document.getElementById("kpiProgress").innerText = pct + "%";
+      document.getElementById("kpiDoneCount").innerText = `${completedCount} de ${weeksData.length} semanas concluídas`;
+    }
+
+    function resetChecklist() {
+      if (confirm("Deseja realmente zerar todo o progresso do checklist?")) {
+        localStorage.removeItem("med_checklist_2026_2");
+        renderChecklist();
+      }
+    }
+
+    // Filtros e Pesquisa na Tabela do Cronograma
+    let currentDisc = "all";
+    let currentPrio = "all";
+
+    function filterSchedule(disc, btn) {
+      currentDisc = disc;
+      document.querySelectorAll(".filter-btn.parasito-btn, .filter-btn.sfc-btn, .filter-btn.farmaco-btn, .filter-group:first-child .filter-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      applyScheduleFilters();
+    }
+
+    function filterPriority(prio, btn) {
+      currentPrio = prio;
+      btn.parentElement.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      applyScheduleFilters();
+    }
+
+    function searchSchedule() {
+      applyScheduleFilters();
+    }
+
+    function applyScheduleFilters() {
+      const query = document.getElementById("scheduleSearch").value.toLowerCase();
+      const rows = document.querySelectorAll("#scheduleTable tbody tr");
+
+      rows.forEach((row) => {
+        const rowDisc = row.getAttribute("data-disc");
+        const rowPrio = row.getAttribute("data-prio");
+        const hasProduct = row.getAttribute("data-has-product") === "true";
+        const text = row.innerText.toLowerCase();
+
+        const matchDisc = (currentDisc === "all" || rowDisc === currentDisc);
+        
+        let matchPrio = false;
+        if (currentPrio === "all") {
+          matchPrio = true;
+        } else if (currentPrio === "produto") {
+          matchPrio = hasProduct;
+        } else {
+          matchPrio = (rowPrio === currentPrio);
+        }
+
+        const matchText = (query === "" || text.includes(query));
+
+        if (matchDisc && matchPrio && matchText) {
+          row.style.display = "";
+        } else {
+          row.style.display = "none";
+        }
+      });
+    }
+
+    // Accordion Control
+    function toggleAccordion(header) {
+      const content = header.nextElementSibling;
+      const arrow = header.querySelector("span:last-child");
+      content.classList.toggle("open");
+      arrow.innerText = content.classList.contains("open") ? "▼" : "▶";
+    }
+
+    // Inicialização ao carregar
+    window.addEventListener("DOMContentLoaded", () => {
+      renderChecklist();
+    });
+  </script>
+</body>
+</html>
