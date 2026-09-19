@@ -254,6 +254,34 @@
           />
         </div>
 
+        <!-- SELETOR DE VERSÃO DO JOGO (SWITCH) -->
+        <div class="space-y-2 pt-1">
+          <label class="block font-mono text-xs uppercase tracking-wider text-slate-300 font-bold">
+            Escolha a Versão do Jogo:
+          </label>
+          <div class="grid grid-cols-2 gap-2 bg-slate-950 p-1.5 rounded-2xl border border-slate-800">
+            <button 
+              type="button" 
+              onclick="selectGameVersion(1)" 
+              id="btn-mode-v1" 
+              class="py-2.5 px-2 rounded-xl font-display font-black text-xs transition-all flex flex-col items-center gap-0.5 border border-sky-500 bg-sky-500/20 text-sky-300 shadow-sm active:scale-95">
+              <span class="flex items-center gap-1"><span>🕵️</span> <span>Versão 1</span></span>
+              <span class="text-[10px] font-mono text-slate-400 font-normal">Missão Clássica (6 Pistas)</span>
+            </button>
+            <button 
+              type="button" 
+              onclick="selectGameVersion(2)" 
+              id="btn-mode-v2" 
+              class="py-2.5 px-2 rounded-xl font-display font-black text-xs transition-all flex flex-col items-center gap-0.5 border border-transparent text-slate-400 hover:text-slate-200 active:scale-95">
+              <span class="flex items-center gap-1"><span>⚡</span> <span>Versão 2</span></span>
+              <span class="text-[10px] font-mono text-slate-400 font-normal">Super Fato/Fake (26 Pistas)</span>
+            </button>
+          </div>
+          <p id="mode-description" class="text-[11px] font-mono text-sky-400 text-center">
+            🎯 Versão 1: 6 evidências com múltipla escolha e fato ou fake.
+          </p>
+        </div>
+
         <div class="grid grid-cols-2 gap-2 text-[11px] font-mono text-slate-300">
           <div class="bg-slate-950/70 p-2.5 rounded-xl border border-slate-800 flex items-center gap-2">
             <span class="text-base">🔥</span>
@@ -659,7 +687,305 @@
       }
     ];
 
+    // --- BANCO DE PERGUNTAS DA VERSÃO 2 (26 EVIDÊNCIAS: DENGUE, ZIKA, CHIKUNGUNYA E PREVENÇÃO) ---
+    const questionsBankV2 = [
+      // 🔴 DENGUE
+      {
+        id: "d1",
+        category: "🔴 DENGUE // VÍRUS",
+        text: "“Dengue é causada por um vírus.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: true },
+          { text: "🚫 FAKE NEWS", correct: false }
+        ],
+        explanation: "O causador da doença é o vírus DENV (família Flaviviridae), que possui 4 sorotipos. O mosquito é apenas o transmissor!"
+      },
+      {
+        id: "d2",
+        category: "🔴 DENGUE // VETOR",
+        text: "“O mosquito que transmite dengue, Zika e a Chikungunya é o Aedes aegypti.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: true },
+          { text: "🚫 FAKE NEWS", correct: false }
+        ],
+        explanation: "A fêmea do mosquito Aedes aegypti é o vetor comum que pode carregar e transmitir qualquer um desses três vírus ao picar."
+      },
+      {
+        id: "d3",
+        category: "🔴 DENGUE // SAZONALIDADE",
+        text: "“Dengue só acontece no verão.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: false },
+          { text: "🚫 FAKE NEWS", correct: true }
+        ],
+        explanation: "O calor e a chuva aceleram o ciclo, mas onde houver água parada dentro de casa, o mosquito se reproduz o ano inteiro!"
+      },
+      {
+        id: "d4",
+        category: "🔴 DENGUE // REINFECÇÃO",
+        text: "“É possível ter dengue mais de uma vez.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: true },
+          { text: "🚫 FAKE NEWS", correct: false }
+        ],
+        explanation: "Existem 4 sorotipos da dengue (DENV 1, 2, 3 e 4). Ter tido um não protege contra os outros três, e a segunda infecção pode ser mais grave!"
+      },
+      {
+        id: "d5",
+        category: "🔴 DENGUE // SINTOMAS",
+        text: "“A dengue pode causar febre.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: true },
+          { text: "🚫 FAKE NEWS", correct: false }
+        ],
+        explanation: "A febre alta e súbita (38,5 ºC a 40 ºC), acompanhada de dores no corpo e atrás dos olhos, é um dos principais sinais da dengue."
+      },
+      {
+        id: "d6",
+        category: "🔴 DENGUE // VACINA",
+        text: "“Vacina contra dengue existe.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: true },
+          { text: "🚫 FAKE NEWS", correct: false }
+        ],
+        explanation: "Existe sim! A vacina tetravalente Qdenga já está aprovada pela Anvisa e distribuída gratuitamente pelo SUS para jovens de 10 a 14 anos."
+      },
+      {
+        id: "d7",
+        category: "🔴 DENGUE // VACINA",
+        text: "“A vacina contra dengue protege 100% das pessoas.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: false },
+          { text: "🚫 FAKE NEWS", correct: true }
+        ],
+        explanation: "Nenhuma vacina tem 100% de eficácia. A vacina reduz drasticamente internações e casos graves, mas eliminar água parada continua essencial!"
+      },
+      {
+        id: "d8",
+        category: "🔴 DENGUE // PREVENÇÃO",
+        text: "“Eliminar água parada é a única medida que ajuda a prevenir dengue.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: false },
+          { text: "🚫 FAKE NEWS", correct: true }
+        ],
+        explanation: "Eliminar água parada é o pilar principal, mas o uso de repelentes, telas em janelas e a vacinação no SUS também são medidas fundamentais!"
+      },
+
+      // 🟣 ZIKA
+      {
+        id: "z1",
+        category: "🟣 ZIKA // TRANSMISSÃO",
+        text: "“Zika pode ser transmitida por relação sexual.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: true },
+          { text: "🚫 FAKE NEWS", correct: false }
+        ],
+        explanation: "A ciência comprovou que, além da picada do mosquito Aedes, o vírus Zika pode ser transmitido pelo contato sexual desprotegido."
+      },
+      {
+        id: "z2",
+        category: "🟣 ZIKA // GRAVIDADE",
+        text: "“Toda pessoa com Zika fica muito doente.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: false },
+          { text: "🚫 FAKE NEWS", correct: true }
+        ],
+        explanation: "Cerca de 80% das pessoas infectadas pelo vírus Zika não desenvolvem sintomas graves ou passam pela infecção sem nem perceber."
+      },
+      {
+        id: "z3",
+        category: "🟣 ZIKA // SINTOMAS",
+        text: "“Zika pode causar manchas na pele.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: true },
+          { text: "🚫 FAKE NEWS", correct: false }
+        ],
+        explanation: "Manchas vermelhas na pele (exantema) com coceira intensa são marcas registradas da infecção pelo vírus Zika."
+      },
+      {
+        id: "z4",
+        category: "🟣 ZIKA // GESTAÇÃO",
+        text: "“Zika durante a gravidez pode afetar o bebê.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: true },
+          { text: "🚫 FAKE NEWS", correct: false }
+        ],
+        explanation: "O vírus pode atravessar a placenta e causar a Síndrome Congênita do Zika, resultando em microcefalia e danos neurológicos ao feto."
+      },
+      {
+        id: "z5",
+        category: "🟣 ZIKA // VÍRUS",
+        text: "“Zika e dengue são causadas pelo mesmo vírus.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: false },
+          { text: "🚫 FAKE NEWS", correct: true }
+        ],
+        explanation: "São vírus de espécies diferentes! Ambos usam o Aedes aegypti como transporte, mas têm códigos genéticos e impactos distintos no corpo."
+      },
+
+      // 🟠 CHIKUNGUNYA
+      {
+        id: "c1",
+        category: "🟠 CHIKUNGUNYA // ARTICULAÇÕES",
+        text: "“Chikungunya pode causar muita dor nas articulações.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: true },
+          { text: "🚫 FAKE NEWS", correct: false }
+        ],
+        explanation: "Chikungunya significa 'aquele que se curva'. As dores e inchaços nas juntas (articulações) das mãos e pés são intensas e incapacitantes."
+      },
+      {
+        id: "c2",
+        category: "🟠 CHIKUNGUNYA // DOENÇA",
+        text: "“Chikungunya e dengue são a mesma doença.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: false },
+          { text: "🚫 FAKE NEWS", correct: true }
+        ],
+        explanation: "Não são a mesma doença! Chikungunya é causada por um alfavírus diferente, com foco principal em dores articulares severas."
+      },
+      {
+        id: "c3",
+        category: "🟠 CHIKUNGUNYA // DURAÇÃO",
+        text: "“A dor da chikungunya pode durar bastante tempo.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: true },
+          { text: "🚫 FAKE NEWS", correct: false }
+        ],
+        explanation: "Na fase crônica da Chikungunya, as dores nas articulações podem persistir por meses ou até anos após a picada."
+      },
+      {
+        id: "c4",
+        category: "🟠 CHIKUNGUNYA // PATÓGENO",
+        text: "“Chikungunya é causada por uma bactéria.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: false },
+          { text: "🚫 FAKE NEWS", correct: true }
+        ],
+        explanation: "Chikungunya é causada por um VÍRUS (família Togaviridae), e não por bactérias! Portanto, tomar antibióticos não adianta contra ela."
+      },
+
+      // ⚪ EXTRA: MOSQUITO E PREVENÇÃO
+      {
+        id: "e1",
+        category: "⚪ EXTRA // CRIADOUROS",
+        text: "“Só existe mosquito Aedes em lugares sujos.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: false },
+          { text: "🚫 FAKE NEWS", correct: true }
+        ],
+        explanation: "O Aedes aegypti prefere justamente água limpa e parada (como água de chuva em garrafas, pratos de plantas e calhas) para colocar ovos!"
+      },
+      {
+        id: "e2",
+        category: "⚪ EXTRA // REPRODUÇÃO",
+        text: "“O Aedes aegypti pode se reproduzir em água parada.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: true },
+          { text: "🚫 FAKE NEWS", correct: false }
+        ],
+        explanation: "A fêmea precisa de recipientes com água parada para que os ovos eclodam e as larvas se transformem em mosquitos adultos."
+      },
+      {
+        id: "e3",
+        category: "⚪ EXTRA // REPELENTE",
+        text: "“Repelente pode ajudar a evitar picadas do mosquito.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: true },
+          { text: "🚫 FAKE NEWS", correct: false }
+        ],
+        explanation: "Repelentes aprovados pela Anvisa formam uma barreira de vapor na pele que desorienta os sensores do mosquito e impede picadas."
+      },
+      {
+        id: "e4",
+        category: "⚪ EXTRA // HÁBITOS",
+        text: "“O Aedes aegypti só pica durante a noite.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: false },
+          { text: "🚫 FAKE NEWS", correct: true }
+        ],
+        explanation: "O Aedes aegypti é um mosquito predominantemente DIURNO! Ele pica de manhã e no fim da tarde. Quem pica à noite é o pernilongo comum (Culex)."
+      },
+      {
+        id: "e5",
+        category: "⚪ EXTRA // VIRAL",
+        text: "“Dengue, Zika e chikungunya são doenças virais.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: true },
+          { text: "🚫 FAKE NEWS", correct: false }
+        ],
+        explanation: "Todas as três são classificadas como arboviroses, causadas por vírus transmitidos pela picada de artrópodes (mosquitos)."
+      },
+      {
+        id: "e6",
+        category: "⚪ EXTRA // REPELENTE",
+        text: "“Usar repelente elimina todos os mosquitos da casa.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: false },
+          { text: "🚫 FAKE NEWS", correct: true }
+        ],
+        explanation: "O repelente apenas afasta o mosquito da pele de quem usou. Ele NÃO mata os mosquitos nem elimina os ovos e criadouros do ambiente!"
+      },
+      {
+        id: "e7",
+        category: "⚪ EXTRA // CAIXA D'ÁGUA",
+        text: "“Tampar caixas-d'água ajuda a prevenir essas doenças.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: true },
+          { text: "🚫 FAKE NEWS", correct: false }
+        ],
+        explanation: "Caixas-d'água destampadas são os maiores criadouros urbanos. Mantê-las bem vedadas impede que milhares de mosquitos nasçam."
+      },
+      {
+        id: "e8",
+        category: "⚪ EXTRA // ASSINTOMÁTICOS",
+        text: "“Uma pessoa pode ter uma dessas doenças sem apresentar sintomas.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: true },
+          { text: "🚫 FAKE NEWS", correct: false }
+        ],
+        explanation: "Casos assintomáticos são muito comuns, especialmente na Zika e na Dengue. A pessoa pode ter o vírus no sangue mesmo sem sentir febre."
+      },
+      {
+        id: "e9",
+        category: "⚪ EXTRA // TRANSMISSÃO",
+        text: "“Se não houver água parada, uma pessoa não pode ser infectada.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: false },
+          { text: "🚫 FAKE NEWS", correct: true }
+        ],
+        explanation: "Mesmo sem água parada na sua casa, mosquitos de vizinhos podem voar até você, ou você pode ser infectado na rua, na escola ou por via sexual (no caso da Zika)!"
+      }
+    ];
+
     // --- 3. VARIÁVEIS DE ESTADO DO JOGO ---
+    let selectedGameVersion = 1;
     let questions = [];
     let currentQuestionIndex = 0;
     let score = 0;
@@ -668,6 +994,25 @@
     let maxStreak = 0;
     let agentName = "Agente Mirim";
     let powerUpUsed = false;
+
+    // Seletor de Versão do Jogo (Switch)
+    function selectGameVersion(v) {
+      selectedGameVersion = v;
+      playSound('click');
+      const btnV1 = document.getElementById('btn-mode-v1');
+      const btnV2 = document.getElementById('btn-mode-v2');
+      const desc = document.getElementById('mode-description');
+      
+      if (v === 1) {
+        btnV1.className = "py-2.5 px-2 rounded-xl font-display font-black text-xs transition-all flex flex-col items-center gap-0.5 border border-sky-500 bg-sky-500/20 text-sky-300 shadow-sm active:scale-95";
+        btnV2.className = "py-2.5 px-2 rounded-xl font-display font-black text-xs transition-all flex flex-col items-center gap-0.5 border border-transparent text-slate-400 hover:text-slate-200 active:scale-95";
+        desc.innerText = "🎯 Versão 1: 6 evidências com múltipla escolha e fato ou fake.";
+      } else {
+        btnV2.className = "py-2.5 px-2 rounded-xl font-display font-black text-xs transition-all flex flex-col items-center gap-0.5 border border-amber-500 bg-amber-500/20 text-amber-300 shadow-sm active:scale-95";
+        btnV1.className = "py-2.5 px-2 rounded-xl font-display font-black text-xs transition-all flex flex-col items-center gap-0.5 border border-transparent text-slate-400 hover:text-slate-200 active:scale-95";
+        desc.innerText = "⚡ Versão 2: 26 desafios de Fato ou Fake sobre Dengue, Zika, Chikungunya e Prevenção!";
+      }
+    }
 
     // Função para embaralhar arrays (Fisher-Yates)
     function shuffleArray(array) {
@@ -722,8 +1067,10 @@
       playSound('click');
       initAudio();
 
-      // Embaralha as perguntas para variar o jogo
-      questions = questionsBank.map(q => {
+      const bank = selectedGameVersion === 1 ? questionsBank : questionsBankV2;
+
+      // Prepara as perguntas do modo escolhido
+      questions = bank.map(q => {
         return {
           ...q,
           options: q.isFatoFake ? q.options : shuffleArray(q.options)
@@ -742,10 +1089,15 @@
       document.getElementById('screen-welcome').classList.add('hidden');
       document.getElementById('screen-quiz').classList.remove('hidden');
 
-      const startPhrases = [
-        `"Excelente, ${agentName}! As evidências estão na mesa. Confio na sua perícia!"`,
-        `"${agentName} na escuta! Vamos desmascarar esse mosquito e proteger a cidade!"`
-      ];
+      const startPhrases = selectedGameVersion === 1 
+        ? [
+            `"Excelente, ${agentName}! As evidências da Versão 1 estão na mesa!"`,
+            `"${agentName} na escuta! Vamos desmascarar esse mosquito e proteger a cidade!"`
+          ]
+        : [
+            `"Atenção, ${agentName}! Iniciando a Versão 2: Super Fato ou Fake com 26 desafios!"`,
+            `"Dossiê Completo ativado! Mostre que você domina Dengue, Zika e Chikungunya!"`
+          ];
       setMascotState('neutral', startPhrases[Math.floor(Math.random() * startPhrases.length)]);
 
       loadQuestion();
@@ -1004,8 +1356,14 @@
       document.getElementById('screen-quiz').classList.add('hidden');
       document.getElementById('screen-result').classList.remove('hidden');
 
-      // Bônus de finalização
-      const finalScore = Math.min(100, score + 10);
+      // Bônus de finalização / Cálculo de pontuação adaptado
+      let finalScore = 0;
+      if (selectedGameVersion === 1) {
+        finalScore = Math.min(100, score + 10);
+      } else {
+        // Versão 2: 26 desafios de Fato ou Fake (precisão pericial de 0 a 100)
+        finalScore = Math.round((correctCount / questions.length) * 100);
+      }
 
       document.getElementById('badge-agent-name').innerText = agentName;
       document.getElementById('final-score-display').innerText = finalScore;
