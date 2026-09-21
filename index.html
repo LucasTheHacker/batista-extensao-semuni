@@ -996,25 +996,25 @@
     const questionsBankV3 = [
       {
         id: "v1",
-        category: "💉 VACINAS // SOROTIPOS DA DENGUE",
-        text: "“A vacina contra a dengue disponível no Brasil protege todas as quatro cepas do vírus dengue.”",
-        isFatoFake: true,
-        options: [
-          { text: "✅ FATO REAL", correct: true },
-          { text: "🚫 FAKE NEWS", correct: false }
-        ],
-        explanation: "As vacinas disponíveis (como a Qdenga) são tetravalentes, o que significa que foram formuladas para conferir proteção contra os quatro sorotipos do vírus da dengue (DENV-1, DENV-2, DENV-3 e DENV-4)."
-      },
-      {
-        id: "v2",
-        category: "💉 VACINAS // DISPONIBILIDADE NO SUS",
-        text: "“O SUS oferece a vacina contra a dengue gratuitamente para todas as faixas etárias.”",
+        category: "💉 VACINAS // EFICÁCIA E SOROTIPOS",
+        text: "“A vacina contra a dengue oferece a mesma proteção clínica comprovada contra todas as quatro cepas do vírus.”",
         isFatoFake: true,
         options: [
           { text: "✅ FATO REAL", correct: false },
           { text: "🚫 FAKE NEWS", correct: true }
         ],
-        explanation: "Devido à capacidade limitada de produção global, o Ministério da Saúde priorizou faixas etárias específicas com maior taxa de hospitalização (como crianças e adolescentes de 10 a 14 anos) em municípios prioritários, não para todas as idades."
+        explanation: "Fake News! Depende da vacina e do sorotipo. Embora vacinas como Qdenga e Butantan-DV sejam tetravalentes na formulação, a proteção clínica não é idêntica para todos os tipos. Nos estudos da Qdenga, por exemplo, a eficácia contra o sorotipo 4 (DENV-4) foi considerada inconclusiva pelo Ministério da Saúde!"
+      },
+      {
+        id: "v2",
+        category: "💉 VACINAS // DISPONIBILIDADE NO SUS",
+        text: "“O SUS oferece a vacina contra a dengue gratuitamente para todas as faixas etárias de uma vez.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: false },
+          { text: "🚫 FAKE NEWS", correct: true }
+        ],
+        explanation: "Fake News! A estratégia do SUS no PNI organiza a vacinação por grupos prioritários (como a Qdenga focada na faixa de 10 a 14 anos e a vacina do Butantan indicada para 15 a 59 anos), não contemplando todas as idades de forma universal e simultânea."
       },
       {
         id: "v3",
@@ -1025,29 +1025,29 @@
           { text: "✅ FATO REAL", correct: true },
           { text: "🚫 FAKE NEWS", correct: false }
         ],
-        explanation: "Atualmente, ainda não há vacina contra o vírus Zika aprovada e disponível comercialmente para a população geral. Há pesquisas e ensaios clínicos promissores em andamento."
+        explanation: "Fato Comprovado! Revisões científicas recentes confirmam que ainda não há nenhuma vacina contra o vírus Zika licenciada para uso comercial na população, embora existam vários candidatos promissores em desenvolvimento clínico."
       },
       {
         id: "v4",
         category: "💉 VACINAS // CHIKUNGUNYA",
-        text: "“A vacina contra a chikungunya já foi aprovada e está disponível no Brasil.”",
-        isFatoFake: true,
-        options: [
-          { text: "✅ FATO REAL", correct: false },
-          { text: "🚫 FAKE NEWS", correct: true }
-        ],
-        explanation: "Embora pesquisas estejam avançadas e já haja aprovação em agências internacionais (como o FDA nos EUA), a vacina contra a chikungunya ainda não está amplamente distribuída ou disponível na rede de saúde brasileira."
-      },
-      {
-        id: "v5",
-        category: "💉 VACINAS // FAIXA ETÁRIA",
-        text: "“A vacina contra a dengue é recomendada para pessoas a partir dos 9 anos de idade.”",
+        text: "“A vacina contra a chikungunya já foi aprovada pela Anvisa no Brasil.”",
         isFatoFake: true,
         options: [
           { text: "✅ FATO REAL", correct: true },
           { text: "🚫 FAKE NEWS", correct: false }
         ],
-        explanation: "A vacina Dengvaxia é indicada a partir dos 9 anos de idade (para indivíduos soropositivos), enquanto a Qdenga pode ser aplicada a partir dos 4 anos (e na campanha do SUS a partir dos 10 anos). Portanto, a recomendação inclui com certeza indivíduos a partir dos 9 anos."
+        explanation: "Fato Comprovado! A Anvisa aprovou a vacina IXCHIQ em abril de 2025 (autorizando produção nacional em maio de 2026) e concedeu registro à Butantan-CHIK em 2026, marco fundamental no combate à doença no país!"
+      },
+      {
+        id: "v5",
+        category: "💉 VACINAS // FAIXAS ETÁRIAS NO SUS",
+        text: "“A vacina contra a dengue é recomendada e aplicada no SUS a partir dos 9 anos de idade.”",
+        isFatoFake: true,
+        options: [
+          { text: "✅ FATO REAL", correct: false },
+          { text: "🚫 FAKE NEWS", correct: true }
+        ],
+        explanation: "Fake News! A recomendação a partir dos 9 anos pertencia à vacina antiga (Dengvaxia). Atualmente, no SUS, a Qdenga contempla a faixa de 10 a 14 anos, enquanto a Butantan-DV é licenciada para 12 a 59 anos (com estratégia do PNI no SUS para 15 a 59 anos)!"
       },
       {
         id: "v6",
@@ -1058,7 +1058,7 @@
           { text: "✅ FATO REAL", correct: true },
           { text: "🚫 FAKE NEWS", correct: false }
         ],
-        explanation: "Sim! As principais vacinas desenvolvidas (como Dengvaxia, Qdenga e a vacina do Instituto Butantan) usam tecnologia de vírus vivo atenuado — vírus enfraquecidos que não provocam a doença, mas ensinam nosso sistema imune a combatê-la."
+        explanation: "Fato Real! Fórmulas importantes como a Qdenga e a Butantan-DV utilizam a tecnologia de vírus vivos atenuados (enfraquecidos), que treinam o sistema imunológico sem provocar a doença."
       },
       {
         id: "v7",
@@ -1069,7 +1069,7 @@
           { text: "✅ FATO REAL", correct: false },
           { text: "🚫 FAKE NEWS", correct: true }
         ],
-        explanation: "Não existe qualquer lei no Brasil que torne a vacinação contra dengue obrigatória para menores de 5 anos. Além disso, vacinas como a Dengvaxia nem sequer são autorizadas para essa faixa etária!"
+        explanation: "Fake News! Não existe lei tornando a vacina da dengue obrigatória para menores de 5 anos. Além disso, as vacinas atuais são autorizadas para faixas mais velhas conforme ensaios clínicos (como a Qdenga a partir de 4 anos e Butantan-DV a partir de 12 anos)."
       },
       {
         id: "v8",
@@ -1080,18 +1080,18 @@
           { text: "✅ FATO REAL", correct: false },
           { text: "🚫 FAKE NEWS", correct: true }
         ],
-        explanation: "A vacina não é regionalizada. Ela é tetravalente e protege igualmente contra os quatro sorotipos conhecidos do vírus da dengue em qualquer região do Brasil."
+        explanation: "Fake News! A formulação não varia por estado ou região do país. Vacinas como Qdenga e Butantan-DV são de amplo espectro (tetravalentes) para atuar contra os quatro sorotipos conhecidos do vírus da dengue em qualquer região do Brasil."
       },
       {
         id: "v9",
         category: "⚖️ LEGISLAÇÃO // CALENDÁRIO SUS",
-        text: "“A vacinação contra a chikungunya faz parte do calendário oficial do SUS atualmente.”",
+        text: "“A vacinação contra a chikungunya faz parte do calendário oficial de rotina básica do SUS para toda a população.”",
         isFatoFake: true,
         options: [
           { text: "✅ FATO REAL", correct: false },
           { text: "🚫 FAKE NEWS", correct: true }
         ],
-        explanation: "A imunização contra a chikungunya NÃO faz parte do calendário básico de rotina do SUS, pois ainda não foi incorporada ao Programa Nacional de Imunizações (PNI)."
+        explanation: "Fake News! Apesar de as vacinas (IXCHIQ e Butantan-CHIK) terem recebido registro e aprovação da Anvisa, a vacinação contra a chikungunya ainda não integra o calendário básico de vacinação rotineira universal do SUS."
       },
       {
         id: "v10",
@@ -1102,7 +1102,7 @@
           { text: "✅ FATO REAL", correct: true },
           { text: "🚫 FAKE NEWS", correct: false }
         ],
-        explanation: "A legislação trabalhista e normas de vigilância em saúde pública garantem justificativas legais e abono para trabalhadores comparecerem a consultas de vacinação e cumprirem campanhas de imunização coletiva."
+        explanation: "Fato Real! A legislação trabalhista e diretrizes de saúde pública asseguram abono ou justificativa de falta para o trabalhador se vacinar ou acompanhar dependentes em campanhas oficiais de imunização."
       }
     ];
 

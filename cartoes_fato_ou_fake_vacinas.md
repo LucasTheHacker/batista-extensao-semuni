@@ -40,7 +40,7 @@
 * **Explicação para os Estudantes:**  
   *"O mosquito *Aedes aegypti* é apenas o **'motorista de fuga'** que transporta esses vírus, mas cada vírus é um inimigo diferente! Na ciência vale a regra da **chave e fechadura**: o anticorpo da dengue só tranca a porta da dengue. Para Zika e Chikungunya, a nossa melhor arma ainda é eliminar os focos de água parada!"*
 * **Pontuação da Rodada:** ⭐ **+5 Pontos de Perito**
-* **Nota de Apoio ao Monitor (Ciência em 1 Frase):** Dengue e Zika são flavivírus distintos, enquanto Chikungunya é um alfavírus; não existe proteção cruzada protetora entre eles conferida pela vacina da dengue.
+* **Nota de Apoio ao Monitor (Ciência em 1 Frase):** Dengue e Zika são flavivírus distintos, enquanto Chikungunya é um alfavírus; não existe proteção cruzada conferida pela vacina da dengue. *(Atualização: A Anvisa já aprovou vacinas contra chikungunya, como a IXCHIQ e Butantan-CHIK; contra Zika ainda não há vacina licenciada).*
 
 ---
 
@@ -97,7 +97,7 @@
 * **Explicação para os Estudantes:**  
   *"É pura verdade! O Brasil foi pioneiro mundial ao incluir a vacina da dengue na rede pública gratuita. A faixa de **10 a 14 anos** foi escolhida como prioridade porque é uma das idades que mais sofria com internações hospitalares. São **duas doses** para garantir que o escudo funcione por muitos anos!"*
 * **Pontuação da Rodada:** ⭐ **+5 Pontos de Perito**
-* **Nota de Apoio ao Monitor (Ciência em 1 Frase):** O Ministério da Saúde incorporou a vacina Qdenga ao PNI com esquema de duas doses (intervalo de 3 meses), priorizando municípios prioritários e a faixa pediátrica de 10 a 14 anos devido ao alto índice de hospitalizações.
+* **Nota de Apoio ao Monitor (Ciência em 1 Frase):** O Ministério da Saúde incorporou a Qdenga ao PNI priorizando a faixa pediátrica de 10 a 14 anos, e posteriormente a vacina Butantan-DV foi licenciada para 12 a 59 anos (com estratégia no SUS voltada para 15 a 59 anos).
 
 ---
 
